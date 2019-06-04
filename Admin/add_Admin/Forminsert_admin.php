@@ -3,7 +3,7 @@
  session_start();
  if (!isset($_SESSION["User_id"])){
  
-    Header("Location:Login.php");
+    Header("Location:../../Login.php");
     exit();
   }
 ?>
@@ -71,7 +71,7 @@
             <br><br>
             <input type="submit" value="save"/>
 
-            <a href="Login.php"><button type="button">กลับหน้าหลัก</button></a>
+            <a href="../../Login.php"><button type="button">กลับหน้าหลัก</button></a>
         </fieldset>
 
         

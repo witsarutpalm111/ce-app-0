@@ -1,11 +1,11 @@
 <?php session_start();
-    require './User.php';
+    require './../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
  
-	  Header("Location:Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+	  Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
     
 }else{
-    $palm = $_POST['user_id']; //Serial num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
+    $palm = $_POST['user_id']; //user_id num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
     ?>
 
 <!DOCTYPE html>

@@ -8,7 +8,7 @@
     if($palm == 1){
        echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>";
     }
-    if($palm == 2){
+    else if($palm == 2){
         echo "<script>alert('กรุณาสมัครสมาชิกก่อนใช้งานค่ะ');</script>";
      }
     
@@ -50,7 +50,7 @@
                     <label id = "p3">Password </label>
                     <input type="password" id="em_Password" required name="em_Password" placeholder="Password">
                     <br><br>
-                    <input type="submit" class="btn btn-warning text-danger btn-sm" name="submit" value="Login" />
+                    <input type="submit" class="btn btn-warning text-danger btn-sm" name="submit" value="Submit" />
                     <a href="add_user/Forminsert_user.php" class="btn btn-warning text-danger btn-sm" >สมัครสมาชิก</a>
                    
                     <br><br>

@@ -1,5 +1,5 @@
 <?php
-    require './User.php';
+    require './DB_ce-app/User.php';
 
 
 
@@ -13,7 +13,5 @@ if( !$num_rows == 0 ) {
     while ($result = mysql_fetch_array($query)) {
         echo $result['User_id'];
     }
- 
- 
 }
     ?>

@@ -1,10 +1,10 @@
 
 <?php
    session_start();
-   require './User.php';
+   require './../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
 
-     Header("Location:Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+     Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
 
 }else{
 
@@ -24,10 +24,11 @@ if (!$_SESSION["User_id"]){  //check session
     $row = mysqli_fetch_array($result5);
         if($row>0){
             $sql = "Insert into com"
-            . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`, `Date_qr`) value('$Serial','$User','$hash','$has','$date')";
-            
+            . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`) value('$Serial','$User','$hash','$has')";
+            $sql1 = "Insert into update_com"
+            . "(`ID_com`) value('$hash')";
             $result = mysqli_query($connect,$sql);
-            
+            $result1 = mysqli_query($connect,$sql1);
             
             
             header("location:Show_data.php?alert=$hash");
@@ -36,7 +37,7 @@ if (!$_SESSION["User_id"]){  //check session
         // ติดปัญหา
 
         }else{
-            header("location:Login.php?alert=2");
+            header("location:../Login.php?alert=2");
             
     }
 }

@@ -1,5 +1,6 @@
 
 <?php 
+require './../User.php';
 $fname = $_POST['em_fname'];
 $lname = $_POST['em_lname'];
 $User = $_POST['em_User'];
@@ -15,7 +16,7 @@ $result5 = mysqli_query($connect,$p);
 $row = mysqli_fetch_array($result5);
     if($row>0){
 
-        echo "<script>alert('User_id นี้มีผู้ใช้ไปแล้วค่ะ');</script>";
+        echo "<script>alert('User_id นี้มีผู้ใช้ไปแล้วค่ะ');history.back;</script>";
       
     // ติดปัญหา
 
@@ -26,6 +27,6 @@ $row = mysqli_fetch_array($result5);
         
         $result = mysqli_query($connect,$sql);
         
-        header("location:Login.php?alert=1");
+        header("location:../Login.php?alert=1");
 }
 ?>

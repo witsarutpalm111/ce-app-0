@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    require './User.php';
+    require './../DB_ce-app/User.php';
      $palm = 0;
      if(isset($_GET['AAA'])){
          $palm = $_GET['AAA'];
      }
+
     ?>
 <head>
     <meta charset="UTF-8">
@@ -16,8 +17,10 @@
 <body>
     <?php 
     
-        $p = "SELECT * FROM user,com WHERE user.User_id=com.User_id and com.ID_com='$palm'";
-        $result = mysqli_query($connect,$p);  
+        $p = "SELECT * FROM update_com WHERE update_com.ID_com='$palm'";
+        $p1 = "SELECT user.User_id,user.fname,user.lname FROM user,com WHERE user.User_id=com.User_id and com.ID_com='$palm'";
+        // ติดปัญหา
+        $result = mysqli_query($connect,$p1);  
         $result1 = mysqli_query($connect,$p); 
         $row1 = mysqli_fetch_array($result);
     ?>
@@ -46,11 +49,11 @@
             while($row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
         ?>
         <tr>
-                <td> <?php echo $row2['Date_com']?></td>
+                <td> <?php echo $row2['Time_update']?></td>
                 <td> <?php echo $row2['Detail_com']?></td>
                 <td><?php echo $row2['Status_com']?></td>
-                <td><?php echo $row2['Price']?></td>
-                <td><?php echo $row2['Note']?></td>
+                <td><?php echo $row2['Price_com']?></td>
+                <td><?php echo $row2['Note_com']?></td>
 
         </tr>
         
@@ -59,6 +62,6 @@
             
              
     </table>
-    <a href="Login.php"><button type="button">Go to Login</button></a>
+    <a href="../Login.php"><button type="button">Go to Login</button></a>
 </body>
 </html>

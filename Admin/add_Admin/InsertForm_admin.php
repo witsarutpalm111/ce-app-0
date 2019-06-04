@@ -1,10 +1,10 @@
 
 <?php
    session_start();
-require './User.php';
+require './../../DB_ce-app/User.php';
 if (!isset($_SESSION["User_id"])){
  
-    Header("Location:Login.php");
+    Header("Location:../../Login.php");
     exit();
   }
 $fname = $_POST['em_fname'];
@@ -21,7 +21,7 @@ $result5 = mysqli_query($connect,$p);
 $row = mysqli_fetch_array($result5);
     if($row>0){
 
-        echo "<script>alert('User_id นี้มีผู้ใช้ไปแล้วค่ะ');</script>";
+        echo "<script>alert('User_id นี้มีผู้ใช้ไปแล้วค่ะ');history.back();</script>";
       
     // ติดปัญหา
 
@@ -32,6 +32,6 @@ $row = mysqli_fetch_array($result5);
         
         $result = mysqli_query($connect,$sql);
         
-        header("location:Login.php?alert=1");
+        header("location:../../Login.php?alert=1");
 }
 ?>

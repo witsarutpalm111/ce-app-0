@@ -3,7 +3,7 @@
  session_start();
  if (!isset($_SESSION["User_id"])){
  
-    Header("Location:Login.php");
+    Header("../Location:Login.php");
     exit();
   }
 ?>
@@ -18,25 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>บันทึกข้อมูล</title>
-    <style>
-    body{
-        background-color:#000000;
-        }
-        label{
-            color:#FFFF66;
-        }
-        fieldset{
-            text-align: center;
-            color:#FF0066
-        }
-        h1{
-            color:#66FF99;
-            text-align: center;
-        }
-        legend{
-            color:#FFFF66;
-        }
-    </style>
+    
     
 </head>
 <body>

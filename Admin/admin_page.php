@@ -1,8 +1,8 @@
 <?php session_start();
-    require './User.php';
+    require './../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
  
-	  Header("Location:Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+	  Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
  
 }else{
  $palm = 0;
@@ -28,9 +28,9 @@ if (!$_SESSION["User_id"]){  //check session
 <body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
-<a href="Login.php"><button type="button">Log out</button></a>
+<a href="../Login.php"><button type="button">Log out</button></a>
 
-<a href="Forminsert_admin.php" class="btn btn-warning text-danger btn-sm" >เพิ่ม Admin</a>
+<a href="add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm" >เพิ่ม Admin</a>
 <a href="add_data.php" class="btn btn-warning text-danger btn-sm" >เพิ่มข้อมูลการซ่อม</a>
 <br><br>
 <a href="check_user_id.php" class="btn btn-warning text-danger btn-sm" >เพิ่มรายละเอียดการซ่อม</a>

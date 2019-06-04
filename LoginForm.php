@@ -18,7 +18,7 @@ session_start();
         $em_User = $_POST['em_User'];
         $em_Password = $_POST['em_Password'];
 
-        require './User.php';
+        require './DB_ce-app/User.php';
 
         $sql = "select * from User where User_id ='$em_User'and Password='$em_Password'";
         $result = mysqli_query($connect,$sql);
@@ -30,10 +30,10 @@ session_start();
           $_SESSION['User_id'] = $em_User;
           $_SESSION['Password'] = $em_Password;
           if($Palm['Role']== "Admin"){
-            header("location:admin_page.php");
+            header("location:Admin/admin_page.php");
           }
           else{
-            header("location:user_page1.php");
+            header("location:shopping/list_shopping.php");
           }
         }else{
           echo"คุณใส่ข้อมูลไม่ถูกต้อง"."<br>";
