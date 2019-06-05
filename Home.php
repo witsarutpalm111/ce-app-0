@@ -138,7 +138,7 @@ section.ma{
 <section>
  
   <div class="footer">
-    <small> Footer</small>
+    <small>Footer</small>
   </div>
 </section>
 

@@ -20,9 +20,9 @@ $result1 = mysqli_query($connect,$p1);
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+    </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
@@ -100,31 +100,31 @@ $result1 = mysqli_query($connect,$p1);
                 </table>
                 <!-- </form> -->
                 <button class="btn btn-success" id="ss" onclick="add()">add</button>
-                <button class="btn btn-danger" onclick="hhh()">ลองสิ</button>
+                <a href="../Home.php" class="btn btn-success" class="ml-3">กลับ</a>
             </div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
         </div>
-        <a href="../Home.php" class="btn btn-success">กลับ</a>
+        
         <!-- <a href="check_shopping.php" class="btn btn-outline-info" id="show" style="text-align:right;">เพิ่ม</a> -->
-
-
     </div>
     <script type="text/javascript">
         function add() {
-            alert("asfasg");
+            alert("เข้า onclick");
             $.ajax({
-                type: 'POST',
+                type: "POST",
                 url: "add_to_cart.php",
-            // dataType: 'json',
-                success: window.alert("inside aJax statement")
-
-});
+             dataType: 'html',
+             success: function (response) {
+                alert(response);
+            }
+            });
         }
         function hhh(){
             $(document).ready(function () {
             alert("asfasg555");
         });
         }
+       
     </script>
 </body>
 
