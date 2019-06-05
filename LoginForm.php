@@ -20,7 +20,7 @@ session_start();
 
         require './DB_ce-app/User.php';
 
-        $sql = "select * from User where User_id ='$em_User'and Password='$em_Password'";
+        $sql = "SELECT user.User_id,user.Password,user.Role FROM user WHERE user.User_id ='$em_User' and user.Password='$em_Password'";
         $result = mysqli_query($connect,$sql);
 
         $Palm = mysqli_fetch_array($result);
@@ -29,7 +29,7 @@ session_start();
         if($num_row == 1){
           $_SESSION['User_id'] = $em_User;
           $_SESSION['Password'] = $em_Password;
-          if($Palm['Role']== "Admin"){
+          if($Palm['Role'] == "Admin"){
             header("location:Admin/admin_page.php");
           }
           else{
