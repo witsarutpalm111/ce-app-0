@@ -23,11 +23,32 @@
     <title>Form Login</title>
     
     <style>
+       div.container{
+            background-image: url("BG/wall2.jpg"); 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 65%;
+        }
+        body {
+            background-image: url("BG/wall3.jpg"); 
+            /*background-color: #4d4d4d;*/
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+
+        #p1 {
+            font-size: 50px ;
+            /* word-spacing: 200px; */
+            padding-left: 
+        }
+
         fieldset{
             text-align: center;
         }
-        a{
-            
+        a{ 
             color:#FFFF66;
             text-align: left;
         }
@@ -41,11 +62,12 @@
         
 </head>
 
-<body style = "text-align: center;">
-    <div class = "p">
+<body style = "text-align: left;">
+    <div class = "container h-100" >
             <form action="LoginForm.php" id="FormLogin" method="post">
-                <div class="border text-center">
-                    <legend id = "p1">Login</legend>
+                <div style="min-height:100vh">
+                <br><br><br>
+                    <legend id = "p1">.            Login </legend>
                     <label id = "p2">User Name</label>
                     <input type="text" id="em_User" required name="em_User" placeholder="User_id">
                     <label id = "p3">Password </label>
@@ -54,12 +76,9 @@
                     <input type="submit" class="btn btn-warning text-danger btn-sm" name="submit" value="Submit" />
                     <a href="add_user/Forminsert_user.php" class="btn btn-warning text-danger btn-sm" >สมัครสมาชิก</a>
                    
-                    <br><br>
                 </div>
             </form>
     </div>
-    
-    
   
 </body>
 
