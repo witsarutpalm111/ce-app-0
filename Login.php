@@ -26,9 +26,10 @@
        div.container{
             background-image: url("BG/wall2.jpg"); 
             background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: 65%;
+           /* // background-position: center; */
+           /* background-attachment: fixed;*/
+            background-size: 100%;
+        
         }
         body {
             background-image: url("BG/wall3.jpg"); 
@@ -62,22 +63,35 @@
         
 </head>
 
-<body style = "text-align: left;">
+<body >
     <div class = "container h-100" >
-            <form action="LoginForm.php" id="FormLogin" method="post">
-                <div style="min-height:100vh">
-                <br><br><br>
-                    <legend id = "p1">.            Login </legend>
-                    <label id = "p2">User Name</label>
-                    <input type="text" id="em_User" required name="em_User" placeholder="User_id">
-                    <label id = "p3">Password </label>
-                    <input type="password" id="em_Password" required name="em_Password" placeholder="Password">
-                    <br><br>
-                    <input type="submit" class="btn btn-warning text-danger btn-sm" name="submit" value="Submit" />
-                    <a href="add_user/Forminsert_user.php" class="btn btn-warning text-danger btn-sm" >สมัครสมาชิก</a>
-                   
-                </div>
-            </form>
+        <div class="row">
+            <div class=""></div>
+            <div class="col-4">
+                <form action="LoginForm.php" id="FormLogin" method="post">
+                    <div style="min-height:100vh;text-align:left;">
+                    <br><br><br>
+                        <legend id = "p1" style="text-align:center; color:black;">Login </legend>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Username</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="em_User">
+                            </div>
+                            <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Password</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" name="em_Password">
+                            </div>
+                        <div>
+                                <input type="submit" class="btn btn-outline-dark" name="submit" value="Submit"/>
+                                <a href="add_user/Forminsert_user.php" class="btn btn-outline-dark">สมัครสมาชิก</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
   
 </body>
