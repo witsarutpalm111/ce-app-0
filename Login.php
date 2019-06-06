@@ -31,6 +31,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Form Login</title>
 
+    <style>
+        .card {  
+            min-height: 85vh;
+            width: 400px;
+            padding: 80px;
+            margin: 35px;
+        }
+    </style>
 
     <style>
         #p1 {
@@ -38,9 +46,9 @@
         }   
 
         #blurbox{       
-            width: 350px;
-            padding: 0px;
-            margin: -30px;
+            width: 400px;
+            padding: 20px;
+            margin: 35px;	
         }
     </style>    
 
@@ -52,46 +60,41 @@
 
 </head>
 
-<body>
-    <div  style="background-image: url(BG/wall3.jpg); background-repeat: no-repeat;background-size: 100%;">
-        <div class="container h-90">
-            <div style="background-image: url(BG/123.jpg); background-position:center ; background-repeat: no-repeat; background-size: 75%;">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-4">
-                        <div id="blurbox" class="card  mb-4 mt-4" style="background-color:#66666688">
+<body style="background-image: url(BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">
+    <div class="container h-90">
+        <div>
+            <div class="row mb-3 mt-1"
+                style="background-image: url(BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:78%;">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
 
-                            <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
-                                <div style="min-height:93vh;">
-                                    <div class="container h-100"><br><br><br><br><br>
-                                        <legend id="p1" style="text-align:center; color:white;">Login </legend>
-                                        <br>
-                                        <div class="input-group mb-3 ml-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">Username</span>
-                                            </div>
-                                            <input type="text" class="form-control  mr-4" placeholder="Username"
-                                                aria-label="Username" aria-describedby="basic-addon1" name="em_User">
-                                        </div>
-                                        <div class="input-group mb-3 ml-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">Password</span>
-                                            </div>
-                                            <input type="password" class="form-control mr-4" placeholder="Password"
-                                                aria-label="Username" aria-describedby="basic-addon1"
-                                                name="em_Password">
-                                        </div>
-                                        <br>
-                                        <div style="text-align: center;">
-                                            <input type="submit" class="btn btn-dark" name="submit" value="Sign in" />
-                                            <a href="add_user/Forminsert_user.php" class="btn btn-dark">Sign up</a>
-                                        </div>
+                        <div class="container h-100" style="min-height:93vh;">
+                            <div id="blurbox" class="card mt-5 mb-3" style="background-color:#66666688"><br>
+                            <br><br>
+                                <legend id="p1" style="text-align:center; color:white;">Login</legend><br>
+                                <div class="input-group mb-3 ml-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Username</span>
                                     </div>
-
+                                    <input type="text" class="form-control  mr-4" placeholder="Username"
+                                        aria-label="Username" aria-describedby="basic-addon1" name="em_User">
                                 </div>
-                            </form>
+                                <div class="input-group mb-3 ml-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Password</span>
+                                    </div>
+                                    <input type="password" class="form-control mr-4" placeholder="Password"
+                                        aria-label="Username" aria-describedby="basic-addon1" name="em_Password">
+                                </div>
+                                <br><br>
+                                <div style="text-align: center;">
+                                    <input type="submit" class="btn btn-dark" name="submit" value="Sign in" />
+                                    <a href="add_user/Forminsert_user.php" class="btn btn-dark">Sign up</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
