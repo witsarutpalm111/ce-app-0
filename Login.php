@@ -64,7 +64,7 @@
     <div class="container h-90">
         <div>
             <div class="row mb-3 mt-1"
-                style="background-image: url(BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:78%;">
+                style="background-image: url(BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:77%;">
                 <div class="col-1"></div>
                 <div class="col-5">
                     <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
