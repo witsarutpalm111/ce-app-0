@@ -1,6 +1,6 @@
 
 <?php 
-require './../User.php';
+require './../DB_ce-app/User.php';
 $fname = $_POST['em_fname'];
 $lname = $_POST['em_lname'];
 $User = $_POST['em_User'];
