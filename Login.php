@@ -26,11 +26,11 @@
        div.container{
             background-image: url("BG/wall2.jpg"); 
             background-repeat: no-repeat;
-           /* // background-position: center; */
-           /* background-attachment: fixed;*/
-            background-size: 100%;
-        
+            background-position: center; 
+            /*background-attachment: fixed;*/
+            background-size: 75%;        
         }
+        
         body {
             background-image: url("BG/wall3.jpg"); 
             /*background-color: #4d4d4d;*/
