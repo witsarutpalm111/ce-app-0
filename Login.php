@@ -88,10 +88,12 @@
                                         aria-label="Username" aria-describedby="basic-addon1" name="em_Password">
                                 </div>
                                 <br><br>
+
                                 <div style="text-align: center;">
                                     <input type="submit" class="btn btn-dark" name="submit" value="Sign in" />
                                     <a href="add_user/Forminsert_user.php" class="btn btn-dark">Sign up</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </form>

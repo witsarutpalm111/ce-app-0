@@ -23,7 +23,7 @@
         html, body { overflow:  hidden; }
         /* เอาscrollup-down ออก */
     </style>
-    
+
 </head>
 
 
@@ -35,40 +35,45 @@
                         <div class="card-header">
                             <h1 class="text-center text-light">ลงทะเบียน</h1>
                         </div>
-                        <div class="card-body p-2">
+                        <div class="card-body p-5">
                             <form class="needs-validation" action="/login.html" >
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend ">
-                                        <span class="input-group-text"><i class='fas fa-user-graduate ml-2' style='font-size:22px'></i></span>
+                                        <span class="input-group-text"><i class='' style='font-size:22px'></i></span>
+                                        <!--<span class="input-group-text"><i class='fas fa-user-graduate ml-2' style='font-size:22px'></i></span>-->
                                         <input type="text" class="form-control" placeholder="ชื่อจริง" id="tbAd" required>                        
                                     </div>         
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class='fas fa-user-graduate ml-2' style='font-size:22px'></i></span>
+                                        <span class="input-group-text"><i class='' style='font-size:22px'></i></span>
+                                        <!--<span class="input-group-text"><i class='fas fa-user-graduate ml-2' style='font-size:22px'></i></span>-->
                                         <input type="text" class="form-control" placeholder="นามสกุล" id="tbSoyad" required>            
                                     </div>   
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class='fa fa-envelope ml-2' style='font-size:26px'></i></span>
+                                        <span class="input-group-text"><i class='' style='font-size:26px'></i></span>
+                                        <!--<span class="input-group-text"><i class='fa fa-envelope ml-2' style='font-size:26px'></i></span>-->
                                         <input type="text" class="form-control" placeholder="อีเมล์" id="tbEmail" required>     
                                     </div>       
                                 </div>
                             <div class="input-group form-group">
                               <div class="input-group-prepend">
-                                  <span class="input-group-text"><i class='fa fa-key ml-2' style='font-size:20px'></i></span>
-                                  <input type="password" class="form-control" placeholder="เบอร์ติดต่อ" id="tbSifre" required>
+                                    <span class="input-group-text"><i class='' style='font-size:20px'></i></span>
+                                    <!--<span class="input-group-text"><i class='fa fa-key ml-2' style='font-size:20px'></i></span>-->
+                                    <input type="password" class="form-control" placeholder="เบอร์ติดต่อ" id="tbSifre" required>
                               </div>         
                           </div>
                           <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class='fa fa-key ml-2' style='font-size:20px'></i></span>
-                                <input type="password" class="form-control" placeholder="Confirm Password" id="tbTekrarSifre" required>                 
+                                <span class="input-group-text"><i class='' style='font-size:20px'></i></span>
+                                <!--<span class="input-group-text"><i class='fa fa-key ml-2' style='font-size:20px'></i></span>-->
+                                <input type="password" class="form-control" placeholder="สถานะ" id="tbTekrarSifre" required>                 
                             </div>         
                         </div>   
                         </div>
-                        <div class="card-footer p-2">
+                        <div class="card-footer p-4">
                             <div class="d-flex justify-content-center links">
                                <button type="submit" id="btnKayıtOl" class="btn login_btn text-light btn-block" style=" font-weight: 600;">ลงทะเบียน</button>
                             </div>
