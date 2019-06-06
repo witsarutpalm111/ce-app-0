@@ -109,7 +109,6 @@ $result1 = mysqli_query($connect,$p1);
     </div>
     <script type="text/javascript">
         function add() {
-            alert("เข้า onclick");
             $.ajax({
                 type: "POST",
                 url: "add_to_cart.php",
