@@ -63,16 +63,17 @@
 <body style="background-image: url(BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">
     <div class="container h-90">
         <div>
-            <div class="row mb-3 mt-1"
+            <div class="row mb-3 mt-0"
                 style="background-image: url(BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:77%;">
                 <div class="col-1"></div>
                 <div class="col-5">
                     <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
 
                         <div class="container h-100" style="min-height:93vh;">
-                            <div id="blurbox" class="card mt-5 mb-3" style="background-color:#66666688"><br>
-                            <br><br>
+                            <div id="blurbox" class="card mt-5 mb-3" style="background-color:#66666688"><br><br><br>
+                            
                                 <legend id="p1" style="text-align:center; color:white;">Login</legend><br>
+                                
                                 <div class="input-group mb-3 ml-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Username</span>
@@ -80,6 +81,7 @@
                                     <input type="text" class="form-control  mr-4" placeholder="Username"
                                         aria-label="Username" aria-describedby="basic-addon1" name="em_User">
                                 </div>
+
                                 <div class="input-group mb-3 ml-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Password</span>
@@ -87,6 +89,7 @@
                                     <input type="password" class="form-control mr-4" placeholder="Password"
                                         aria-label="Username" aria-describedby="basic-addon1" name="em_Password">
                                 </div>
+                                
                                 <br><br>
 
                                 <div style="text-align: center;">
