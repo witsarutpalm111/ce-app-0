@@ -67,6 +67,8 @@
         <li><a class="active" href="../Home.php">Home</a></li>
         <li><a href="#promotion">Promotion</a></li>
         <li><a href="../shopping/list_shopping.php">My list</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact us</a></li>
         <li class="right"><a href="#logout">Log out</a></li>      
     </ul>
 
@@ -80,7 +82,7 @@
 
     <!--ส่วนของ button-->
     <div class="container">
-        <button type="button" class="btn btn-success">ตรวจสอบสถานะ</button>
+        <a href="check_qr.php" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
         <button type="button" class="btn btn-danger">สั่งซ่อม</button>  
     </div>
 
