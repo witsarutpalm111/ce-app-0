@@ -1,17 +1,27 @@
 <?php
- session_start();
- if (!isset($_SESSION["User_id"])){
- 
-    Header("Location:../Login.php?alert=1002");
-    exit();
-  }
-require './../DB_ce-app/User.php';
- $palm = 0;
- if(isset($_GET['id_list'])){
-     $palm = $_GET['id_list'];
+
+session_start();
+if (!isset($_SESSION["User_id"])){
+
+   Header("Location:../Login.php");
+   exit();
  }
- 
- $p = "SELECT * FROM price_rate WHERE price_rate.id_list=$palm";
- $result = mysqli_query($connect,$p);
- Header("Location:list_shopping.php?id_list=$palm");
+ $checkbox = 0;
+    if(isset($_POST['checkbox'])){
+        $checkbox = $_POST['checkbox'];
+    }
+ require './../DB_ce-app/User.php';
+
+ $user_id = $_SESSION["User_id"];
+
+if(!$checkbox){
+    
+echo("");
+}else{
+   
+    $checkbox=$_POST['checkbox'];
+    
+    print_r($checkbox);
+}
+
 ?>

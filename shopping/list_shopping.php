@@ -64,11 +64,12 @@ $result1 = mysqli_query($connect,$p1);
                     aria-controls="pills-contact" aria-selected="false">Contact</a>
             </li> -->
             <div class=" text-right ml-5">
-                <button class="btn btn-success" name="insert" id="insert">add</button>
+
                 <a href="../Home.php" class="btn btn-success" class="ml-3">กลับ</a>
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <form medhod="post" name="insert_form" id="insert_form">
                 <table class="table table-dark" id="user_data">
                     <tr style="text-align:center">
                         <th>ID</th>
@@ -88,7 +89,9 @@ $result1 = mysqli_query($connect,$p1);
                     </tr>
                     <?php }?>
                 </table>
-                <a href="../Home.php" class="btn btn-success" class="ml-3">กลับ</a>
+                <button class="btn btn-success " name="save" id="save">Save</button>
+              
+                </form>
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <form medhod="post" name="check_shop" id="check_shop">
@@ -111,7 +114,8 @@ $result1 = mysqli_query($connect,$p1);
                                 <div class="container ml-5">
 
                                     <div class="input_wrapper ml-5">
-                                        <input type="checkbox" class="switch_4" name="checkbox[]" id="checkbox"
+                                        <input type="checkbox" class="switch_4" name="checkbox[]"
+                                            id="checkbox_<?php echo $row1['id_list']?>"
                                             value="<?php echo $row1['id_list']?>">
                                         <svg class="is_checked" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 426.67 426.67">
@@ -127,15 +131,17 @@ $result1 = mysqli_query($connect,$p1);
                                     </div>
 
                                 </div>
+                                <button class="btn btn-danger">addd</button>
                             </td>
                         </tr>
                         <?php }?>
                     </table>
-
-
+                    
+                </form>
+                <button type="submit" class="btn btn-success " name="add" id="add">add</button>
             </div>
 
-            </form>
+
 
 
         </div>
@@ -146,32 +152,46 @@ $result1 = mysqli_query($connect,$p1);
     <script type="text/javascript">
         $(document).ready(function () {
 
-            // $("#insert").click(function () {
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "add_to_cart.php",
-            //         data: $("#check_shop").serialize(),
-            //         success: function (response) {
-            //             alert(response);
-            //         }
-            //     });
-            // });
-            $("#insert").click(function () {
-                if ($('#insert').text() == 'add') {
-                    // var id_list ='';
-                    // var detail = '';
-                    // var price = '';
-                    var checkbox ='';
-                    if($("#checkbox").val == ''){
+            $("#add").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "check_shopping.php",
+                    data: $("#check_shop").serialize(),
+                    success: function (response) {
+                      //  alert(response);
+                        var id = response;
+                        // alert(id[4]);
+                        // foreach(id in response){
+                        //     alert(response[id]);
+                            if(id == ""){
+                                alert("กรุณาเลือกรายการสั่งซ่อมค่ะ");
+                            }else{
+                                 alert(id[2]);
+                                // $.each(id,function(){
+                                //     alert(id);
+                                // });
+                            }
+                        // }
 
-                    }else{
-                        alert("เข้า else");
-                        // เอาข้อมุลที่เลือกมาแสดง
-                        //ตรงนี้โว้ยยยยยยยยยยยยยยยยยยยยยยยยยย
-                        //อย่าลืม
                     }
-               }
+                });
             });
+            // $('#insert').click(function () {
+            //     if ($('#insert').text() == 'add') {
+            //         // var id_list ='';
+            //         // var detail = '';
+            //         // var price = '';
+            //         var checkbox = '';
+            //         if ($('#checkbox_1001').val() == '1001') {
+            //             alert("เข้า if");
+            //         } else {
+            //             alert("เข้า else");
+            //             // เอาข้อมุลที่เลือกมาแสดง
+            //             //ตรงนี้โว้ยยยยยยยยยยยยยยยยยยยยยยยยยย
+            //             //อย่าลืม
+            //         }
+            //     }
+            // });
         });
     </script>
 
