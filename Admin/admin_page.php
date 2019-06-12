@@ -24,6 +24,12 @@ if (!$_SESSION["User_id"]){  //check session
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>/*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
+
 </head>
 <body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>

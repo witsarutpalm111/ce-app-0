@@ -67,32 +67,33 @@
 </head>
 
 
-<body >
+<body>
     <div class="container"><br>
-    <ul class="topnav">
-        <li><a class="active" href="../Home.php">Home</a></li>
-        <li><a href="#promotion">Promotion</a></li>
-        <li><a href="../shopping/list_shopping.php">My list</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact us</a></li>
-        <li class="right"><a href="#logout">Log out</a></li>      
-    </ul>
 
-    <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
-    <!-- <div style="padding:0 16px;">
-        <h2>Responsive Topnav Example</h2>
-        <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
-        <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-        <h4>Resize the browser window to see the effect.</h4>
-    </div> -->
+        <!--ส่วนของ Nav Bar แถบด้านบน-->
+        <ul class="topnav">
+            <li><a class="active" href="../Home.php">Home</a></li>
+            <li><a href="#promotion">Promotion</a></li>
+            <li><a href="../shopping/list_shopping.php">My list</a></li>
+            <li><a href="../about.php">About</a></li>
+            <li><a href="#contact">Contact us</a></li>
+            <li class="right"><a href="#logout">Log out</a></li>      
+        </ul>
 
-    <!--ส่วนของ button-->
-    <br><br><br><br><br>
-    <div class="container">
-        <a href="check_qr.php" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
-        <a href="../shopping/list_shopping.php" class="btn btn-danger" aria-pressed="true">สั่งซ่อม</a>
+        <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
+        <div style="padding:0 16px;">
+            <h2>Responsive Topnav Example</h2>
+            <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
+            <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+            <h4>Resize the browser window to see the effect.</h4>
+        </div>
+
+        <!--ส่วนของ button-->
+        <div class="container">
+            <a href="check_qr.php" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
+            <button type="button" class="btn btn-danger">สั่งซ่อม</button>  
+        </div>
     </div>
-
 
 
     </div>
