@@ -5,15 +5,14 @@
     Header("Location:../Login.php");
     exit();
   }
-$palm = 0;
-if(isset($_GET['id_list'])){
-    $palm = $_GET['id_list'];
-}
+
 require './../DB_ce-app/User.php';
-$p = "SELECT * FROM price_rate WHERE price_rate.id_list=$palm ";
-$p1 = "SELECT * FROM price_rate WHERE price_rate.id_list!=$palm LIMIT 5";
-$result = mysqli_query($connect,$p); 
+$AA = $_SESSION["User_id"];
+$p1 = "SELECT * FROM price_rate  LIMIT 5";
 $result1 = mysqli_query($connect,$p1);
+
+$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
+$result = mysqli_query($connect,$p); 
 
 ?>
 <!DOCTYPE html>
@@ -47,8 +46,8 @@ $result1 = mysqli_query($connect,$p1);
         <br><br>
 
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-            <li class="nav-item">
+        
+            <li class="nav-item" id="AAA">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
                     aria-controls="pills-home" aria-selected="true">My List</a>
             </li>
@@ -69,7 +68,7 @@ $result1 = mysqli_query($connect,$p1);
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <form medhod="post" name="insert_form" id="insert_form">
+            <form medhod="post" name="insert_form" id="insert_form">
                 <table class="table table-dark" id="user_data">
                     <tr style="text-align:center">
                         <th>ID</th>
@@ -85,16 +84,15 @@ $result1 = mysqli_query($connect,$p1);
                         <td><?php echo $row['id_list']?></td>
                         <td><?php echo $row['List']?></td>
                         <td><?php echo $row['Price']?></td>
-                        <td><button class="btn btn-outline-danger" id="remove">ลบรายการ</button></td>
+                        <td><button class="btn btn-outline-danger" id="<?php echo $row['id_list']?>">ลบรายการ</button></td>
                     </tr>
                     <?php }?>
                 </table>
-                <button class="btn btn-success " name="save" id="save">Save</button>
-              
                 </form>
+                <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br>
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <form medhod="post" name="check_shop" id="check_shop">
+            <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <form medhod="post" name="check_shop" id="check_shop">
                     <table class="table table-dark" style="width:100%">
                         <tr style="text-align:center">
                             <th>ID</th>
@@ -131,7 +129,7 @@ $result1 = mysqli_query($connect,$p1);
                                     </div>
 
                                 </div>
-                                <button class="btn btn-danger" id="<?php echo $row1['id_list']?>">addd</button>
+                                <!-- <button class="btn btn-danger" id="<?php echo $row1['id_list']?>">addd</button> -->
                             </td>
                         </tr>
                         <?php }?>
@@ -139,62 +137,32 @@ $result1 = mysqli_query($connect,$p1);
                     
                 </form>
                 <button type="submit" class="btn btn-success " name="add" id="add">add</button>
+           
             </div>
-
-
-
-
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
 
     </div>
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#1001").click(function(){
-                alert("1001");
+         $(document).ready(function () {
+            $("#AAA").click(function(){
+                 window.location.reload();
             })
 
-            // $("#add").click(function () {
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "check_shopping.php",
-            //         data: $("#check_shop").serialize(),
-            //         success: function (response) {
-            //           //  alert(response);
-            //             var id = response;
-            //             // alert(id[4]);
-            //             // foreach(id in response){
-            //             //     alert(response[id]);
-            //                 if(id == ""){
-            //                     alert("กรุณาเลือกรายการสั่งซ่อมค่ะ");
-            //                 }else{
-            //                      alert(id[2]);
-            //                     // $.each(id,function(){
-            //                     //     alert(id);
-            //                     // });
-            //                 }
-            //             // }
+            $("#add").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "check_shopping.php",
+                    data: $("#check_shop").serialize(),
+                    success: function (response) {
+                       alert(response);
+                       
+                         }
 
-            //         }
-            //     });
-            // });
-            // $('#insert').click(function () {
-            //     if ($('#insert').text() == 'add') {
-            //         // var id_list ='';
-            //         // var detail = '';
-            //         // var price = '';
-            //         var checkbox = '';
-            //         if ($('#checkbox_1001').val() == '1001') {
-            //             alert("เข้า if");
-            //         } else {
-            //             alert("เข้า else");
-            //             // เอาข้อมุลที่เลือกมาแสดง
-            //             //ตรงนี้โว้ยยยยยยยยยยยยยยยยยยยยยยยยยย
-            //             //อย่าลืม
-            //         }
-            //     }
-            // });
+                    
+                });
+            });
         });
     </script>
 
