@@ -70,11 +70,11 @@
             font-family: "Times New Roman", Times, serif;
         }
         h1 {
-            color: whitesmoke;
+            color: white;
             text-align:center;            
         }
         h4 {
-            color: whitesmoke;
+            color: white;
             text-align:center;
         }
         #but1{       
@@ -97,7 +97,7 @@
 </head>
 
 
-<body style="background-image: url(BG/galaxy1.jpg);background-repeat: no-repeat;background-size:100%;">
+<body style="background-image: url(BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <div class="container"><br>
 
         <!--ส่วนของ Nav Bar แถบด้านบน-->
@@ -118,7 +118,7 @@
             <h4 class="serif">Website Building Team (SSRU Computer Engineering)</h4>
         </div>
         
-        <br><br>
+        <br>
 
         <section id="comtent" class="ma" >
             <div class="row mb-3"> 
@@ -167,10 +167,10 @@
                     </div>
                 </div>
             </div> 
-
+            <br>
             <div style="text-align: center;">
-                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-info">Home</a>
-                <a id="but2" href="user/user_page.php" class="btn btn-outline-info">Back</a>
+                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-light">Home</a>
+                <a id="but2" href="user/user_page.php" class="btn btn-outline-light">Back</a>
             </div>  
 
         </section>       

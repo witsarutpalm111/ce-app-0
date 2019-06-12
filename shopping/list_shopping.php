@@ -45,8 +45,7 @@ $result = mysqli_query($connect,$p);
     <div class="container">
         <br><br>
 
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">       
             <li class="nav-item" id="AAA">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
                     aria-controls="pills-home" aria-selected="true">My List</a>
@@ -62,10 +61,10 @@ $result = mysqli_query($connect,$p);
                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
                     aria-controls="pills-contact" aria-selected="false">Contact</a>
             </li> -->
-            <div class=" text-right ml-5">
-
+            <div class="text-right ml-5">
                 <a href="../Home.php" class="btn btn-success" class="ml-3">กลับ</a>
         </ul>
+
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <form medhod="post" name="insert_form" id="insert_form">
