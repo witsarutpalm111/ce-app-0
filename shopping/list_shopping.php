@@ -84,12 +84,12 @@ $result = mysqli_query($connect,$p);
                         <td><?php echo $row['id_list']?></td>
                         <td><?php echo $row['List']?></td>
                         <td><?php echo $row['Price']?></td>
-                        <td><button class="btn btn-outline-danger" id="<?php echo $row['id_list']?>">ลบรายการ</button></td>
+                        <td><button class="btn btn-outline-danger" id="remove">ลบรายการ</button></td>
                     </tr>
                     <?php }?>
                 </table>
                 </form>
-                <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br>
+                <!-- <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br> -->
             </div>
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">

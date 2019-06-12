@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2019 at 10:53 AM
+-- Generation Time: Jun 12, 2019 at 10:45 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `com` (
   `ID_com` text NOT NULL,
-  `Serial_number` int(11) NOT NULL,
+  `Serial_number` text NOT NULL,
   `Recieve_ID` text NOT NULL,
   `User_id` int(11) NOT NULL,
   `id` int(11) NOT NULL
@@ -41,7 +41,12 @@ CREATE TABLE `com` (
 --
 
 INSERT INTO `com` (`ID_com`, `Serial_number`, `Recieve_ID`, `User_id`, `id`) VALUES
-('f2acc825cdf670e66d30e3c31dea0463', 5555, 'beb6b30becdde85643f50e301386b268', 111, 20);
+('aa4d905f7a115fa48316c29cf638c8f4', '561', '2e3196f85e7182da7bd1f5dfe6eedba0', 111, 1),
+('9ac4f3edea45470ef0d7d114705915dd', '591561', 'e653389a0332c8506cf7a7c447af863a', 111, 2),
+('c84eba5de62428dd65a6414bd27e0d4a', '5555', '82a86ecc8d992fc2afa89353ece79f2f', 111, 3),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', '5555', '15495fccc22ef9667d73945310c21b83', 111, 4),
+('840b64c11771151a7babd4d9f538e5dd', '555666', 'e604d125ff0f15cf1b56494c40fb6d80', 111, 5),
+('eba3174adf235b31afeff3fc12b3e977', '555666', 'e85c4e9a342747e1fdeaa73d65d16654', 111, 6);
 
 -- --------------------------------------------------------
 
@@ -58,6 +63,21 @@ CREATE TABLE `update_com` (
   `Time_update` text NOT NULL,
   `id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `update_com`
+--
+
+INSERT INTO `update_com` (`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`, `id`) VALUES
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ตรวจหาจุดบกพร่อง', 'ฟหำกเฟำเฟำเ', '--', 5000, 'วันพุธที่ 29 พฤษภาคม พ.ศ.2562 เวลา 23:41:05', 10),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'อื่นๆ', 'adgfadg', '453453', 200, 'วันพุธที่ 29 พฤษภาคม พ.ศ.2562 เวลา 23:41:20', 11),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ติดตั้งอุปกรณ์ที่เสียหาย', '', '', 0, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 12:53:11', 12),
+('840b64c11771151a7babd4d9f538e5dd', '', '', '', 0, '', 13),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ติดตั้งอุปกรณ์ที่เสียหาย', '56161561', 'AFBAEFBA', 5000, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:13:15', 14),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทดสอบเครื่องคอมพิวเตอร์', 'ihgvouybokm', '-', 200, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:13:37', 15),
+('840b64c11771151a7babd4d9f538e5dd', 'ติดตั้งอุปกรณ์ที่เสียหาย', '78378378', '783783', 5000, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:20:59', 16),
+('840b64c11771151a7babd4d9f538e5dd', 'ตรวจเช็คความเรียบร้อย', '783783793', '-', 7783, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:21:27', 17),
+('eba3174adf235b31afeff3fc12b3e977', '', '', '', 0, '', 18);
 
 -- --------------------------------------------------------
 
@@ -81,10 +101,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `E-mail`, `More_contact`, `Password`) VALUES
-('111', '111', '111', '111', 'Std', '111', '111', '111'),
+('111', 'palm', 'dfhjdfj', '0895685236', 'Std', 'palm@gmail.com', '5555', '111'),
+('1112', '5555', '5555', '5555', 'Admin', '5555', '444', '4444'),
 ('123456', 'ooo', 'aaa', '963256325', 'Admin', 'aplm@gmail.com', '-', '123456'),
-('222', '2222', '2222', '2222', 'Std', '2222', '2222', '222'),
-('4444', '4444', '444', '456456', 'Std', '45645', '5555', '444');
+('1234561', '5555', 'dfhjdfj', '55555', 'Admin', '555', '5555', '4444'),
+('qwdwf', 'qwfqwf', 'qwfqwf', '591415641', 'Admin', 'qwfqwfqwf.com', 'qwfqwf', 'qwfwf');
 
 --
 -- Indexes for dumped tables
@@ -117,13 +138,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `com`
 --
 ALTER TABLE `com`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `update_com`
 --
 ALTER TABLE `update_com`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
