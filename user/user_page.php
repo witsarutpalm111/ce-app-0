@@ -56,7 +56,13 @@
             ul.topnav li {float: none;}
         }
     </style>
+    
 
+    <style>/*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
 
 </head>
 
