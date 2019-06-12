@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 10:45 AM
+-- Generation Time: Jun 12, 2019 at 10:54 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -47,6 +47,52 @@ INSERT INTO `com` (`ID_com`, `Serial_number`, `Recieve_ID`, `User_id`, `id`) VAL
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', '5555', '15495fccc22ef9667d73945310c21b83', 111, 4),
 ('840b64c11771151a7babd4d9f538e5dd', '555666', 'e604d125ff0f15cf1b56494c40fb6d80', 111, 5),
 ('eba3174adf235b31afeff3fc12b3e977', '555666', 'e85c4e9a342747e1fdeaa73d65d16654', 111, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id_order` text NOT NULL,
+  `user_id` text NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id_order`, `user_id`, `id`) VALUES
+('1001', '111', 72),
+('1002', '111', 73),
+('1003', '111', 74),
+('1005', '111', 75),
+('1004', '111', 76);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `price_rate`
+--
+
+CREATE TABLE `price_rate` (
+  `Price` int(11) NOT NULL,
+  `List` text NOT NULL,
+  `id_list` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `price_rate`
+--
+
+INSERT INTO `price_rate` (`Price`, `List`, `id_list`) VALUES
+(200, 'ล้างเครื่อง', 1001),
+(2000, 'ลง window', 1002),
+(200, 'ทำความสะอาด', 1003),
+(250, 'ตรวจสภาพเครื่อง', 1004),
+(500, 'อาการจอฟ้า', 1005);
 
 -- --------------------------------------------------------
 
@@ -119,6 +165,18 @@ ALTER TABLE `com`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `price_rate`
+--
+ALTER TABLE `price_rate`
+  ADD PRIMARY KEY (`id_list`);
+
+--
 -- Indexes for table `update_com`
 --
 ALTER TABLE `update_com`
@@ -139,6 +197,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `com`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `update_com`
