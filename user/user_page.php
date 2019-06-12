@@ -56,12 +56,18 @@
             ul.topnav li {float: none;}
         }
     </style>
+    
 
+    <style>/*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
 
 </head>
 
 
-<body >
+<body>
     <!--ส่วนของ Nav Bar แถบด้านบน-->
     <ul class="topnav">
         <li><a class="active" href="../Home.php">Home</a></li>
