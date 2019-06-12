@@ -106,7 +106,7 @@ $result1 = mysqli_query($connect,$p1);
                         <?php
                     while($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
                 ?>
-                        <tr style="text-align:center">
+                        <tr style="text-align:center" >
                             <td><?php echo $row1['id_list']?></td>
                             <td><?php echo $row1['List']?></td>
                             <td><?php echo $row1['Price']?></td>
@@ -131,7 +131,7 @@ $result1 = mysqli_query($connect,$p1);
                                     </div>
 
                                 </div>
-                                <button class="btn btn-danger">addd</button>
+                                <button class="btn btn-danger" id="<?php echo $row1['id_list']?>">addd</button>
                             </td>
                         </tr>
                         <?php }?>
@@ -151,31 +151,34 @@ $result1 = mysqli_query($connect,$p1);
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
+            $("#1001").click(function(){
+                alert("1001");
+            })
 
-            $("#add").click(function () {
-                $.ajax({
-                    type: "POST",
-                    url: "check_shopping.php",
-                    data: $("#check_shop").serialize(),
-                    success: function (response) {
-                      //  alert(response);
-                        var id = response;
-                        // alert(id[4]);
-                        // foreach(id in response){
-                        //     alert(response[id]);
-                            if(id == ""){
-                                alert("กรุณาเลือกรายการสั่งซ่อมค่ะ");
-                            }else{
-                                 alert(id[2]);
-                                // $.each(id,function(){
-                                //     alert(id);
-                                // });
-                            }
-                        // }
+            // $("#add").click(function () {
+            //     $.ajax({
+            //         type: "POST",
+            //         url: "check_shopping.php",
+            //         data: $("#check_shop").serialize(),
+            //         success: function (response) {
+            //           //  alert(response);
+            //             var id = response;
+            //             // alert(id[4]);
+            //             // foreach(id in response){
+            //             //     alert(response[id]);
+            //                 if(id == ""){
+            //                     alert("กรุณาเลือกรายการสั่งซ่อมค่ะ");
+            //                 }else{
+            //                      alert(id[2]);
+            //                     // $.each(id,function(){
+            //                     //     alert(id);
+            //                     // });
+            //                 }
+            //             // }
 
-                    }
-                });
-            });
+            //         }
+            //     });
+            // });
             // $('#insert').click(function () {
             //     if ($('#insert').text() == 'add') {
             //         // var id_list ='';

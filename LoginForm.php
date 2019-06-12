@@ -33,7 +33,7 @@ session_start();
             header("location:Admin/admin_page.php");
           }
           else{
-            header("location:shopping/list_shopping.php");
+            header("location:user/user_page.php");
           }
         }else{
           echo"คุณใส่ข้อมูลไม่ถูกต้อง"."<br>";
