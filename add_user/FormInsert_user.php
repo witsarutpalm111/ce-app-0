@@ -39,11 +39,20 @@
         }
     </style>
 
-    <style type="text/css">
+    <!-- <style type="text/css">
         html,
         body {
             overflow: hidden;  /* เอาscrollup-down ออก */
         }        
+    </style> -->
+
+    <style type="text/css">
+        html, 
+        body{
+            padding:0px;
+            margin:0px;
+            height:100%;
+        }
     </style>
 
     <style>
@@ -51,6 +60,7 @@
             width: 400px;
             padding: 0px;
             margin: 15px;
+            background-position: center ;
         }
     </style>
 

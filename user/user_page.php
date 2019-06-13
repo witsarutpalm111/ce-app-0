@@ -73,7 +73,6 @@
         <!--ส่วนของ Nav Bar แถบด้านบน-->
         <ul class="topnav">
             <li><a class="active" href="../Home.php">Home</a></li>
-            <li><a href="#promotion">Promotion</a></li>
             <li><a href="../shopping/list_shopping.php">My list</a></li>
             <li><a href="../about.php">About</a></li>
             <li><a href="#contact">Contact us</a></li>
