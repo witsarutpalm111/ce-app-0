@@ -37,35 +37,41 @@ $result = mysqli_query($connect,$p);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>My list</title>
 
+    <style type="text/css">
+        html, body{
+            padding:0px;
+            margin:0px;
+            height:100%;
+        }
+    </style>
+    
 </head>
 
 <body>
-    <div class="container">
-        <br><br>
+    <div class="container"><br><br>      
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        
             <li class="nav-item" id="AAA">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
                     aria-controls="pills-home" aria-selected="true">My List</a>
             </li>
+
             <li class="nav-item mr-5">
                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
                     aria-controls="pills-profile" aria-selected="false">List All</a>
             </li>
-            <li class="ml-5 mr-2">
-                <div class="ml-5 mr-5"></div>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                    aria-controls="pills-contact" aria-selected="false">Contact</a>
-            </li> -->
-            <div class=" text-right ml-5">
+            
+            <div id="bb" class="text-right ml-5" >
+                <li class="right ml-5">
+                    <a href="../Home.php" class="btn btn-success ml-5">กลับ</a>
+                </li>
+            </div>
 
                 <a href="../user/user_page.php" class="btn btn-success" class="ml-3">กลับ</a>
         </ul>
+
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <form medhod="post" name="insert_form" id="insert_form">

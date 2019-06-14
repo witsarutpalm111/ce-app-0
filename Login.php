@@ -33,6 +33,8 @@
 
     <style>
         .card {  
+            /* height: 100% */
+            position: relative;
             min-height: 85vh;
             width: 400px;
             padding: 80px;
@@ -44,19 +46,26 @@
         #p1 {
             font-size: 45px;
         }   
-
-        #blurbox{       
+        #blurbox {       
             width: 400px;
             padding: 20px;
-            margin: 35px;	
+            margin: 35px;
+            background-position: center;	
         }
     </style>    
 
-    <style type="text/css">
+    <!-- <style type="text/css">
         html, body { overflow:  hidden; }
         /* เอาscrollup-down ออก */
-    </style>
+    </style> -->
 
+    <style type="text/css">
+        html, body{
+            padding:0px;
+            margin:0px;
+            height:100%;
+        }
+    </style>
 
 </head>
 
@@ -70,7 +79,7 @@
                     <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
 
                         <div class="container h-100" style="min-height:93vh;">
-                            <div id="blurbox" class="card mt-5 mb-3" style="background-color:#66666688"><br><br><br>
+                            <div id="blurbox" class="card mt-5 mb-3" style="background-color:#66666688" ><br><br><br>
                             
                                 <legend id="p1" style="text-align:center; color:white;">Login</legend><br>
                                 
