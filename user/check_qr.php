@@ -6,6 +6,10 @@
      if(isset($_GET['AAA'])){
          $palm = $_GET['AAA'];
      }
+     $pal = 0;
+     if(isset($_GET['AAA'])){
+         $pal = $_GET['AAA'];
+     }
 
     ?>
 <head>
@@ -45,8 +49,8 @@
         <br><br>
         <tr>
             <th>Time stamp</th>
-            <th>รายละเอียดการซ่อม</th>
             <th>ผลการซ่อม</th>
+            <th>รายละเอียดการซ่อม</th>
             <th>ราคารวม</th>
             <th>หมายเหตุ</th>
         </tr>
@@ -56,8 +60,8 @@
         ?>
         <tr>
                 <td> <?php echo $row2['Time_update']?></td>
-                <td> <?php echo $row2['Detail_com']?></td>
-                <td><?php echo $row2['Status_com']?></td>
+                <td> <?php echo $row2['Status_com']?></td>
+                <td><?php echo $row2['Detail_com']?></td>
                 <td><?php echo $row2['Price_com']?></td>
                 <td><?php echo $row2['Note_com']?></td>
 
@@ -68,6 +72,6 @@
             
              
     </table>
-    <a href="../Login.php"><button type="button">Go to Login</button></a>
+    <a href="user_page.php"><button type="button">Back</button></a>
 </body>
 </html>

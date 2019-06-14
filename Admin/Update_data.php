@@ -6,6 +6,13 @@ if (!$_SESSION["User_id"]){  //check session
     
 }else{
     $palm = $_POST['user_id']; //user_id num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
+
+    $p = "SELECT com.User_id FROM com WHERE com.User_id=$palm";
+    $result5 = mysqli_query($connect,$p);
+    $row = mysqli_fetch_array($result5);
+    if(!$row){
+        Header("Location:../Login.php?alert=2");
+    }
     ?>
 
 <!DOCTYPE html>
@@ -50,7 +57,7 @@ if (!$_SESSION["User_id"]){  //check session
         </div>
     <br>
     <label>รายละเอียด : </label>
-    <textarea name="detail" id="" cols="100" rows="10"></textarea><br>
+    <textarea name="detail" id="" cols="50" rows="1"></textarea><br>
 
     <label>ราคารวม : </label>
     <input type="text" name="Price">

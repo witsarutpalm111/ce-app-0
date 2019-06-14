@@ -64,7 +64,7 @@ $result = mysqli_query($connect,$p);
             </li> -->
             <div class=" text-right ml-5">
 
-                <a href="../Home.php" class="btn btn-success" class="ml-3">กลับ</a>
+                <a href="../user/user_page.php" class="btn btn-success" class="ml-3">กลับ</a>
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -84,7 +84,7 @@ $result = mysqli_query($connect,$p);
                         <td><?php echo $row['id_list']?></td>
                         <td><?php echo $row['List']?></td>
                         <td><?php echo $row['Price']?></td>
-                        <td><button class="btn btn-outline-danger" id="remove">ลบรายการ</button></td>
+                        <td><a href="remove.php?id=<?php echo $row['id_list']?>" class="btn btn-outline-danger" id="remove" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">ลบรายการ</a></td>
                     </tr>
                     <?php }?>
                 </table>

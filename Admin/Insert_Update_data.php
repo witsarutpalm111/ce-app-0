@@ -19,10 +19,24 @@ session_start();
            $result = mysqli_query($connect,$pp); 
            
            $row1 = mysqli_fetch_array($result);
-      // $RR = $result['ID_com'];
-       //echo $RR;
+      
        $RR = $row1['ID_com'];
-       echo $RR;
+       //echo $RR;
+       $count ="SELECT update_com.count FROM update_com,com WHERE com.ID_com = update_com.ID_com AND com.User_id=$palm ORDER BY update_com.count DESC LIMIT 1";
+      $resultcount = mysqli_query($connect,$count);
+      $rowcount = mysqli_fetch_array($resultcount);
+      $Nub = $rowcount['count'];
+      if($rowcount){
+        $Nub += 1;
+      }
+      else{
+        $Nub = 1;
+      }
+     if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
+        $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
+     }else{
+        $ddl = $_POST['ddl'];
+     }
      if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
         $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
      }else{
@@ -37,7 +51,7 @@ session_start();
     $Detail =$_POST['detail'];
 
     $sql = "Insert into update_com"
-    . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`) value('$RR','$ddl','$Detail','$Note','$Price','$Date')";
+    . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$RR','$ddl','$Detail','$Note','$Price','$Date' ,'$Nub')";
     $result1 = mysqli_query($connect,$sql); 
     
     Header("Location:admin_page.php?alert=1");

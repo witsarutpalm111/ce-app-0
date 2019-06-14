@@ -1,3 +1,18 @@
+
+<?php 
+ session_start();
+ if (!isset($_SESSION["User_id"])){
+ 
+    Header("Location:../Login.php");
+    exit();
+  }
+$pal = $_SESSION['User_id'];
+require './../DB_ce-app/User.php';
+$pp = "SELECT com.ID_com FROM com WHERE com.User_id=$pal ORDER BY id DESC LIMIT 1";
+$result = mysqli_query($connect,$pp);
+$row1 = mysqli_fetch_array($result);
+ ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +92,7 @@
             <li><a href="../shopping/list_shopping.php">My list</a></li>
             <li><a href="../about.php">About</a></li>
             <li><a href="#contact">Contact us</a></li>
-            <li class="right"><a href="#logout">Log out</a></li>      
+            <li class="right"><a href="../Home.php">Log out</a></li>      
         </ul>
 
         <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
@@ -90,7 +105,7 @@
 
         <!--ส่วนของ button-->
         <div class="container">
-            <a href="check_qr.php" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
+            <a href="check_qr.php?AAA=<?php echo $row1['ID_com']?>" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
             <button type="button" class="btn btn-danger">สั่งซ่อม</button>  
         </div>
     </div>

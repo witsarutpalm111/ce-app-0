@@ -6,6 +6,8 @@
     Header("Location:../Login.php");
     exit();
   }
+
+  
 ?>
 <html lang="en">
 <head>
@@ -35,7 +37,7 @@
 
             <a href="admin_page.php"><button type="button">กลับ</button></a>
         </fieldset>
-
+        </form>
         
 </body>
 </html>

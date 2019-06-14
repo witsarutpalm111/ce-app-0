@@ -1,7 +1,7 @@
 
 <?php
    session_start();
-   require './../DB_ce-app/User.php';
+   require './../../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
 
      Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
@@ -31,13 +31,13 @@ if (!$_SESSION["User_id"]){  //check session
             $result1 = mysqli_query($connect,$sql1);
             
             
-            header("location:Show_data.php?alert=$hash");
+            header("location:../Show_data.php?alert=$hash");
             
         
         // ติดปัญหา
 
         }else{
-            header("location:../Login.php?alert=2");
+            header("location:../../Login.php?alert=2");
             
     }
 }

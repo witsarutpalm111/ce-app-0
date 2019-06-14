@@ -23,7 +23,7 @@
 </head>
 <body>
     <h1> เพิ่มข้อมูลการซ่อม</h1>
-    <form action = "Insert_data.php" id ="form_data" method = "post">
+    <form action = "Insert_data_repair.php" id ="form_data" method = "post">
         <fieldset>
             <legend>บันทึกข้อมูล</legend>
             
@@ -38,9 +38,9 @@
             <br><br>
             <input type="submit" value="save"/>
 
-            <a href="admin_page.php"><button type="button">กลับ</button></a>
+            <a href="../admin_page.php"><button type="button">กลับ</button></a>
         </fieldset>
-
+</form>
         
 </body>
 </html>
