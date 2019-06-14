@@ -44,7 +44,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         <input type="text" name="price" value="<?php echo $row['price_com'] ?>">
         <br>
 <input type="submit" value="submit">
-<a href="../view_user.php?id=<?php echo$row['User_id'] ?>">กลับ</a>
+<a href="../view_detail_repair/view_user.php?id=<?php echo$row['User_id'] ?>">กลับ</a>
 
 
 
