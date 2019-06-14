@@ -6,7 +6,7 @@ if (!isset($_SESSION["User_id"])){
     Header("Location:../Login.php");
     exit();
   }
-require './../../../../DB_ce-app/User.php';
+require './../../../DB_ce-app/User.php';
 $palm = 0;
 if(isset($_GET['edit'])){
     $palm = $_GET['edit'];

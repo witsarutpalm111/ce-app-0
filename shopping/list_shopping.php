@@ -63,11 +63,11 @@ $result = mysqli_query($connect,$p);
                     aria-controls="pills-profile" aria-selected="false">List All</a>
             </li>
             
-            <div id="bb" class="text-right ml-5" >
+            <!-- <div id="bb" class="text-right ml-5" >
                 <li class="right ml-5">
                     <a href="../Home.php" class="btn btn-success ml-5">กลับ</a>
                 </li>
-            </div>
+            </div> -->
 
                 <a href="../user/user_page.php" class="btn btn-success" class="ml-3">กลับ</a>
         </ul>

@@ -103,7 +103,7 @@
 
                                 <div style="text-align: center;">
                                     <input type="submit" class="btn btn-dark" name="submit" value="Sign in" />
-                                    <a href="add_user/Forminsert_user.php" class="btn btn-dark">Sign up</a>
+                                    <a href="user/add_user/Forminsert_user.php" class="btn btn-dark">Sign up</a>
                                 </div>
                                 
                             </div>

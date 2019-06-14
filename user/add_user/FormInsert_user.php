@@ -66,11 +66,11 @@
 
 </head>
 
-<body style="background-image: url(../BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">
+<body style="background-image: url(../../BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">
     <div class="container h-90">
 
         <div class="row mb-3 mt-2"
-            style="background-image: url(../BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:79%;">
+            style="background-image: url(../../BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:79%;">
             <div class="col-1"></div>
             <div class="col-5">
 
@@ -154,8 +154,8 @@
                                             </div>
                                             <select class="custom-select" id="inputGroupSelect01" name="em_Role" required>
                                                 <option hidden selected>...Choose...</option>
-                                                <option value="Std">SSRU Student</option>
-                                                <option value="User">Other</option>
+                                                <option value="Student">SSRU Student</option>
+                                                <option value="Guest">Other</option>
                                             </select>
                                         </div>
 
@@ -164,7 +164,7 @@
                             
                                     <div style="text-align: center;">
                                         <input type="submit" class="btn btn-dark" name="Save" value="Save" />
-                                        <a href="../Home.php" class="btn btn-dark">Back Home</a>
+                                        <a href="../../Login.php" class="btn btn-dark">Back Login</a>
                                     </div><br>
                        
                                 </div>

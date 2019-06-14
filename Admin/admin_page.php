@@ -75,13 +75,16 @@ if (!$_SESSION["User_id"]){  //check session
             </tr>
             <?php }?>
         </table>
-    </div>
-
-
-    <a href="../Login.php"><button type="button">Log out</button></a>
+        <a href="../Login.php"><button type="button" class="btn btn-info btn-sm">Log out</button></a>
 
     <a href="add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a>
     <a href="Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
+    <a href="view/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
+
+    </div>
+
+
+ 
     <br><br>
     <!-- <a href="check_user_id.php" class="btn btn-warning text-danger btn-sm">เพิ่มรายละเอียดการซ่อม</a> -->
 

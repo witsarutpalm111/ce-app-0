@@ -27,7 +27,7 @@ $row = mysqli_fetch_array($result5);
 
     }else{
 
-        $sql = "Insert into `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `E-mail`, `More_contact`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Line','$Password')";
+        $sql = "Insert into `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `More_contact`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Line','$Password')";
         
         $result = mysqli_query($connect,$sql);
         

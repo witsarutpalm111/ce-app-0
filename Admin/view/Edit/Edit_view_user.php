@@ -13,7 +13,7 @@ $palm1 = 0;
 if(isset($_GET['id'])){
     $palm1 = $_GET['id'];
 }
-require './../../../../DB_ce-app/User.php';
+require './../../../DB_ce-app/User.php';
 // $palm = 0;
 // if(isset($_GET['id'])){
 //     $palm = $_GET['id'];

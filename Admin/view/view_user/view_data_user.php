@@ -1,29 +1,18 @@
-<?php
+<?php 
 session_start();
+require './../../../DB_ce-app/User.php';
 if (!isset($_SESSION["User_id"])){
  
     Header("Location:../Login.php");
     exit();
-  }
-require './../../../DB_ce-app/User.php';
-$palm = 0;
-if(isset($_GET['id'])){
-    $palm = $_GET['id']; // user id
 }
-// เลือก id_com ล่าสุด
-$pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
-           $result2 = mysqli_query($connect,$pp); 
-           
-           $row1 = mysqli_fetch_array($result2);
-      
-       $RR = $row1['ID_com'];
-//เอา id_com มาใช้
-$p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Time_update,com.User_id,Price_com
-    FROM `com`,`update_com` 
-    WHERE com.User_id = $palm AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ";
-$result = mysqli_query($connect,$p);   
+
+$p ="SELECT User_id,fname,lname,phone_num,Role,Email FROM user WHERE Role != 'Admin'";
+$result = mysqli_query($connect,$p);
+
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,18 +36,15 @@ $result = mysqli_query($connect,$p);
 <body>
     <br>
 <div class="container">
-    <div class="text-right mb-3">
-    <button class="btn text-warning btn-secondary" disabled>User id : <?php echo$palm ?></button>
 
-    </div>
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
-                <th>Time</th>
-                <th>Status</th>
-                <th>Detail</th>
-                <th>Note</th>
-                <th>Price</th>
-                <th>View</th>
+                <th>User id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>E-mail</th>
                 <th>Delete</th>
 
 
@@ -68,13 +54,14 @@ $result = mysqli_query($connect,$p);
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                     ?>
             <tr style="text-align:center" class="pa">
-                <td><?php echo $row['Time_update']?></td>
-                <td><?php echo $row['Status_com']?></td>
-                <td><?php echo $row['Detail_com']?></td>
-                <td><?php echo $row['Note_com']?></td>
-                <td><?php echo $row['Price_com']?></td>
-                <td><a href="../Edit/form_edit_view.php?edit=<?php echo $row['Time_update']?>&id=<?php echo $palm ?>" class="btn btn-warning" >Edit</a></td>
-                <td><a href="../delete/delete_view_user.php?delete=<?php echo $row['Time_update']?>&id=<?php echo $palm ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a></td>
+                <td><?php echo $row['User_id']?></td>
+                <td><?php echo $row['fname']?></td>
+                <td><?php echo $row['lname']?></td>
+                <td><?php echo $row['phone_num']?></td>
+                <td><?php echo $row['Role']?></td>
+                <td><?php echo $row['Email']?></td>
+                <td><a href="../delete/delete_user.php?delete=<?php echo $row['User_id']?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a></td>
+
 
             </tr>
             <?php }?>

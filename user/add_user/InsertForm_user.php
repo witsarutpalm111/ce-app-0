@@ -1,6 +1,6 @@
 
 <?php 
-require './../DB_ce-app/User.php';
+require './../../DB_ce-app/User.php';
 $fname = $_POST['em_fname'];
 $lname = $_POST['em_lname'];
 $User = $_POST['em_User'];
@@ -23,10 +23,10 @@ $row = mysqli_fetch_array($result5);
     }else{
 
         $sql = "Insert into user"
-        . "(`User_id`, `fname`, `lname`, `phone_num`, `Role`, `E-mail`, `More_contact`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Line','$Password')";
+        . "(`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `More_contact`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Line','$Password')";
         
         $result = mysqli_query($connect,$sql);
         
-        header("location:../Login.php?alert=1");
+        header("location:../../Login.php?alert=1");
 }
 ?>
