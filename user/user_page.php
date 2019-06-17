@@ -89,9 +89,10 @@ $row1 = mysqli_fetch_array($result);
         <ul class="topnav">
             <li><a class="active" href="../Home.php">Home</a></li>
             <li><a href="../shopping/list_shopping.php">My list</a></li>
+            <li><a href="setting/view_profile/My_profile.php">My Profile</a></li>
             <li><a href="../about.php">About</a></li>
             <li><a href="#contact">Contact us</a></li>
-            <li class="right"><a href="../Home.php">Log out</a></li>      
+            <li class="right"><a href="../Login.php">Log out</a></li>      
         </ul>
 
         <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
@@ -105,7 +106,7 @@ $row1 = mysqli_fetch_array($result);
         <!--ส่วนของ button-->
         <div class="container">
             <a href="check_qr.php?AAA=<?php echo $row1['ID_com']?>" class="btn btn-success" role="button" aria-pressed="true">ตรวจสอบสถานะ</a>
-            <button type="button" class="btn btn-danger">สั่งซ่อม</button>  
+            <!-- <button type="button" class="btn btn-danger">สั่งซ่อม</button>   -->
         </div>
     </div>
 

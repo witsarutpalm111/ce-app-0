@@ -3,7 +3,7 @@
  session_start();
  if (!isset($_SESSION["User_id"])){
  
-    Header("../Location:Login.php");
+    Header("../../../Location:Login.php");
     exit();
   }
 ?>
@@ -38,7 +38,7 @@
             <br><br>
             <input type="submit" value="save"/>
 
-            <a href="../admin_page.php"><button type="button">กลับ</button></a>
+            <a href="../../admin_page.php"><button type="button">กลับ</button></a>
         </fieldset>
 </form>
         

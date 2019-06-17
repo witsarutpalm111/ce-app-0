@@ -59,6 +59,6 @@ if($result = mysqli_query($connect,$p)){
     <title>Document</title>
 </head>
 <body>
-    <a href="../view_user.php?id=<?php echo$row['User_id'] ?>">ดูข้อมูล</a>
+    <a href="../view_detail_repair/view_user.php?id=<?php echo$row['User_id'] ?>">ดูข้อมูล</a>
 </body>
 </html>

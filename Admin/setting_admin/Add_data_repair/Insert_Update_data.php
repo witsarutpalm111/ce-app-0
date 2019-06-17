@@ -1,11 +1,11 @@
 <?php
-include_once('../Rundiz-thai-date-db65595/Rundiz/Thaidate/Thaidate.php');
-include_once('../Rundiz-thai-date-db65595/Rundiz/Thaidate/thaidate-functions.php');
+include_once('../../../Rundiz-thai-date-db65595/Rundiz/Thaidate/Thaidate.php');
+include_once('../../../Rundiz-thai-date-db65595/Rundiz/Thaidate/thaidate-functions.php');
 
 session_start();
-    require './../DB_ce-app/User.php';
+    require './../../../DB_ce-app/User.php';
     if (!isset($_SESSION["User_id"])){
-        Header("Location:../Login.php");
+        Header("Location:../../../Login.php");
         exit();
       }
       date_default_timezone_set("Asia/Bangkok");
@@ -32,11 +32,12 @@ session_start();
       else{
         $Nub = 1;
       }
-     if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
-        $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
-     }else{
-        $ddl = $_POST['ddl'];
-     }
+   //   if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
+   //      $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
+   //   }else{
+   //      $ddl = $_POST['ddl'];
+   //   }
+
      if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
         $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
      }else{
@@ -54,6 +55,6 @@ session_start();
     . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$RR','$ddl','$Detail','$Note','$Price','$Date' ,'$Nub')";
     $result1 = mysqli_query($connect,$sql); 
     
-    Header("Location:admin_page.php?alert=1");
+    Header("Location:../view_detail_repair/view_user.php?id=$palm");
    
       ?>

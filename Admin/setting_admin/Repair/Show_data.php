@@ -4,10 +4,10 @@
 session_start();
 if (!isset($_SESSION["User_id"])){
  
-    Header("Location:../Login.php");
+    Header("Location:../../../Login.php");
     exit();
   }
-    require './../DB_ce-app/User.php';
+    require './../../../DB_ce-app/User.php';
     $palm = 0;
     if(isset($_GET['alert'])){
         $palm = $_GET['alert'];
@@ -33,7 +33,7 @@ if (!isset($_SESSION["User_id"])){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <script src ="./../qr/qrcode.min.js" ></script>
+   <script src ="./../../../qr/qrcode.min.js" ></script>
 
 <meta charset="UTF-8">
     <style>
@@ -108,8 +108,8 @@ if (!isset($_SESSION["User_id"])){
              
     </table>
     <br><br>
-    <a href="admin_page.php"><button type="button">back</button></a>
-    <a href="../Login.php"><button type="button">Log out</button></a>
+    <a href="../../admin_page.php"><button type="button">back</button></a>
+    <a href="../../../Login.php"><button type="button">Log out</button></a>
     
 </body>
 

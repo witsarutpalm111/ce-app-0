@@ -71,7 +71,7 @@
             <br><br>
             <input type="submit" value="save"/>
 
-            <a href="../../Login.php"><button type="button">กลับหน้าหลัก</button></a>
+            <a href="../../admin_page.php"><button type="button">กลับหน้าหลัก</button></a>
         </fieldset>
 
         

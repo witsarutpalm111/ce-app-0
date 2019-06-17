@@ -1,17 +1,20 @@
 <?php session_start();
-    require './../DB_ce-app/User.php';
+    require './../../../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
  
-	  Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+	  Header("Location:../../../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
     
 }else{
-    $palm = $_POST['user_id']; //user_id num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
-
+    $palm = 0;
+    if(isset($_GET['id'])){
+        $palm = $_GET['id']; // user id
+    } //user_id num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
+// echo$palm;
     $p = "SELECT com.User_id FROM com WHERE com.User_id=$palm";
     $result5 = mysqli_query($connect,$p);
     $row = mysqli_fetch_array($result5);
     if(!$row){
-        Header("Location:../Login.php?alert=2");
+        Header("Location:../../../Login.php?alert=2");
     }
     ?>
 
@@ -65,7 +68,9 @@ if (!$_SESSION["User_id"]){  //check session
     <label>หมายเหตุ : </label>
     <input type="text" name="Note">
     <br>
-    <button type="summit" class="btn btn-warning text-danger">summit</button>
+    <button type="summit" class="btn btn-warning text-danger btn-sm">summit</button>
+    <a href="../view_detail_repair/view_user.php?id=<?php echo$palm ?>" class="btn btn-success btn-sm">กลับ</a>
+
     </form>
 
 

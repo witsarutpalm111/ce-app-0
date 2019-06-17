@@ -16,7 +16,7 @@ $p = "DELETE FROM `user` WHERE user.User_id = '$palm'";
 if($result = mysqli_query($connect,$p)){
     
 }
-Header("Location:../view_detail_repair/view_user.php?id=$palm"); 
+Header("Location:../view_user/view_data_user.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">

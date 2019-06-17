@@ -20,7 +20,7 @@ $pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT
 //เอา id_com มาใช้
 $p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Time_update,com.User_id,Price_com
     FROM `com`,`update_com` 
-    WHERE com.User_id = $palm AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ";
+    WHERE com.User_id = $palm AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ORDER BY update_com.Time_update DESC ";
 $result = mysqli_query($connect,$p);   
 
 ?>
@@ -80,6 +80,8 @@ $result = mysqli_query($connect,$p);
             <?php }?>
         </table>
         <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
+        <a href="../Add_data_repair/Update_data.php?id=<?php echo$palm ?>" class="btn btn-success">เพิ่มข้อมูล</a>
+
     </div>
 
 </body>

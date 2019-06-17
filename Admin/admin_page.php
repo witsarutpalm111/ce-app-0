@@ -12,10 +12,10 @@ if (!$_SESSION["User_id"]){  //check session
     if($palm == 1){
        echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>";
     }
-    $p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Time_update,com.User_id,MAX(update_com.count)
+    $p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,MAX(Time_update),com.User_id,MAX(update_com.count)
     FROM `com`,`update_com`,`user` 
-    WHERE com.User_id = user.User_id and com.ID_com = update_com.ID_com
-    GROUP BY User_id";
+    WHERE com.User_id = user.User_id AND com.ID_com=update_com.ID_com
+     GROUP BY User_id";
     $result = mysqli_query($connect,$p);   
     ?>
 
@@ -66,20 +66,20 @@ if (!$_SESSION["User_id"]){  //check session
                     ?>
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['User_id']?></td>
-                <td><?php echo $row['Time_update']?></td>
+                <td><?php echo $row['MAX(Time_update)']?></td>
                 <td><?php echo $row['Status_com']?></td>
                 <td><?php echo $row['Detail_com']?></td>
                 <td><?php echo $row['Note_com']?></td>
-                <td><a href="view/view_detail_repair/view_user.php?id=<?php echo $row['User_id']?>" class="btn btn-info" id="<?php echo $row['User_id']?>">View</a></td>
+                <td><a href="setting_admin/view_detail_repair/view_user.php?id=<?php echo $row['User_id']?>" class="btn btn-info" id="<?php echo $row['User_id']?>">View</a></td>
 
             </tr>
             <?php }?>
         </table>
         <a href="../Login.php"><button type="button" class="btn btn-info btn-sm">Log out</button></a>
 
-    <a href="add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a>
-    <a href="Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
-    <a href="view/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
+    <a href="setting_admin/add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a>
+    <a href="setting_admin/Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
+    <a href="setting_admin/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
 
     </div>
 
