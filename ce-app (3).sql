@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 10:54 AM
+-- Generation Time: Jun 18, 2019 at 06:30 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -41,12 +41,10 @@ CREATE TABLE `com` (
 --
 
 INSERT INTO `com` (`ID_com`, `Serial_number`, `Recieve_ID`, `User_id`, `id`) VALUES
-('aa4d905f7a115fa48316c29cf638c8f4', '561', '2e3196f85e7182da7bd1f5dfe6eedba0', 111, 1),
-('9ac4f3edea45470ef0d7d114705915dd', '591561', 'e653389a0332c8506cf7a7c447af863a', 111, 2),
-('c84eba5de62428dd65a6414bd27e0d4a', '5555', '82a86ecc8d992fc2afa89353ece79f2f', 111, 3),
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', '5555', '15495fccc22ef9667d73945310c21b83', 111, 4),
-('840b64c11771151a7babd4d9f538e5dd', '555666', 'e604d125ff0f15cf1b56494c40fb6d80', 111, 5),
-('eba3174adf235b31afeff3fc12b3e977', '555666', 'e85c4e9a342747e1fdeaa73d65d16654', 111, 6);
+('c1350a824260f096a33874d4de2367e6', '123456', 'd9c36c991f4f54cec688e9cf1a07f16d', 222, 8),
+('f074ba7230039abc2eec93540d24f2ad', '555666', '002194e5a814a024d0980e19eb3d0796', 333, 9),
+('2eb0ef6c89ce32690d3fbfae81cc8e27', '123', '529fc1bce30dd491030a21d1bff23269', 111, 10);
 
 -- --------------------------------------------------------
 
@@ -65,11 +63,9 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`id_order`, `user_id`, `id`) VALUES
-('1001', '111', 72),
-('1002', '111', 73),
-('1003', '111', 74),
-('1005', '111', 75),
-('1004', '111', 76);
+('1003', '111', 105),
+('1004', '111', 107),
+('1001', '111', 113);
 
 -- --------------------------------------------------------
 
@@ -80,19 +76,20 @@ INSERT INTO `order` (`id_order`, `user_id`, `id`) VALUES
 CREATE TABLE `price_rate` (
   `Price` int(11) NOT NULL,
   `List` text NOT NULL,
-  `id_list` int(3) NOT NULL
+  `id_list` int(3) NOT NULL,
+  `time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `price_rate`
 --
 
-INSERT INTO `price_rate` (`Price`, `List`, `id_list`) VALUES
-(200, 'ล้างเครื่อง', 1001),
-(2000, 'ลง window', 1002),
-(200, 'ทำความสะอาด', 1003),
-(250, 'ตรวจสภาพเครื่อง', 1004),
-(500, 'อาการจอฟ้า', 1005);
+INSERT INTO `price_rate` (`Price`, `List`, `id_list`, `time`) VALUES
+(200, 'ล้างเครื่อง', 1001, 30),
+(2000, 'ลง window', 1002, 90),
+(200, 'ทำความสะอาด', 1003, 50),
+(250, 'ตรวจสภาพเครื่อง', 1004, 30),
+(500, 'อาการจอฟ้า', 1005, 120);
 
 -- --------------------------------------------------------
 
@@ -107,23 +104,26 @@ CREATE TABLE `update_com` (
   `Note_com` text NOT NULL,
   `Price_com` int(11) NOT NULL,
   `Time_update` text NOT NULL,
-  `id` int(5) NOT NULL
+  `id` int(5) NOT NULL,
+  `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `update_com`
 --
 
-INSERT INTO `update_com` (`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`, `id`) VALUES
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ตรวจหาจุดบกพร่อง', 'ฟหำกเฟำเฟำเ', '--', 5000, 'วันพุธที่ 29 พฤษภาคม พ.ศ.2562 เวลา 23:41:05', 10),
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'อื่นๆ', 'adgfadg', '453453', 200, 'วันพุธที่ 29 พฤษภาคม พ.ศ.2562 เวลา 23:41:20', 11),
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ติดตั้งอุปกรณ์ที่เสียหาย', '', '', 0, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 12:53:11', 12),
-('840b64c11771151a7babd4d9f538e5dd', '', '', '', 0, '', 13),
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ติดตั้งอุปกรณ์ที่เสียหาย', '56161561', 'AFBAEFBA', 5000, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:13:15', 14),
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทดสอบเครื่องคอมพิวเตอร์', 'ihgvouybokm', '-', 200, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:13:37', 15),
-('840b64c11771151a7babd4d9f538e5dd', 'ติดตั้งอุปกรณ์ที่เสียหาย', '78378378', '783783', 5000, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:20:59', 16),
-('840b64c11771151a7babd4d9f538e5dd', 'ตรวจเช็คความเรียบร้อย', '783783793', '-', 7783, 'วันอาทิตย์ที่ 2 มิถุนายน พ.ศ.2562 เวลา 13:21:27', 17),
-('eba3174adf235b31afeff3fc12b3e977', '', '', '', 0, '', 18);
+INSERT INTO `update_com` (`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`, `id`, `count`) VALUES
+('c1350a824260f096a33874d4de2367e6', 'ตรวจเช็คความเรียบร้อย', '1561knioml;,', '453453', 0, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 17:55:48', 22, 2),
+('f074ba7230039abc2eec93540d24f2ad', 'อื่นๆ', 'fdhdhdhdtjdff', '783783', 0, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 17:57:16', 25, 2),
+('f074ba7230039abc2eec93540d24f2ad', 'ทดสอบเครื่องคอมพิวเตอร์', 'srmrtms4t6m', '', 5000, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 17:57:27', 26, 3),
+('f074ba7230039abc2eec93540d24f2ad', 'ทำความสะอาดตัวเครื่อง', 'ppppppppppppppppppp', 'ppp', 0, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 19:11:53', 28, 4),
+('c1350a824260f096a33874d4de2367e6', 'ตรวจหาจุดบกพร่อง', '111111', '1111', 1111, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 19:13:31', 30, 3),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', '666666', '-', 7783, 'วันพุธที่ 12 มิถุนายน พ.ศ.2562 เวลา 19:14:28', 31, 6),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'อื่นๆ', '11111', '--', 5000, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:06:29', 32, 7),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', '999999', '-', 200, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:14:56', 33, 8),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', 'aaa', 'AFBAEFBA', 5000, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:31:49', 34, 9),
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', 'aaa', '-', 300, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:32:18', 35, 10),
+('2eb0ef6c89ce32690d3fbfae81cc8e27', '', '', '', 0, '', 36, 0);
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE `user` (
   `lname` text NOT NULL,
   `phone_num` text NOT NULL,
   `Role` text NOT NULL,
-  `E-mail` text NOT NULL,
+  `Email` text NOT NULL,
   `More_contact` text NOT NULL,
   `Password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -146,12 +146,11 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `E-mail`, `More_contact`, `Password`) VALUES
-('111', 'palm', 'dfhjdfj', '0895685236', 'Std', 'palm@gmail.com', '5555', '111'),
-('1112', '5555', '5555', '5555', 'Admin', '5555', '444', '4444'),
-('123456', 'ooo', 'aaa', '963256325', 'Admin', 'aplm@gmail.com', '-', '123456'),
-('1234561', '5555', 'dfhjdfj', '55555', 'Admin', '555', '5555', '4444'),
-('qwdwf', 'qwfqwf', 'qwfqwf', '591415641', 'Admin', 'qwfqwfqwf.com', 'qwfqwf', 'qwfwf');
+INSERT INTO `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `More_contact`, `Password`) VALUES
+('111', 'witsarut', 'wittaya', '00000000', 'Std', 'palm@gmail.com', '5555', '111'),
+('123456', 'witsarut', 'wittaya', '00000000', 'Admin', 'palm@gmail.com', '-', '123456'),
+('222', 'witsarut', '5555', '00000000', 'asfasf', 'palm@gmail.com', 'safsafsaf', '222'),
+('333', 'witsarut', 'wittaya', '00000000', '783783', 'palm@gmail.com', '78378', '333');
 
 --
 -- Indexes for dumped tables
@@ -196,19 +195,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `com`
 --
 ALTER TABLE `com`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `update_com`
 --
 ALTER TABLE `update_com`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

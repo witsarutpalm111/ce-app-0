@@ -5,6 +5,8 @@ if (!isset($_SESSION["User_id"])){
 
    Header("Location:../Login.php");
    exit();
+ }else{
+     $palm = $_SESSION["User_id"];
  }
  $checkbox = 0;
     if(isset($_POST['checkbox'])){
@@ -15,7 +17,7 @@ if (!isset($_SESSION["User_id"])){
  $user_id = $_SESSION["User_id"];
 
  foreach($checkbox as $arr){
- $p1 = "SELECT id_order FROM `order` WHERE id_order = $arr";
+ $p1 = "SELECT id_order FROM `order` WHERE user_id=$palm AND id_order=$arr";
         $result1 = mysqli_query($connect,$p1);
         $row = mysqli_fetch_array($result1);
     

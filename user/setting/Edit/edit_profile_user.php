@@ -12,7 +12,7 @@ if (!isset($_SESSION["User_id"])){  //check session
   $lname = $_POST['lname'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-$p ="UPDATE `user` SET fname='$fname', lname='$lname', phone_num='$phone', Email='$email'";
+$p ="UPDATE `user` SET fname='$fname', lname='$lname', phone_num='$phone', Email='$email' WHERE user.User_id = '$palm'";
 $resalt = mysqli_query($connect,$p);
 Header("Location:../view_profile/My_profile.php");
 ?>

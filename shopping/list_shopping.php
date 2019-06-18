@@ -94,6 +94,7 @@ $result = mysqli_query($connect,$p);
                     </tr>
                     <?php }?>
                 </table>
+                
                 </form>
                 <!-- <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br> -->
             </div>
