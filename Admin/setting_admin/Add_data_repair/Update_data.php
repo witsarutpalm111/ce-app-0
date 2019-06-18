@@ -37,10 +37,18 @@ if (!$_SESSION["User_id"]){  //check session
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Update Data User</title>
+
+    <style>
+        /*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
 </head>
 
 <body>
     <br><br>
+    <div style="text-align:center; color:white;"><h4>
     <form action="Insert_Update_data.php?AAAA=<?php echo $palm ?>" id="Form_data" method="post">
     
     <label>ผลการซ่อม : </label>
@@ -63,16 +71,16 @@ if (!$_SESSION["User_id"]){  //check session
     <textarea name="detail" id="" cols="50" rows="1"></textarea><br>
 
     <label>ราคารวม : </label>
-    <input type="text" name="Price">
+    <input type="text" name="Price"><br>
     
     <label>หมายเหตุ : </label>
     <input type="text" name="Note">
-    <br>
+    <br><br>
     <button type="summit" class="btn btn-warning text-danger btn-sm">summit</button>
     <a href="../view_detail_repair/view_user.php?id=<?php echo$palm ?>" class="btn btn-success btn-sm">กลับ</a>
 
-    </form>
-
+    </form></h4>
+</div>
 
     <script type="text/javascript">
     $(document).ready(function(){
