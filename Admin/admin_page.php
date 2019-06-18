@@ -79,9 +79,11 @@ if (!$_SESSION["User_id"]){  //check session
         </table>
         <a href="../Login.php"><button type="button" class="btn btn-info btn-sm">Log out</button></a>
 
-    <a href="setting_admin/add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a>
+    <!-- <a href="setting_admin/add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a> -->
     <a href="setting_admin/Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
     <a href="setting_admin/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
+    <a href="setting_admin/view_user/view_order_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล Order</a>
+
 
     </div>
 

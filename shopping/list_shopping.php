@@ -11,7 +11,7 @@ $AA = $_SESSION["User_id"];
 $p1 = "SELECT * FROM price_rate  LIMIT 5";
 $result1 = mysqli_query($connect,$p1);
 
-$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
+$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
 $result = mysqli_query($connect,$p); 
 
 ?>
@@ -80,6 +80,7 @@ $result = mysqli_query($connect,$p);
                         <th>ID</th>
                         <th>Detail</th>
                         <th>Price</th>
+                        <th>Time</th>                        
                         <th>Remove</th>
                     </tr>
                     <?php   
@@ -90,11 +91,30 @@ $result = mysqli_query($connect,$p);
                         <td><?php echo $row['id_list']?></td>
                         <td><?php echo $row['List']?></td>
                         <td><?php echo $row['Price']?></td>
+                        <td><?php 
+                        $num = $row['time'];
+                        if($num){
+                            $hour = $num/60;
+                            if($hour < 1){
+                                $hour = 0;
+                                echo(int)$hour." ชั่วโมง ";
+                            }else{
+                                echo(int)$hour." ชั่วโมง ";
+                            }
+                            
+                        }
+                        if($num){
+                            $minute = $num%60;
+                            echo $minute." นาที";
+                        }
+                        
+                        ?></td>
                         <td><a href="remove.php?id=<?php echo $row['id_list']?>" class="btn btn-outline-danger" id="remove" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">ลบรายการ</a></td>
                     </tr>
                     <?php }?>
                 </table>
-                
+                        <label>ราคารวม</label>
+                        
                 </form>
                 <!-- <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br> -->
             </div>
