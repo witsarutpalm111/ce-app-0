@@ -19,28 +19,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>บันทึกข้อมูล</title>
     
+    <style type="text/css">
+        html,
+        body {
+            overflow: hidden;  /* เอาscrollup-down ออก */
+        }        
+    </style>
+
+    <style>
+        /*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
+
     
 </head>
 <body>
+    <div style="text-align:center; color:white;">
+    <br><br><br><br>
     <h1> เพิ่มข้อมูลการซ่อม</h1>
     <form action = "Insert_data_repair.php" id ="form_data" method = "post">
-        <fieldset>
+        <fieldset><br>
             <legend>บันทึกข้อมูล</legend>
-            
-                        <label>User_name : </label>
-                        <input type="text" name = "em_User" size = "20" placeholder="User_Name" required />
+            <div class="container h-100" style="min-height:93vh;">
 
-                        <label>Serial Number : </label>
-                        <input type="text" name = "em_Serial" size = "20" placeholder="Serial Number" required />
-                    
+                <div class="input-group mb-3 ml-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">User_Name & Serial_Number</span>
+                    </div>
+                    <input type="text" aria-label="User_Name" class="form-control" 
+                    placeholder="User_name" name="em_User" required >
+
+                    <input type="text" aria-label="Serial_Number" class="form-control"
+                    placeholder="Serial_number" name = "em_Serial" required >
+                </div>
+
+
+                <!-- <label>User Name : </label>
+                <input type="text" name = "em_User" size = "20" placeholder="User_name" required />
                         
-            
-            <br><br>
-            <input type="submit" value="save"/>
+                <label>Serial Number : </label>
+                <input type="text" name = "em_Serial" size = "20" placeholder="Serial_number" required /> -->
+            <br>
 
-            <a href="../../admin_page.php"><button type="button">กลับ</button></a>
+            <input type="submit" class="btn btn-dark" name="save" value="save"/>
+            <a href="../../admin_page.php" class="btn btn-dark">กลับ</a>
+
+        </div>
         </fieldset>
-</form>
-        
+    </form>
+    </div>   
 </body>
 </html>
