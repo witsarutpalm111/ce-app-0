@@ -8,11 +8,15 @@
 
 require './../DB_ce-app/User.php';
 $AA = $_SESSION["User_id"];
-$p1 = "SELECT * FROM price_rate  LIMIT 5";
+$p1 = "SELECT * FROM price_rate";
 $result1 = mysqli_query($connect,$p1);
 
 $p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
 $result = mysqli_query($connect,$p); 
+
+$psum = "SELECT SUM(time)AS WWW FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
+$resultsum = mysqli_query($connect,$psum); 
+$sumtime = mysqli_fetch_array($resultsum);
 
 ?>
 <!DOCTYPE html>
@@ -20,9 +24,7 @@ $result = mysqli_query($connect,$p);
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script> -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
@@ -84,43 +86,55 @@ $result = mysqli_query($connect,$p);
                         <th>Remove</th>
                     </tr>
                     <?php   
+                    $sum=0;
                     
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                     ?>
                     <tr style="text-align:center" class="pa">
                         <td><?php echo $row['id_list']?></td>
-                        <td><?php echo $row['List']?></td>
-                        <td><?php echo $row['Price']?></td>
+                        <td><?php echo $row['List'];
+                        ?>
+                        </td>
+                        <td><?php echo $row['Price'];
+                        $sum += $row['Price'];
+                        ?></td>
                         <td><?php 
                         $num = $row['time'];
-                        if($num){
                             $hour = $num/60;
                             if($hour < 1){
                                 $hour = 0;
-                                echo(int)$hour." ชั่วโมง ";
+                                echo" ";
                             }else{
                                 echo(int)$hour." ชั่วโมง ";
                             }
-                            
-                        }
-                        if($num){
                             $minute = $num%60;
-                            echo $minute." นาที";
-                        }
-                        
+                            echo $minute." นาที ";
                         ?></td>
                         <td><a href="remove.php?id=<?php echo $row['id_list']?>" class="btn btn-outline-danger" id="remove" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">ลบรายการ</a></td>
                     </tr>
                     <?php }?>
                 </table>
-                        <label>ราคารวม</label>
-                        
+                        <button> ราคารวม</button>
+                        <?php echo$sum; ?>
+                        <br> <br>
+                        <button>รวมเวลา</button>
+                        <?php $time = $sumtime['WWW'];
+                            $hour = $time/60;
+                            if($hour < 1){
+                                $hour = 0;
+                                echo" ";
+                            }else{
+                                echo(int)$hour." ชั่วโมง ";
+                            }
+                            $minute = $time%60;
+                            echo $minute." นาที ";
+                        ?>
                 </form>
                 <!-- <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br> -->
             </div>
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
-                    <table class="table table-dark" style="width:100%">
+                    <table class="table table-dark" style="width:100%" >
                         <tr style="text-align:center">
                             <th>ID</th>
                             <th>Detail</th>
@@ -190,7 +204,9 @@ $result = mysqli_query($connect,$p);
                     
                 });
             });
-        });
+       
+});
+       
     </script>
 
 </body>
