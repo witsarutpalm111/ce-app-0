@@ -35,7 +35,7 @@ if (!$_SESSION["User_id"]){  //check session
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Admin page</title>
+    <title>admin_page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,26 +49,28 @@ if (!$_SESSION["User_id"]){  //check session
 </head>
 
 <body>
+    <br>
     <div class="container">
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
                 <th>User id</th>
                 <th>Time</th>
                 <th>Status</th>
-                <th>Detail</th>
+                <!-- <th>Detail</th> -->
                 <th>Note</th>
                 <th>View</th>
 
             </tr>
             <?php   
                     
-                        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                    ?>
+                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            ?>
+            
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['User_id']?></td>
                 <td><?php echo $row['MAX(Time_update)']?></td>
                 <td><?php echo $row['Status_com']?></td>
-                <td><?php echo $row['Detail_com']?></td>
+                <!-- <td><?php echo $row['Detail_com']?></td> -->
                 <td><?php echo $row['Note_com']?></td>
                 <td><a href="setting_admin/view_detail_repair/view_user.php?id=<?php echo $row['User_id']?>" class="btn btn-info" id="<?php echo $row['User_id']?>">View</a></td>
 

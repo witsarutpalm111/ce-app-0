@@ -42,7 +42,14 @@ $result = mysqli_query($connect,$p);
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>view_user</title>
+
+    <style>
+        /*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
 </head>
 <body>
     <br>
@@ -54,7 +61,7 @@ $result = mysqli_query($connect,$p);
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
                 <th>Time</th>
-                <th>Status</th>
+                <!-- <th>Status</th> -->
                 <th>Detail</th>
                 <th>Note</th>
                 <th>Price</th>
@@ -63,13 +70,14 @@ $result = mysqli_query($connect,$p);
 
 
             </tr>
-            <?php   
-                    
-                        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                    ?>
+
+            <?php                     
+                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            ?>
+
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['Time_update']?></td>
-                <td><?php echo $row['Status_com']?></td>
+                <!-- <td><?php echo $row['Status_com']?></td> -->
                 <td><?php echo $row['Detail_com']?></td>
                 <td><?php echo $row['Note_com']?></td>
                 <td><?php echo $row['Price_com']?></td>
