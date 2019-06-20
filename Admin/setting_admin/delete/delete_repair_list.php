@@ -6,15 +6,15 @@ if (!isset($_SESSION["User_id"])){
     exit();
   }
   $palm =0;
-  if(isset($_GET['delete'])){
-    $palm = $_GET['delete'];
+  if(isset($_GET['delete_list'])){
+    $palm = $_GET['delete_list'];
 }
 
 require './../../../DB_ce-app/User.php';
  
-$p = "DELETE FROM `user` WHERE user.User_id = '$palm'";
+$p = "DELETE FROM `price_rate` WHERE id_list = '$palm'";
 if($result = mysqli_query($connect,$p)){
-    
+    Header("Location:../view_repair_list/view_repair_list.php"); 
 }
-Header("Location:../view_user/view_data_user.php"); 
+
 ?>

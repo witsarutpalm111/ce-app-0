@@ -1,17 +1,11 @@
 <?php  
-session_start();
 require './../../../DB_ce-app/User.php';
+session_start();
 if (!isset($_SESSION["User_id"])){
  
-    Header("Location:../Login.php");
+    Header("Location:../../../Login.php");
     exit();
 }
-$palm = 0;
-     if(isset($_GET['id'])){
-         $palm = $_GET['id'];
-     }
-$p ="SELECT user_id,id_product,List FROM `order`,`price_rate` WHERE order.user_id=$palm AND order.id_product= price_rate.id_list";
-$result = mysqli_query($connect,$p);
 
 ?>
 <!DOCTYPE html>
@@ -33,31 +27,35 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body><br>
-    <div class="container">
-    <table class="table table-dark" id="user_data">
-            <tr style="text-align:center">
-                <th>User id</th>
-                <th>ID Order</th>
-                <th>Order</th>
-            </tr>
-            <?php   
-                    
-                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-            ?>
-            
-            <tr style="text-align:center">
-                <td><?php echo $row['user_id']?></td>
-                <td><?php echo $row['id_product']?></td>
-                <td><?php echo $row['List']?></td>
-               
-            </tr>
-            <?php }?>
-        </table>
-        <a href="view_order_user.php">กลับ</a>
-        <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a>
+<body>
+    <form action="add_order.php" method="post">
+    <label>ชื่อรายการ</label>
+    <input type="text" name="list" required><br>
 
-    </div>
+    <label>ราคา</label>
+    <input type="number" name="price" required><label>บาท</label><br>
 
+    <label>ระยะเวลาซ่อม</label>
+    <input type="number" name="time_hour" id="txt"  required><label>ชั่วโมง</label><input type="number" id="test_txt" name="time_minute" onchange="check()" required><label>นาที</label><br>
+
+    <input type="submit" value="Submit">
+    </form>
+    <script>
+        
+	function check(){
+		var elem = document.getElementById('test_txt').value;
+		if(elem < 60 && elem >0)
+		{
+            $('#test_txt').css('border-color', '#00ff00');
+			
+		}else if(elem == " "){
+            $('#test_txt').css('border-color', '');
+
+        }else{
+			 alert("กรอกได้เฉพาะตัวเลข 1-59 คะ");
+            $('#test_txt').css('border-color', '#cc0000');
+        }
+	}
+</script>
 </body>
 </html>

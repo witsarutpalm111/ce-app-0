@@ -1,18 +1,13 @@
-<?php  
-session_start();
+<?php 
 require './../../../DB_ce-app/User.php';
+session_start();
 if (!isset($_SESSION["User_id"])){
  
-    Header("Location:../Login.php");
+    Header("Location:../../../Login.php");
     exit();
 }
-$palm = 0;
-     if(isset($_GET['id'])){
-         $palm = $_GET['id'];
-     }
-$p ="SELECT user_id,id_product,List FROM `order`,`price_rate` WHERE order.user_id=$palm AND order.id_product= price_rate.id_list";
+$p = "SELECT * FROM price_rate";
 $result = mysqli_query($connect,$p);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,29 +28,48 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body><br>
+<body>
     <div class="container">
     <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
-                <th>User id</th>
-                <th>ID Order</th>
-                <th>Order</th>
+                <th>ID List</th>
+                <th>List</th>
+                <th>Price</th>
+                <th>Time</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+
             </tr>
-            <?php   
-                    
+            <?php
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             ?>
             
-            <tr style="text-align:center">
-                <td><?php echo $row['user_id']?></td>
-                <td><?php echo $row['id_product']?></td>
+            <tr style="text-align:center" class="pa">
+                <td><?php echo $row['id_list']?></td>
                 <td><?php echo $row['List']?></td>
-               
+                <td><?php echo $row['Price']?></td>
+                <td><?php $num = $row['time'];
+                            $hour = $num/60;
+                            if($hour < 1){
+                                $hour = 0;
+                                echo" ";
+                            }else{
+                                echo(int)$hour." ชั่วโมง ";
+                            }
+                            $minute = $num%60;
+                            echo $minute." นาที ";
+                        ?>
+                </td>
+                <td><a href="../Edit/form_edit_list.php?edit_list=<?php echo $row['id_list']?>" class="btn btn-warning">Edit</a> </td>
+                <td><a href="../delete/delete_repair_list.php?delete_list=<?php echo $row['id_list']?>" class="btn btn-danger"onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a> </td>
+
+
             </tr>
             <?php }?>
         </table>
-        <a href="view_order_user.php">กลับ</a>
-        <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a>
+        <a href="../add_order/form_add_order.php">เพิ่มรายการซ่อม</a>
+        <a href="../../admin_page.php">กลับ</a>
 
     </div>
 

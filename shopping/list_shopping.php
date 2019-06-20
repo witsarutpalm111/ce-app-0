@@ -11,10 +11,10 @@ $AA = $_SESSION["User_id"];
 $p1 = "SELECT * FROM price_rate";
 $result1 = mysqli_query($connect,$p1);
 
-$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
+$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_product";
 $result = mysqli_query($connect,$p); 
 
-$psum = "SELECT SUM(time)AS WWW FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_order";
+$psum = "SELECT SUM(time)AS WWW FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_product";
 $resultsum = mysqli_query($connect,$psum); 
 $sumtime = mysqli_fetch_array($resultsum);
 
@@ -76,7 +76,6 @@ $sumtime = mysqli_fetch_array($resultsum);
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <form medhod="post" name="insert_form" id="insert_form">
                 <table class="table table-dark" id="user_data">
                     <tr style="text-align:center">
                         <th>ID</th>
@@ -114,23 +113,33 @@ $sumtime = mysqli_fetch_array($resultsum);
                     </tr>
                     <?php }?>
                 </table>
-                        <button> ราคารวม</button>
-                        <?php echo$sum; ?>
+
+            <form action="../user/setting/confirm/confirm_repair_user.php" method="post" name="insert_form" id="insert_form" >
+
+                         ราคารวม
+                        <input type="text" value="<?php echo$sum?>" name="price" style="width:100px;border:0; overflow:hidden;text-align: center;" readonly>โดยประมาณ
+                            
                         <br> <br>
-                        <button>รวมเวลา</button>
-                        <?php $time = $sumtime['WWW'];
+                       รวมเวลา
+                        <input type="text" value=" <?php $time = $sumtime['WWW'];
                             $hour = $time/60;
                             if($hour < 1){
                                 $hour = 0;
                                 echo" ";
                             }else{
-                                echo(int)$hour." ชั่วโมง ";
-                            }
+                                echo(int)$hour;
+                            }?>" name="time_hour" style="width:50px;border:0; overflow:hidden;text-align: center;"
+                        readonly>ชั่วโมง
+
+                        <input type="text" value="<?php
+                            $time = $sumtime['WWW'];
                             $minute = $time%60;
-                            echo $minute." นาที ";
-                        ?>
+                            echo $minute;
+                        ?>" name="time_minute" style="width:50px;border:0; overflow:hidden;text-align: center;" readonly>นาที
+                       
+                
+                <input type="submit" value="Confirm"> <br><br>
                 </form>
-                <!-- <a href="#" class="btn btn-success"name="save" id="save">Save</a> <br><br> -->
             </div>
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">

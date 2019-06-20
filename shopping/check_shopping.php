@@ -17,7 +17,7 @@ if (!isset($_SESSION["User_id"])){
  $user_id = $_SESSION["User_id"];
 
  foreach($checkbox as $arr){
- $p1 = "SELECT id_order FROM `order` WHERE user_id=$palm AND id_order=$arr";
+ $p1 = "SELECT id_product FROM `order` WHERE user_id=$palm AND id_product=$arr";
         $result1 = mysqli_query($connect,$p1);
         $row = mysqli_fetch_array($result1);
     
@@ -37,7 +37,7 @@ if(!$checkbox){
     foreach($checkbox as $arr){
     // echo $arr;
       
-            $p = "INSERT INTO `order`(`id_order`, `user_id`) VALUE('$arr','$user_id')";
+            $p = "INSERT INTO `order`(`id_product`, `user_id`) VALUE('$arr','$user_id')";
             $result = mysqli_query($connect,$p);
             echo("เพิ่มรายการ $arr เรียบร้อยคะ");
     }

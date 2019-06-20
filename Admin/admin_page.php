@@ -83,6 +83,8 @@ if (!$_SESSION["User_id"]){  //check session
     <a href="setting_admin/Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
     <a href="setting_admin/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
     <a href="setting_admin/view_user/view_order_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล Order</a>
+    <a href="setting_admin/view_repair_list/view_repair_list.php" class="btn btn-warning text-danger btn-sm">ดูรายการซ่อม</a>
+
 
 
     </div>
