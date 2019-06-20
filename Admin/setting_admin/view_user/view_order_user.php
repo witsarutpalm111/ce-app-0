@@ -7,7 +7,7 @@ if (!isset($_SESSION["User_id"])){
     exit();
 }
 
-$p ="SELECT user_id FROM `order` GROUP BY user_id";
+$p ="SELECT order.id_order,order.user_id FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
 $result = mysqli_query($connect,$p);
 
 ?>
@@ -38,7 +38,8 @@ $result = mysqli_query($connect,$p);
 <table class="table table-dark" id="user_data"  >
 
             <tr style="text-align:center">
-                <th>User id</th>
+                <th>ID Order</th>
+                <th>User ID</th>
                 <th>view</th>
             </tr>
             <?php   
@@ -47,10 +48,14 @@ $result = mysqli_query($connect,$p);
             ?>
             
             <tr style="text-align:center" class="pa">
+                <td><?php echo $row['id_order']?></td>
                 <td><?php echo $row['user_id']?></td>
-            
-                <td><a href="order_user_list.php?id=<?php echo$row['user_id'] ?>" class="btn btn-warning" >View</a>
-                
+                    
+                <td>
+                <form action="order_user_list.php" method="post">
+                    <input type="submit" value="View">
+                    <input type="hidden" name="id" value="<?php echo $row['id_order']?>">
+                </form>
             </td>
             </tr>
             <?php }?>

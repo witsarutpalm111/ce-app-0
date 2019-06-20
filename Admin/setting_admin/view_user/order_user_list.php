@@ -6,11 +6,8 @@ if (!isset($_SESSION["User_id"])){
     Header("Location:../Login.php");
     exit();
 }
-$palm = 0;
-     if(isset($_GET['id'])){
-         $palm = $_GET['id'];
-     }
-$p ="SELECT user_id,id_product,List FROM `order`,`price_rate` WHERE order.user_id=$palm AND order.id_product= price_rate.id_list";
+$palm = $_POST['id'];
+$p ="SELECT user_id,id_order,id_product,List FROM `order`,`price_rate` WHERE order.id_order=$palm AND order.id_product= price_rate.id_list ";
 $result = mysqli_query($connect,$p);
 
 ?>
@@ -39,6 +36,8 @@ $result = mysqli_query($connect,$p);
             <tr style="text-align:center">
                 <th>User id</th>
                 <th>ID Order</th>
+
+                <th>ID Order</th>
                 <th>Order</th>
             </tr>
             <?php   
@@ -47,7 +46,9 @@ $result = mysqli_query($connect,$p);
             ?>
             
             <tr style="text-align:center">
-                <td><?php echo $row['user_id']?></td>
+            <td><?php echo $row['user_id']?></td>
+
+                <td><?php echo $row['id_order']?></td>
                 <td><?php echo $row['id_product']?></td>
                 <td><?php echo $row['List']?></td>
                
@@ -55,7 +56,7 @@ $result = mysqli_query($connect,$p);
             <?php }?>
         </table>
         <a href="view_order_user.php">กลับ</a>
-        <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a>
+        <!-- <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a> -->
 
     </div>
 

@@ -25,10 +25,16 @@ if (!isset($_SESSION["User_id"])){
   $id_order = $num;
 
   $p = "INSERT INTO `order_user`(`date_order`, `id_order`, `order_price`) VALUE('$Date','$id_order','$price')";
+  $search ="SELECT * FROM `order` WHERE order.user_id = '$user_id' AND order.id_order='' ";
   $pp ="UPDATE `order` SET id_order ='$num' WHERE order.User_id = '$user_id' AND order.id_order='' ";
-if($insert = mysqli_query($connect,$p)){
-  $inserorder = mysqli_query($connect,$pp);
-echo"GIUP[IHVPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP";
-}
+  if($search = mysqli_query($connect,$search)){
+    if($insert = mysqli_query($connect,$p)){
+      $updateorder = mysqli_query($connect,$pp);
+      }
+  }else{
+    Header("Location:../../../Login.php");
+    echo("กรุณาเพิ่มรายการก่อนค่ะ");
+  }
+
 
 ?>
