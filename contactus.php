@@ -17,7 +17,7 @@
 
 
     <style>
-            #but1{       
+        #but1{       
             width: 200px;
             padding: 0px;
             margin: 20px;	
@@ -26,11 +26,20 @@
             width: 200px;
             padding: 0px;
             margin: 35px;	
-        }</style>
+        }
+        h2 {
+            color: white;
+            text-align:center;            
+        }
+        h5 {
+            color: white;
+            text-align:center;
+        }
+        </style>
   </head>
 
 
-  <body>
+  <body style="background-image: url(BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <section id="contact">
        <div class="container"><br><br>
            <h2 class="text-center text-uppercase">contact us</h2><br>
@@ -83,8 +92,8 @@
   
 
             <div style="text-align: center;">
-                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-dark">Home</a>
-                <a id="but2" href="user/user_page.php" class="btn btn-dark">Back</a>
+                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-light">Home</a>
+                <a id="but2" href="user/user_page.php" class="btn btn-outline-light">Back</a>
             </div>
 
 </body>
