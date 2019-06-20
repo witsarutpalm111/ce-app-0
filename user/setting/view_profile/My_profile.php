@@ -24,9 +24,19 @@ $row = mysqli_fetch_array($resalt);
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Document</title>
+
+     <style>
+     .container{
+        color: white
+     }
+     </style>
  </head>
- <body>
+
+
+
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
 <br>
+
 <div class="container">
     User id : <?php echo$row['User_id'] ?><br>
      Name : <?php echo$row['fname'] ?><br>
