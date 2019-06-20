@@ -124,14 +124,7 @@
             <div class="row mb-3"> 
 
                 <div class="col-3">
-                    <!-- <div class="card" style="width:15rem;" style="background-color:transparent" >
-                        <img src="profilepic/tong.jpg" class="card-img-top" alt="..." style=" height:230px; "> -->
-                         <!-- <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text"></p> -->
-                             <!-- <a href="#" class="btn btn-primary">click to connect</a>
-                         </div>
-                    </div> -->
+
                 </div>
 
                 <div class="col-sm-3">
@@ -140,7 +133,7 @@
                         <div class="card-body">
                         <h5 class="card-title">นายวิศรุต วิทยา</h5>
                         <p class="card-text">รหัส 60122519022</p>
-                        <!-- <a href="Login.php" class="btn btn-primary">เลือก</a> -->
+
                         </div>
                     </div>
                 </div>
@@ -151,21 +144,10 @@
                         <div class="card-body">
                             <h5 class="card-title">น.ส.ม่านไหม ฐิติยากูร</h5>
                             <p class="card-text">รหัส 60122519016</p>
-                            <!-- <a href="#" class="btn btn-primary">click to connect</a> -->
+                           
                         </div>
                     </div>
                 </div>   
-
-                <!-- <div class="col-3">
-                    <div class="card" style="width:15rem;" >
-                        <img src="profilepic/kamin.jpg" class="card-img-top" alt="..." style=" height:230px; ">
-                        <div class="card-body">
-                            <h5 class="card-title">นายคามิน แสงศรี</h5>
-                            <p class="card-text">รหัส 60122519036</p>
-                            <a href="#" class="btn btn-primary">click to connect</a>
-                        </div>
-                    </div>
-                </div> -->
 
 
             </div> 

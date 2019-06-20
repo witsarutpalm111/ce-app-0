@@ -91,7 +91,7 @@ $row1 = mysqli_fetch_array($result);
             <li><a href="../shopping/list_shopping.php">My list</a></li>
             <li><a href="setting/view_profile/My_profile.php">My Profile</a></li>
             <li><a href="../about.php">About</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="../contactus.php">Contact us</a></li>
             <li class="right"><a href="../Login.php">Log out</a></li>      
         </ul>
 

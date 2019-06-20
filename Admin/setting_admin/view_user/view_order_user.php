@@ -28,15 +28,22 @@ $result = mysqli_query($connect,$p);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>view_order_user</title>
+
+    <style>
+        /*style ของ Background*/
+        body {
+            background-color: darkslategray;
+        }
+    </style>
 </head>
 <body>
-<div class=" container">
+<div class="container">
 <form action="order_user_list.php" method="post">
     
 
 <table class="table table-dark" id="user_data"  >
-
+<br>
             <tr style="text-align:center">
                 <th>User id</th>
                 <th>view</th>
