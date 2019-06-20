@@ -15,7 +15,7 @@ if (!$_SESSION["User_id"]){  //check session
 
     $salt = $Serial;
     $date = date("jnYHis");
-
+    $status = 'ยืนยันคำสั่งซ่อม';
     $hash = md5($date.$salt.'user');
     $has = md5($date.$salt.'Recieve');
 
@@ -25,8 +25,9 @@ if (!$_SESSION["User_id"]){  //check session
         if($row>0){
             $sql = "Insert into com"
             . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`) value('$Serial','$User','$hash','$has')";
+
             $sql1 = "Insert into update_com"
-            . "(`ID_com`) value('$hash')";
+            . "(`ID_com`,`Status_com`) value('$hash','$status')";
             $result = mysqli_query($connect,$sql);
             $result1 = mysqli_query($connect,$sql1);
             
