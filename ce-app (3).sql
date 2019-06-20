@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2019 at 06:30 AM
+-- Generation Time: Jun 20, 2019 at 05:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -43,8 +43,7 @@ CREATE TABLE `com` (
 INSERT INTO `com` (`ID_com`, `Serial_number`, `Recieve_ID`, `User_id`, `id`) VALUES
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', '5555', '15495fccc22ef9667d73945310c21b83', 111, 4),
 ('c1350a824260f096a33874d4de2367e6', '123456', 'd9c36c991f4f54cec688e9cf1a07f16d', 222, 8),
-('f074ba7230039abc2eec93540d24f2ad', '555666', '002194e5a814a024d0980e19eb3d0796', 333, 9),
-('2eb0ef6c89ce32690d3fbfae81cc8e27', '123', '529fc1bce30dd491030a21d1bff23269', 111, 10);
+('f074ba7230039abc2eec93540d24f2ad', '555666', '002194e5a814a024d0980e19eb3d0796', 333, 9);
 
 -- --------------------------------------------------------
 
@@ -53,19 +52,51 @@ INSERT INTO `com` (`ID_com`, `Serial_number`, `Recieve_ID`, `User_id`, `id`) VAL
 --
 
 CREATE TABLE `order` (
-  `id_order` text NOT NULL,
+  `id_product` text NOT NULL,
   `user_id` text NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `id_order` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id_order`, `user_id`, `id`) VALUES
-('1003', '111', 105),
-('1004', '111', 107),
-('1001', '111', 113);
+INSERT INTO `order` (`id_product`, `user_id`, `id`, `id_order`) VALUES
+('1003', '111', 105, '190004'),
+('1001', '222', 114, ''),
+('1002', '222', 115, ''),
+('1003', '222', 116, ''),
+('1004', '333', 120, ''),
+('1001', '333', 121, ''),
+('1002', '333', 122, ''),
+('1003', '333', 123, ''),
+('1002', '111', 124, '190004'),
+('1005', '111', 126, '190004'),
+('1001', '111', 127, '190004');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_user`
+--
+
+CREATE TABLE `order_user` (
+  `date_order` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `id_order` text NOT NULL,
+  `order_price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order_user`
+--
+
+INSERT INTO `order_user` (`date_order`, `id`, `id_order`, `order_price`) VALUES
+('วันพุธที่ 19 มิถุนายน พ.ศ.2562 เวลา 15:00:19', 8, '190001', 2900),
+('วันพฤหัสบดีที่ 20 มิถุนายน พ.ศ.2562 เวลา 05:09:40', 9, '190002', 2900),
+('วันพฤหัสบดีที่ 20 มิถุนายน พ.ศ.2562 เวลา 05:10:04', 10, '190003', 2900),
+('วันพฤหัสบดีที่ 20 มิถุนายน พ.ศ.2562 เวลา 05:14:59', 11, '190004', 2900);
 
 -- --------------------------------------------------------
 
@@ -86,7 +117,7 @@ CREATE TABLE `price_rate` (
 
 INSERT INTO `price_rate` (`Price`, `List`, `id_list`, `time`) VALUES
 (200, 'ล้างเครื่อง', 1001, 30),
-(2000, 'ลง window', 1002, 90),
+(2000, 'ลง window', 1002, 170),
 (200, 'ทำความสะอาด', 1003, 50),
 (250, 'ตรวจสภาพเครื่อง', 1004, 30),
 (500, 'อาการจอฟ้า', 1005, 120);
@@ -122,8 +153,7 @@ INSERT INTO `update_com` (`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Pri
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', 'อื่นๆ', '11111', '--', 5000, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:06:29', 32, 7),
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', '999999', '-', 200, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:14:56', 33, 8),
 ('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', 'aaa', 'AFBAEFBA', 5000, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:31:49', 34, 9),
-('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', 'aaa', '-', 300, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:32:18', 35, 10),
-('2eb0ef6c89ce32690d3fbfae81cc8e27', '', '', '', 0, '', 36, 0);
+('fa6d4cfd3c26c2537cf6cfc3274a1634', 'ทำความสะอาดตัวเครื่อง', 'aaa', '-', 300, 'วันศุกร์ที่ 14 มิถุนายน พ.ศ.2562 เวลา 19:32:18', 35, 10);
 
 -- --------------------------------------------------------
 
@@ -170,6 +200,12 @@ ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `order_user`
+--
+ALTER TABLE `order_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `price_rate`
 --
 ALTER TABLE `price_rate`
@@ -195,19 +231,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `com`
 --
 ALTER TABLE `com`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+
+--
+-- AUTO_INCREMENT for table `order_user`
+--
+ALTER TABLE `order_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `update_com`
 --
 ALTER TABLE `update_com`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
