@@ -1,83 +1,23 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <!--script normal-->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script> -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-    
-    
-    <!--script button-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <title>Contact us</title>
 
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>About</title>
-
-    <style>/*style ของ Nav Bar*/
-        body {margin: 0;}
-        ul.topnav {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-        ul.topnav li {float: left;}
-        ul.topnav li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        ul.topnav li a:hover:not(.active) {background-color: #111;}
-        ul.topnav li a.active {background-color: #4CAF50;}
-        ul.topnav li.right {float: right;}
-        @media screen and (max-width: 600px) {
-            ul.topnav li.right, 
-            ul.topnav li {float: none;}
-        }
-    </style>
-    
-
-    <style>/*style ของ Background*/
-        body {
-            /* background-image: url("../BG/galaxy1.jpg"); */
-        }
-        h1.serif {
-            font-family: "Times New Roman", Times, serif;
-        }
-        h4.serif {
-            font-family: "Times New Roman", Times, serif;
-        }
-        h1 {
-            color: white;
-            text-align:center;            
-        }
-        h4 {
-            color: white;
-            text-align:center;
-        }
-        #but1{       
+    <style>
+            #but1{       
             width: 200px;
             padding: 0px;
             margin: 20px;	
@@ -86,78 +26,66 @@
             width: 200px;
             padding: 0px;
             margin: 35px;	
-        }
-    </style>
+        }</style>
+  </head>
 
 
-    <style type="text/css">/* เอาscrollup-down ออก */
-        html, body { overflow:  hidden; }       
-    </style>
-
-</head>
-
-
-<body style="background-image: url(BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
-    <div class="container"><br>
-
-        <!--ส่วนของ Nav Bar แถบด้านบน-->
-        <!-- <ul class="topnav">
-            <li><a class="active" href="../Home.php">Home</a></li>
-            <li><a href="#promotion">Promotion</a></li>
-            <li><a href="../shopping/list_shopping.php">My list</a></li>
-            <li><a href="../about.php">About</a></li>
-            <li><a href="#contact">Contact us</a></li>
-            <li class="right"><a href="#logout">Log out</a></li>      
-        </!--> 
-        <br>
-        <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
-        <div style="padding:0 16px;">
-            <h1 class="serif">OUR TEAM</h1>
-            <!-- <p style="color:White ; text-align:center">This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
-            <p style="color:White ; text-align:center">You will learn more about media queries and responsive web design later in our CSS Tutorial.</p> -->
-            <h4 class="serif">Website Building Team (SSRU Computer Engineering)</h4>
-        </div>
-        
-        <br>
-
-        <section id="comtent" class="ma" >
-            <div class="row mb-3"> 
-
-                <div class="col-3">
-
+  <body>
+    <section id="contact">
+       <div class="container"><br><br>
+           <h2 class="text-center text-uppercase">contact us</h2><br>
+           <h5 class="text-center w-75 m-auto">สามารถติดต่อทางทีมงานสาขาวิศวกรรมคอมพิวเตอร์ ได้ผ่านช่องทางดังนี้</h5>
+           <div class="row">
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">call us</h4>
+                    <p>+66 84 178 2616</p>
+                  </div>
                 </div>
-
-                <div class="col-sm-3">
-                    <div class="card" style="width:15rem;" >
-                        <img src="profilepic/palm.jpg" class="card-img-top" alt="..." style=" height:230px; ">
-                        <div class="card-body">
-                        <h5 class="card-title">นายวิศรุต วิทยา</h5>
-                        <p class="card-text">รหัส 60122519022</p>
-
-                        </div>
-                    </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">university</h4>
+                   <address>1 UThongNok Rd, KhwaengDusit, KhetDusit, Bangkok 10300</address>
+                  </div>
                 </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">our office</h4>
+                    <address>Building 47 , Room 4765 , KhwaengDusit, KhetDusit, Bangkok 10300</address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">email</h4>
+                    <p>sethakarn.pr@ieee.org</p>
+                  </div>
+                </div>
+             </div>
+           </div>
+       </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  
 
-                <div class="col-sm-3">
-                    <div class="card" style="width:15rem;" >
-                        <img src="profilepic/hngeng.jpg" class="card-img-top" alt="..." style=" height:230px; ">
-                        <div class="card-body">
-                            <h5 class="card-title">น.ส.ม่านไหม ฐิติยากูร</h5>
-                            <p class="card-text">รหัส 60122519016</p>
-                           
-                        </div>
-                    </div>
-                </div>   
-
-
-            </div> 
-            <br>
             <div style="text-align: center;">
-                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-light">Home</a>
-                <a id="but2" href="user/user_page.php" class="btn btn-outline-light">Back</a>
-            </div>  
+                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-dark">Home</a>
+                <a id="but2" href="user/user_page.php" class="btn btn-dark">Back</a>
+            </div>
 
-        </section>       
-    </div>
 </body>
 </html>
