@@ -63,17 +63,17 @@
         body {
             /* background-image: url("../BG/galaxy1.jpg"); */
         }
-        h1.serif {
+        /* h1.serif {
             font-family: "Times New Roman", Times, serif;
         }
         h4.serif {
             font-family: "Times New Roman", Times, serif;
-        }
-        h1 {
+        } */
+        h2 {
             color: white;
             text-align:center;            
         }
-        h4 {
+        h5 {
             color: white;
             text-align:center;
         }
@@ -112,16 +112,27 @@
         <br>
         <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
         <div style="padding:0 16px;">
-            <h1 class="serif">OUR TEAM</h1>
+            <h2 class="serif">OUR TEAM</h2><br>
             <!-- <p style="color:White ; text-align:center">This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
             <p style="color:White ; text-align:center">You will learn more about media queries and responsive web design later in our CSS Tutorial.</p> -->
-            <h4 class="serif">Website Building Team (SSRU Computer Engineering)</h4>
+            <h5 class="serif">Website Building Team (SSRU Computer Engineering)</h5>
         </div>
         
         <br>
 
         <section id="comtent" class="ma" >
             <div class="row mb-3"> 
+
+                <div class="col-3">
+                    <!-- <div class="card" style="width:15rem;" style="background-color:transparent" >
+                        <img src="profilepic/tong.jpg" class="card-img-top" alt="..." style=" height:230px; "> -->
+                         <!-- <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p> -->
+                             <!-- <a href="#" class="btn btn-primary">click to connect</a>
+                         </div>
+                    </div> -->
+                </div>
 
                 <div class="col-sm-3">
                     <div class="card" style="width:15rem;" >
@@ -136,28 +147,6 @@
 
                 <div class="col-sm-3">
                     <div class="card" style="width:15rem;" >
-                        <img src="profilepic/tong.jpg" class="card-img-top" alt="..." style=" height:230px; ">
-                        <div class="card-body">
-                            <h5 class="card-title">นายญาณกร ผลเจริญ</h5>
-                            <p class="card-text">รหัส 60122519008</p>
-                            <!-- <a href="#" class="btn btn-primary">click to connect</a> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div class="card" style="width:15rem;" >
-                        <img src="profilepic/kamin.jpg" class="card-img-top" alt="..." style=" height:230px; ">
-                        <div class="card-body">
-                            <h5 class="card-title">นายคามิน แสงศรี</h5>
-                            <p class="card-text">รหัส 60122519036</p>
-                            <!-- <a href="#" class="btn btn-primary">click to connect</a> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" style="width:15rem;" >
                         <img src="profilepic/hngeng.jpg" class="card-img-top" alt="..." style=" height:230px; ">
                         <div class="card-body">
                             <h5 class="card-title">น.ส.ม่านไหม ฐิติยากูร</h5>
@@ -165,9 +154,22 @@
                             <!-- <a href="#" class="btn btn-primary">click to connect</a> -->
                         </div>
                     </div>
-                </div>
+                </div>   
+
+                <!-- <div class="col-3">
+                    <div class="card" style="width:15rem;" >
+                        <img src="profilepic/kamin.jpg" class="card-img-top" alt="..." style=" height:230px; ">
+                        <div class="card-body">
+                            <h5 class="card-title">นายคามิน แสงศรี</h5>
+                            <p class="card-text">รหัส 60122519036</p>
+                            <a href="#" class="btn btn-primary">click to connect</a>
+                        </div>
+                    </div>
+                </div> -->
+
+
             </div> 
-            <br>
+            
             <div style="text-align: center;">
                 <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-light">Home</a>
                 <a id="but2" href="user/user_page.php" class="btn btn-outline-light">Back</a>

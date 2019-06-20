@@ -51,7 +51,7 @@ $sumtime = mysqli_fetch_array($resultsum);
     
 </head>
 
-<body>
+<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <div class="container"><br><br>      
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
