@@ -61,7 +61,7 @@ $result = mysqli_query($connect,$p);
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
                 <th>Time</th>
-                <!-- <th>Status</th> -->
+                <th>Status</th>
                 <th>Detail</th>
                 <th>Note</th>
                 <th>Price</th>
@@ -77,7 +77,7 @@ $result = mysqli_query($connect,$p);
 
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['Time_update']?></td>
-                <!-- <td><?php echo $row['Status_com']?></td> -->
+                <td><?php echo $row['Status_com']?></td>
                 <td><?php echo $row['Detail_com']?></td>
                 <td><?php echo $row['Note_com']?></td>
                 <td><?php echo $row['Price_com']?></td>

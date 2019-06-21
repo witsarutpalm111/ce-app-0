@@ -12,10 +12,7 @@ if (!$_SESSION["User_id"]){  //check session
     if($palm == 1){
        echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>";
     }
-    $p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,MAX(Time_update),com.User_id,MAX(update_com.count)
-    FROM `com`,`update_com`,`user` 
-    WHERE com.User_id = user.User_id AND com.ID_com=update_com.ID_com
-     GROUP BY User_id";
+    $p = "SELECT update_com.Status_com,com.User_id,Time_update,MAX(update_com.count) FROM `com`,`update_com`,`user` WHERE com.User_id = user.User_id AND com.ID_com=update_com.ID_com GROUP BY User_id HAVING MAX(update_com.count)";
     $result = mysqli_query($connect,$p);   
     ?>
 
@@ -57,7 +54,7 @@ if (!$_SESSION["User_id"]){  //check session
                 <th>Time</th>
                 <th>Status</th>
                 <!-- <th>Detail</th> -->
-                <th>Note</th>
+                
                 <th>View</th>
 
             </tr>
@@ -68,10 +65,9 @@ if (!$_SESSION["User_id"]){  //check session
             
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['User_id']?></td>
-                <td><?php echo $row['MAX(Time_update)']?></td>
+                <td><?php echo $row['Time_update']?></td>
                 <td><?php echo $row['Status_com']?></td>
-                <!-- <td><?php echo $row['Detail_com']?></td> -->
-                <td><?php echo $row['Note_com']?></td>
+                
                 <td><a href="setting_admin/view_detail_repair/view_user.php?id=<?php echo $row['User_id']?>" class="btn btn-info" id="<?php echo $row['User_id']?>">View</a></td>
 
             </tr>

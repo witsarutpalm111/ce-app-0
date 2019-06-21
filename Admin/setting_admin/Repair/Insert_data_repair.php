@@ -1,5 +1,8 @@
 
 <?php
+include_once('../../../Rundiz-thai-date-db65595/Rundiz/Thaidate/Thaidate.php');
+include_once('../../../Rundiz-thai-date-db65595/Rundiz/Thaidate/thaidate-functions.php');
+
    session_start();
    require './../../../DB_ce-app/User.php';
 if (!$_SESSION["User_id"]){  //check session
@@ -14,6 +17,8 @@ if (!$_SESSION["User_id"]){  //check session
     $Serial = $_POST['em_Serial'];
 
     $salt = $Serial;
+    $time = thaidate('วันlที่ j F พ.ศ.Y เวลา H:i:s');
+
     $date = date("jnYHis");
     $status = 'ยืนยันคำสั่งซ่อม';
     $hash = md5($date.$salt.'user');
@@ -27,7 +32,7 @@ if (!$_SESSION["User_id"]){  //check session
             . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`) value('$Serial','$User','$hash','$has')";
 
             $sql1 = "Insert into update_com"
-            . "(`ID_com`,`Status_com`) value('$hash','$status')";
+            . "(`ID_com`,`Status_com`,`Time_update`) value('$hash','$status','$time')";
             $result = mysqli_query($connect,$sql);
             $result1 = mysqli_query($connect,$sql1);
             
