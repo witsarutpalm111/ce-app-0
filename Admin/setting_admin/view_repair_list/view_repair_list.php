@@ -9,10 +9,11 @@ if (!isset($_SESSION["User_id"])){
 $p = "SELECT * FROM price_rate";
 $result = mysqli_query($connect,$p);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -23,14 +24,20 @@ $result = mysqli_query($connect,$p);
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
+    
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <title>view_repair_list</title>
+
 </head>
-<body>
+
+
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">   
+<br><br>
     <div class="container">
-    <table class="table table-dark" id="user_data">
+        <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
                 <th>ID List</th>
                 <th>List</th>
@@ -38,39 +45,41 @@ $result = mysqli_query($connect,$p);
                 <th>Time</th>
                 <th>Edit</th>
                 <th>Delete</th>
-
-
             </tr>
+
             <?php
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             ?>
-            
+                
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['id_list']?></td>
                 <td><?php echo $row['List']?></td>
                 <td><?php echo $row['Price']?></td>
                 <td><?php $num = $row['time'];
-                            $hour = $num/60;
-                            if($hour < 1){
-                                $hour = 0;
-                                echo" ";
-                            }else{
-                                echo(int)$hour." ชั่วโมง ";
-                            }
-                            $minute = $num%60;
-                            echo $minute." นาที ";
-                        ?>
+                    $hour = $num/60;
+                    if($hour < 1)
+                    {
+                        $hour = 0;
+                        echo" ";
+                    }
+                    else
+                    {
+                        echo(int)$hour." ชั่วโมง ";
+                    }
+                    $minute = $num%60;
+                    echo $minute." นาที ";
+                    ?>
                 </td>
                 <td><a href="../Edit/form_edit_list.php?edit_list=<?php echo $row['id_list']?>" class="btn btn-warning">Edit</a> </td>
                 <td><a href="../delete/delete_repair_list.php?delete_list=<?php echo $row['id_list']?>" class="btn btn-danger"onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a> </td>
-
-
             </tr>
-            <?php }?>
-        </table>
-        <a href="../add_order/form_add_order.php">เพิ่มรายการซ่อม</a>
-        <a href="../../admin_page.php">กลับ</a>
 
+                <?php }?>
+                
+        </table>
+
+        <a href="../add_order/form_add_order.php" class="btn btn-info text-light btn-sm">เพิ่มรายการซ่อม</a>
+        <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
     </div>
 
 </body>

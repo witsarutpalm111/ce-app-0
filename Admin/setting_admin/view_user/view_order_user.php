@@ -30,20 +30,22 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>view_order_user</title>
 
-    <style>
+    <!-- <style>
         /*style ของ Background*/
         body {
             background-color: darkslategray;
         }
-    </style>
+    </style> -->
 </head>
-<body>
+
+
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
 <div class="container">
 <form action="order_user_list.php" method="post">
     
 
 <table class="table table-dark" id="user_data"  >
-<br>
+<br><br>
             <tr style="text-align:center">
                 <th>ID Order</th>
                 <th>User ID</th>
@@ -60,7 +62,7 @@ $result = mysqli_query($connect,$p);
                     
                 <td>
                 <form action="order_user_list.php" method="post">
-                    <input type="submit" value="View">
+                    <input class="btn btn-info text-light btn-sm" type="submit" value="View">
                     <input type="hidden" name="id" value="<?php echo $row['id_order']?>">
                 </form>
             </td>
@@ -68,7 +70,7 @@ $result = mysqli_query($connect,$p);
             <?php }?>
         </table>
         </form>
-        <a href="../../admin_page.php">กลับ</a>
+        <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
 
     </div>
 

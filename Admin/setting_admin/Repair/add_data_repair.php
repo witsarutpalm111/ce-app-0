@@ -26,16 +26,9 @@
         }        
     </style>
 
-    <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style>
-
     
 </head>
-<body>
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <div style="text-align:center; color:white;">
     <br><br><br><br>
     <h1> เพิ่มข้อมูลการซ่อม</h1>
