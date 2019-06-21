@@ -37,7 +37,7 @@ section.ma{
 }
 </style>
 </head>
-<body>
+<body style="background-color:white">
   
   <div class="container">
     <section id="header" class="mb-3">
