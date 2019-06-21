@@ -4,7 +4,8 @@ if (!$_SESSION["User_id"]){  //check session
  
 	  Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
  
-}else{
+}
+else{
  $palm = 0;
     if(isset($_GET['alert'])){
         $palm = $_GET['alert'];
@@ -16,9 +17,9 @@ if (!$_SESSION["User_id"]){  //check session
     $result = mysqli_query($connect,$p);   
     ?>
 
+
 <!doctype html>
 <html>
-
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -31,22 +32,17 @@ if (!$_SESSION["User_id"]){  //check session
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <meta charset="UTF-8">
-    <title>admin_page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style>
+    <title>admin_page</title>
 
 </head>
 
-<body>
-    <br>
+<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+    <br><br>
     <div class="container">
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">

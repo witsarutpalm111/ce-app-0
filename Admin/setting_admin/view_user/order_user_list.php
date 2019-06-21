@@ -30,14 +30,16 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>order_user_list</title>
 
-    <style>
+    <!-- <style>
         /*style ของ Background*/
         body {
             background-color: darkslategray;
         }
-    </style>
+    </style> -->
 </head>
-<body><br>
+
+
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;"><br>
     <div class="container">
     <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
@@ -62,7 +64,7 @@ $result = mysqli_query($connect,$p);
             </tr>
             <?php }?>
         </table>
-        <a href="view_order_user.php">กลับ</a>
+        <a href="view_order_user.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
         <!-- <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a> -->
 
     </div>

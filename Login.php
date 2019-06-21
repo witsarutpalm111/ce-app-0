@@ -66,7 +66,6 @@
             height:100%;
         }
     </style>
-
 </head>
 
 <body style="background-image: url(BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">

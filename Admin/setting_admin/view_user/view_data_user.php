@@ -34,14 +34,8 @@ $result = mysqli_query($connect,$p);
     <title>Document</title>
 
 
-    <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style>
 </head>
-<body>
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br>
 <div class="container">
 

@@ -117,12 +117,6 @@ $row = mysqli_fetch_array($resalt);
         }
     </style>
 
-    <!-- <style>/*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style> -->
-
 </head>
 
 
@@ -162,10 +156,8 @@ $row = mysqli_fetch_array($resalt);
         </div>
     </div>
 
-
     </div>
-    <!--ส่วนของ Nav Bar แถบด้านบน-->
-    <!-- <button onclick="pass();">a</button> -->
+
 </body>
 
 </html>

@@ -49,6 +49,17 @@ $sumtime = mysqli_fetch_array($resultsum);
         }
     </style>
     
+    <style>
+        #profile {
+            color: white;       
+            padding-right: 770px;
+        }
+        #profile2 {
+            color: white;       
+            padding-right: 600px;
+        }
+    </style>
+
 </head>
 
 <body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
@@ -114,33 +125,83 @@ $sumtime = mysqli_fetch_array($resultsum);
                     <?php }?>
                 </table>
 
-            <form action="../user/setting/confirm/confirm_repair_user.php" method="post" name="insert_form" id="insert_form" >
+                <form action="../user/setting/confirm/confirm_repair_user.php" method="post" name="insert_form" id="insert_form">              
+                    <!-- ส่วนของ ราคารวม -->
+                    <div id="profile" class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">ราคารวม</span>
+                        </div>
+                        <input type="text" class="form-control" value="<?php echo$sum?>" name="price" style="width:100px;border:0; overflow:hidden;text-align: center;" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text">บาทโดยประมาณ</span>
+                        </div>
+                    </div>
+                                       
+                    <!-- ส่วนของ รวมเวลา -->
+                    <div id="profile2" class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">รวมเวลา</label>
+                        </div>
+                        <div>
+                        <input type="text" class="form-control" value=" <?php $time = $sumtime['WWW'];
+                                $hour = $time/60;
+                                if($hour < 1){
+                                    $hour = 0;
+                                    echo" ";
+                                }else{
+                                    echo(int)$hour;
+                                }?>" name="time_hour" style="width:50px;border:0; 
+                                overflow:hidden;text-align: center;" readonly>
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">ชั่วโมง</span>
+                        </div>
+                        <div>
+                        <input type="text" class="form-control" value="<?php
+                                $time = $sumtime['WWW'];
+                                $minute = $time%60;
+                                echo $minute;
+                            ?>" name="time_minute" style="width:50px;border:0; 
+                            overflow:hidden;text-align: center;" readonly>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">นาที</span>
+                        </div>
+                    </div>
 
-                         ราคารวม
-                        <input type="text" value="<?php echo$sum?>" name="price" style="width:100px;border:0; overflow:hidden;text-align: center;" readonly>โดยประมาณ
+                    <!-- ส่วนราคารวม และ รวมเวลา แบบเก่าที่ปาล์มทำ -->
+                    <!-- 
+                    รวมเวลา
+                    <input type="text" value=" 
+                        <?php $time = $sumtime['WWW'];
+                        $hour = $time/60;
+                        if($hour < 1){
+                            $hour = 0;
+                            echo" ";
+                        }else{
+                            echo(int)$hour;
+                        }?>
+                        " name="time_hour" style="width:50px;border:0; 
+                        overflow:hidden;text-align: center;" readonly>
+                    ชั่วโมง
+                    <input type="text" value="
+                        <?php
+                        $time = $sumtime['WWW'];
+                        $minute = $time%60;
+                        echo $minute;
+                        ?>" 
+                        name="time_minute" style="width:50px;border:0; 
+                        overflow:hidden;text-align: center;" readonly>
+                    นาที 
+                    -->       
                             
-                        <br> <br>
-                       รวมเวลา
-                        <input type="text" value=" <?php $time = $sumtime['WWW'];
-                            $hour = $time/60;
-                            if($hour < 1){
-                                $hour = 0;
-                                echo" ";
-                            }else{
-                                echo(int)$hour;
-                            }?>" name="time_hour" style="width:50px;border:0; overflow:hidden;text-align: center;"
-                        readonly>ชั่วโมง
-
-                        <input type="text" value="<?php
-                            $time = $sumtime['WWW'];
-                            $minute = $time%60;
-                            echo $minute;
-                        ?>" name="time_minute" style="width:50px;border:0; overflow:hidden;text-align: center;" readonly>นาที
-                       
-                
-                <input type="submit" value="Confirm"> <br><br>
+                    
+                    <!-- ปุ่ม confirm คือส่วนนี้ -->     
+                    <input type="submit" class="btn btn-success" value="Confirm"> <br><br>
                 </form>
             </div>
+
+
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
                     <table class="table table-dark" style="width:100%" >
@@ -186,14 +247,14 @@ $sumtime = mysqli_fetch_array($resultsum);
                     </table>
                     
                 </form>
-                <button type="submit" class="btn btn-success " name="add" id="add">add</button>
+                <button type="submit" class="btn btn-success" name="add" id="add">add</button>
            
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
+    </div>
 
-    </div>
-    </div>
+
     <script type="text/javascript">
          $(document).ready(function () {
             $("#AAA").click(function(){
@@ -206,18 +267,12 @@ $sumtime = mysqli_fetch_array($resultsum);
                     url: "check_shopping.php",
                     data: $("#check_shop").serialize(),
                     success: function (response) {
-                       alert(response);
-                       
-                         }
-
-                    
+                       alert(response);                       
+                         }                   
                 });
-            });
-       
-});
-       
+            });      
+        });      
     </script>
 
 </body>
-
 </html>
