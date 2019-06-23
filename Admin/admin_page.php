@@ -13,7 +13,7 @@ else{
     if($palm == 1){
        echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>";
     }
-    $p = "SELECT update_com.Status_com,com.User_id,Time_update,MAX(update_com.count) FROM `com`,`update_com`,`user` WHERE com.User_id = user.User_id AND com.ID_com=update_com.ID_com GROUP BY User_id HAVING MAX(update_com.count)";
+    $p = "SELECT update_com.Time_update,com.User_id,update_com.Status_com,com.Serial_number FROM update_com,com WHERE update_com.ID_com=com.ID_com AND update_com.Time_update IN (SELECT MAX(update_com.Time_update) FROM update_com,com WHERE update_com.ID_com=com.ID_com GROUP BY com.User_id,com.Serial_number) ORDER BY com.User_id ASC";
     $result = mysqli_query($connect,$p);   
     ?>
 
@@ -47,6 +47,8 @@ else{
         <table class="table table-dark" id="user_data">
             <tr style="text-align:center">
                 <th>User id</th>
+                <th>Serial Num</th>
+
                 <th>Time</th>
                 <th>Status</th>
                 <!-- <th>Detail</th> -->
@@ -61,6 +63,8 @@ else{
             
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['User_id']?></td>
+                <td><?php echo $row['Serial_number']?></td>
+
                 <td><?php echo $row['Time_update']?></td>
                 <td><?php echo $row['Status_com']?></td>
                 

@@ -6,8 +6,14 @@ if (!isset($_SESSION["User_id"])){
     Header("Location:../Login.php");
     exit();
 }
-
-$p ="SELECT order.id_order,order.user_id FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
+$palm = 0;
+if(isset($_GET['alert'])){
+    $palm = $_GET['alert'];
+}
+if($palm == 1){
+   echo "<script>alert('คุณยืนยัน order นี้ไปแล้วค่ะ');</script>";
+}
+$p ="SELECT order.id_order,order.user_id,status_order FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
 $result = mysqli_query($connect,$p);
 
 ?>
@@ -49,7 +55,9 @@ $result = mysqli_query($connect,$p);
             <tr style="text-align:center">
                 <th>ID Order</th>
                 <th>User ID</th>
+                <th>Status</th>
                 <th>view</th>
+
             </tr>
             <?php   
                     
@@ -60,7 +68,17 @@ $result = mysqli_query($connect,$p);
                 <td><?php echo $row['id_order']?></td>
                 <td><?php echo $row['user_id']?></td>
                     
-                <td>
+                
+            <td><?php 
+                    if($row['status_order'] == 'confirm'){
+                        echo("ยืนยันแล้ว");
+                    }else{
+                        echo("ยังไม่ได้ยืนยัน");
+                    }
+    
+                ?>
+            </td>
+            <td>
                 <form action="order_user_list.php" method="post">
                     <input class="btn btn-info text-light btn-sm" type="submit" value="View">
                     <input type="hidden" name="id" value="<?php echo $row['id_order']?>">

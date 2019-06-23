@@ -2,14 +2,22 @@
 <html lang="en">
     <?php
     require './../DB_ce-app/User.php';
-     $palm = 0;
-     if(isset($_GET['AAA'])){
-         $palm = $_GET['AAA'];
-     }
-     $pal = 0;
-     if(isset($_GET['AAA'])){
-         $pal = $_GET['AAA'];
-     }
+    $user_id = $_POST['em_User'];
+    $serial = $_POST['em_Serial'];
+        // $p = "SELECT * FROM update_com WHERE update_com.ID_com='$palm'";
+        $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname
+        FROM user,com,update_com
+        WHERE com.User_id = $user_id AND com.Serial_number = $serial AND com.ID_com = update_com.ID_com AND com.User_id = user.User_id";
+         $result = mysqli_query($connect,$p1);
+         $result1 = mysqli_query($connect,$p1); 
+          
+         if($row1 = mysqli_fetch_array($result)){
+            
+         }else{
+            Header("Location:form_check_repair.php?alert=1");
+            exit();
+         }
+    
     ?>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
@@ -58,11 +66,7 @@
 
 <body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <?php   
-        $p = "SELECT * FROM update_com WHERE update_com.ID_com='$palm'";
-        $p1 = "SELECT user.User_id,user.fname,user.lname FROM user,com WHERE user.User_id=com.User_id and com.ID_com='$palm'";
-        $result = mysqli_query($connect,$p1);  
-        $result1 = mysqli_query($connect,$p); 
-        $row1 = mysqli_fetch_array($result);
+   
     ?>
 
 
@@ -71,6 +75,8 @@
         <h1> ผลการค้นหา </h1><br>  
         <label>User Name : </label>
         <?php echo $row1['User_id']?>
+        <label>Serial Number: </label>
+        <?php echo $row1['Serial_number']?>
         <br>
         <label>ชื่อ : </label>
         <?php echo $row1['fname']?>

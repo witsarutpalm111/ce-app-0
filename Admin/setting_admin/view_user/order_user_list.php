@@ -9,7 +9,8 @@ if (!isset($_SESSION["User_id"])){
 $palm = $_POST['id'];
 $p ="SELECT user_id,id_order,id_product,List FROM `order`,`price_rate` WHERE order.id_order=$palm AND order.id_product= price_rate.id_list ";
 $result = mysqli_query($connect,$p);
-
+$result1 = mysqli_query($connect,$p);
+$row1 = mysqli_fetch_array($result1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +46,6 @@ $result = mysqli_query($connect,$p);
             <tr style="text-align:center">
                 <th>User id</th>
                 <th>ID Order</th>
-
                 <th>ID Order</th>
                 <th>Order</th>
             </tr>
@@ -60,11 +60,18 @@ $result = mysqli_query($connect,$p);
                 <td><?php echo $row['id_order']?></td>
                 <td><?php echo $row['id_product']?></td>
                 <td><?php echo $row['List']?></td>
+                
+
                
             </tr>
             <?php }?>
         </table>
+        <form action="../confirm/confirm_order.php" method="post">
         <a href="view_order_user.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
+        <input type="submit" value="ยืนยันคำสั่งซ่อม">
+        <input type="hidden" name="id" value="<?php echo $row1['id_order']?>">
+    </form>
+        
         <!-- <a href="view_order_user.php">ยืนยันสำสั่งซ่อม</a> -->
 
     </div>

@@ -1,16 +1,5 @@
 <?php 
  session_start();
- if (!isset($_SESSION["User_id"])){
- 
-    Header("Location:../Login.php");
-    exit();
-  }
-$pal = $_SESSION['User_id'];
-require './../DB_ce-app/User.php';
-$pp = "SELECT com.ID_com FROM com WHERE com.User_id=$pal ORDER BY id DESC LIMIT 1";
-$result = mysqli_query($connect,$pp);
-$row1 = mysqli_fetch_array($result);
-  
 require './../DB_ce-app/User.php';
 
 if (!isset($_SESSION["User_id"])){  //check session
@@ -60,7 +49,7 @@ $row = mysqli_fetch_array($resalt);
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
 
     <title>user_page</title>
 
@@ -150,8 +139,9 @@ $row = mysqli_fetch_array($resalt);
 
         <!--ส่วนของ button-->
         <div class="container">
-            <a href="check_qr.php?AAA=<?php echo $row1['ID_com']?>" class="btn btn-success" role="button"
-                aria-pressed="true">ตรวจสอบสถานะ</a>
+            <a href="form_check_repair.php" class="btn btn-success" role="button"
+                aria-pressed="true">ตรวจสอบการซ่อม</a>
+                <a href="check_order.php">ตรวจสอบใบสั่งซ่อม</a>
             <!-- <button type="button" class="btn btn-danger">สั่งซ่อม</button>   -->
         </div>
     </div>
