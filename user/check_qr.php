@@ -2,21 +2,50 @@
 <html lang="en">
     <?php
     require './../DB_ce-app/User.php';
-    $user_id = $_POST['em_User'];
-    $serial = $_POST['em_Serial'];
-        // $p = "SELECT * FROM update_com WHERE update_com.ID_com='$palm'";
+    if(isset($_GET['id_com'])){
+        $palm = $_GET['id_com'];
+    }
+    // กรณีเข้ามากับ qr
+    // echo$palm;
+    if(isset($palm)){
+        $id_com = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname,com.Serial_number,com.User_id
+        FROM `update_com`,`com`,`user`
+        WHERE update_com.ID_com = '$palm' AND com.ID_com=update_com.ID_com AND com.User_id = user.User_id";
+        $result = mysqli_query($connect,$id_com);
+        $result1 = mysqli_query($connect,$id_com);
+        $row1 = mysqli_fetch_array($result);
+// echo$palm;
+    }else{
+        // กรณีเข้าจากหน้าเว็บ
+        // echo"5555555555555555555555555";
+        $user_id = $_POST['em_User'];
+        $serial = $_POST['em_Serial'];
+
         $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname
         FROM user,com,update_com
         WHERE com.User_id = $user_id AND com.Serial_number = $serial AND com.ID_com = update_com.ID_com AND com.User_id = user.User_id";
          $result = mysqli_query($connect,$p1);
          $result1 = mysqli_query($connect,$p1); 
           
-         if($row1 = mysqli_fetch_array($result)){
+        if($row1 = mysqli_fetch_array($result)){
             
-         }else{
-            Header("Location:form_check_repair.php?alert=1");
-            exit();
-         }
+        }else{
+            // Header("Location:form_check_repair.php?alert=1");
+            // exit();
+        }
+    }
+
+    
+
+//     $search_order = "SELECT status_order,order_user.date_order,order_user.order_price,order.id_order,order.id_product,price_rate.List,price_rate.Price
+// FROM `order`,`order_user`,`price_rate`
+// WHERE order.id_order = $id_order AND order.user_id = $palm AND order.id_product = price_rate.id_list AND order.id_order = order_user.id_order";
+// $order = mysqli_query($connect,$search_order);
+// $result1 = mysqli_query($connect,$search_order);
+
+// $row = mysqli_fetch_array($result1);
+        // $p = "SELECT * FROM update_com WHERE update_com.ID_com='$palm'";
+       
     
     ?>
 <head>

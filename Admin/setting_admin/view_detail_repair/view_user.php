@@ -5,22 +5,23 @@ if (!isset($_SESSION["User_id"])){
     Header("Location:../Login.php");
     exit();
   }
+
 require './../../../DB_ce-app/User.php';
-$palm = 0;
-if(isset($_GET['id'])){
-    $palm = $_GET['id']; // user id
-}
+ // user id$
+ $serial = $_POST['serial'];
+ $user_id = $_POST['user'];
+
 // เลือก id_com ล่าสุด
-$pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
-           $result2 = mysqli_query($connect,$pp); 
+// $pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
+//            $result2 = mysqli_query($connect,$pp); 
            
-           $row1 = mysqli_fetch_array($result2);
+//            $row1 = mysqli_fetch_array($result2);
       
-       $RR = $row1['ID_com'];
+//        $RR = $row1['ID_com'];
 //เอา id_com มาใช้
-$p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Time_update,com.User_id,Price_com
-    FROM `com`,`update_com` 
-    WHERE com.User_id = $palm AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ORDER BY update_com.Time_update DESC ";
+$p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update
+FROM `update_com`,`com`
+WHERE Serial_number = '$serial' AND com.User_id = $user_id AND com.ID_com=update_com.ID_com";
 $result = mysqli_query($connect,$p);   
 
 ?>
@@ -55,7 +56,7 @@ $result = mysqli_query($connect,$p);
     <br>
 <div class="container">
     <div class="text-right mb-3">
-    <button class="btn text-warning btn-secondary" disabled>User id : <?php echo$palm ?></button>
+    <button class="btn text-warning btn-secondary" disabled>User id : <?php echo$user_id ?></button>
 
     </div>
         <table class="table table-dark" id="user_data">
