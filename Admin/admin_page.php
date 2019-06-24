@@ -13,7 +13,14 @@ else{
     if($palm == 1){
        echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>";
     }
-    $p = "SELECT update_com.Time_update,com.User_id,update_com.Status_com,com.Serial_number FROM update_com,com WHERE update_com.ID_com=com.ID_com AND update_com.Time_update IN (SELECT MAX(update_com.Time_update) FROM update_com,com WHERE update_com.ID_com=com.ID_com GROUP BY com.User_id,com.Serial_number) ORDER BY com.User_id ASC";
+    $p = "SELECT update_com.Time_update,com.User_id,update_com.Status_com,com.Serial_number 
+    FROM update_com,com
+    WHERE update_com.ID_com=com.ID_com 
+    AND update_com.Time_update IN (SELECT MAX(update_com.Time_update) 
+    FROM update_com,com 
+    WHERE update_com.ID_com=com.ID_com 
+    GROUP BY com.User_id,com.Serial_number) 
+    ORDER BY com.User_id ASC";
     $result = mysqli_query($connect,$p);   
     ?>
 
@@ -67,9 +74,18 @@ else{
 
                 <td><?php echo $row['Time_update']?></td>
                 <td><?php echo $row['Status_com']?></td>
-                
-                <td><a href="setting_admin/view_detail_repair/view_user.php?id=<?php echo $row['User_id']?>" class="btn btn-info" id="<?php echo $row['User_id']?>">View</a></td>
+                <!-- ปัญหา -->
+                <!-- ทำเป็น form ส่งค่า serail ไปด้วย จะได้เช็ค 1 id หลายเครื่องได้-->
+                <td>
+                    <form action="setting_admin/view_detail_repair/view_user.php" method="post">
+                        <input class="btn btn-info" value="View" type="submit">
+                        <input type="hidden" name="serial" value="<?php echo $row['Serial_number']?>">
+                        <input type="hidden" name="user" value="<?php echo $row['User_id']?>">
 
+
+                    </form>
+                </td>
+                <!-- --------------------------------------------- -->
             </tr>
             <?php }?>
         </table>

@@ -14,7 +14,7 @@ FROM `order`,`order_user`,`price_rate`
 WHERE order.id_order = $id_order AND order.user_id = $palm AND order.id_product = price_rate.id_list AND order.id_order = order_user.id_order";
 $result = mysqli_query($connect,$search_order);
 $result1 = mysqli_query($connect,$search_order);
-$row = mysqli_fetch_array($result1)
+$row = mysqli_fetch_array($result1);
 ?>
  <!DOCTYPE html>
  <html lang="en">

@@ -90,7 +90,7 @@ if (!isset($_SESSION["User_id"])){
                 <td><?php echo $row['fname']?></td>
                 <td><?php echo $row['lname']?></td>
                 <td><?php echo $row['User_id']?></td>
-                <td> <a href="../user/check_qr.php?AAA=<?php echo $row['ID_com']?>"><div id ="<?php echo $row['ID_com']?>"></div></a></td>
+                <td> <a href="../../../user/check_qr.php?id_com=<?php echo $row['ID_com']?>"><div id ="<?php echo $row['ID_com']?>"></div></a></td>
                 <td><div id ="<?php echo $row['Recieve_ID']?>"></td>
                 
                 
@@ -98,7 +98,7 @@ if (!isset($_SESSION["User_id"])){
         </tr>
         <script type="text/javascript">
 
-            new QRCode(document.getElementById("<?php echo $row['ID_com']?>"), "<?php echo $row['ID_com']?>");
+            new QRCode(document.getElementById("<?php echo $row['ID_com']?>"),"10.71.6.203/ce_app/user/check_qr.php?id_com=<?php echo $row['ID_com']?>");
             new QRCode(document.getElementById("<?php echo $row['Recieve_ID']?>"), "<?php echo $row['Recieve_ID']?>");
 
         </script>
