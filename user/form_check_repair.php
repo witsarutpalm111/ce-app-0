@@ -19,23 +19,41 @@ $palm = 0;
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Document</title>
+     <title>form_check_repair</title>
+
+     <link rel="stylesheet" href="../scrollbar.css">
+
+     <style>
+        #but1{       
+            width: 150px;
+            padding: 0px;
+            margin: 15px;	
+        }
+        #but2{       
+            width: 150px;
+            padding: 0px;
+            margin: 15px;	
+        }
+    </style>
  </head>
- <body>
+
+
+ <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
  <form action = "check_qr.php" id ="form_data" method = "post">
-        <fieldset><br>
-            <legend>บันทึกข้อมูล</legend>
+        <fieldset><br><br>
+        <div class="container">
+            <legend><h3>บันทึกข้อมูล</h3></legend><br><br>
             <div class="container h-100" style="min-height:93vh;">
 
                 <div class="input-group mb-3 ml-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">User_Name & Serial_Number</span>
+                        <span class="input-group-text">User Name & Serial Number</span>
                     </div>
                     <input type="text" aria-label="User_Name" class="form-control" 
-                    placeholder="User_name" name="em_User" required >
+                    placeholder="User name" name="em_User" required >
 
                     <input type="text" aria-label="Serial_Number" class="form-control"
-                    placeholder="Serial_number" name = "em_Serial" required >
+                    placeholder="Serial number" name = "em_Serial" required >
                 </div>
 
 
@@ -46,9 +64,10 @@ $palm = 0;
                 <input type="text" name = "em_Serial" size = "20" placeholder="Serial_number" required /> -->
             <br>
 
-            <input type="submit" class="btn btn-dark" name="save" value="ตกลง"/>
-            <a href="user_page.php" class="btn btn-dark">กลับ</a>
+            <input type="submit" id="but1" class="btn btn-outline-dark" name="save" value="ตกลง"/>
+            <a href="user_page2.php" id="but2" class="btn btn-outline-dark">กลับ</a>
 
+        </div>
         </div>
         </fieldset>
     </form>

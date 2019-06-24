@@ -102,17 +102,17 @@ $row = mysqli_fetch_array($resalt);
 
     <style>
         #profile {
-            color: white;
+            color: black;
         }
     </style>
 
+    <link rel="stylesheet" href="scrollbar.css">
 </head>
 
 
-<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
-    <div class="container"><br>
+<body>
 
-        <!--ส่วนของ Nav Bar แถบด้านบน-->
+<!--ส่วนของ Nav Bar แถบด้านบน-->
         <ul class="topnav">
             <li><a class="active" href="../Home.php">Home</a></li>
             <div onclick="pass();">
@@ -125,6 +125,7 @@ $row = mysqli_fetch_array($resalt);
             <li class="right"><a href="../Login.php">Log out</a></li>
         </ul>
 
+    <div class="container"><br>
         <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
         <br><br>
         <div id="profile" style="padding:0 16px;">

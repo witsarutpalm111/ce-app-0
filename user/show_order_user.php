@@ -28,8 +28,12 @@ $row = mysqli_fetch_array($result1)
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Document</title>
+
+     <link rel="stylesheet" href="scrollbar.css">
  </head>
- <body>
+
+
+ <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
  <div class="container"> 
     ID Order : <?php echo$row['id_order'] ?><br>
     Time Order : <?php echo$row['date_order'] ?><br>
@@ -70,7 +74,7 @@ $row = mysqli_fetch_array($result1)
     </div><br>
 
     <div style="text-align:center;" >
-        <a  href="check_order.php" class="btn btn-outline-success" class="ml-3">Back</a>
+        <a  href="check_order.php" class="btn btn-outline-dark" class="ml-3">Back</a>
     </div>
     <script>
     $(document).ready(function () {

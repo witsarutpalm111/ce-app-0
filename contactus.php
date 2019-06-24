@@ -17,29 +17,40 @@
 
 
     <style>
-        #but1{       
+        #but1{      
+            text-align: center;
+            height: 25px; 
             width: 200px;
             padding: 0px;
             margin: 20px;	
         }
         #but2{       
+            text-align: center;
+            height: 25px;
             width: 200px;
             padding: 0px;
             margin: 35px;	
         }
         h2 {
-            color: white;
+            color: black;
             text-align:center;            
         }
         h5 {
-            color: white;
+            color: black;
             text-align:center;
         }
+        #contact{
+          background-color: transparent;
+        }
+        </style>
+
+        <style type="text/css">/* เอาscrollup-down ออก */
+            html, body { overflow:  hidden; }       
         </style>
   </head>
 
 
-  <body style="background-image: url(BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+  <body style="background-image: url(BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
     <section id="contact">
        <div class="container"><br><br>
            <h2 class="text-center text-uppercase">contact us</h2><br>
@@ -90,10 +101,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
-
             <div style="text-align: center;">
-                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-light">Home</a>
-                <a id="but2" href="user/user_page.php" class="btn btn-outline-light">Back</a>
+                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a>
+                <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
             </div>
 
 </body>

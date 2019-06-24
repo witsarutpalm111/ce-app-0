@@ -52,17 +52,17 @@ $sumtime = mysqli_fetch_array($resultsum);
     <style>
         #profile {
             color: white;       
-            padding-right: 770px;
+            padding-right: 700px;
         }
         #profile2 {
             color: white;       
-            padding-right: 600px;
+            padding-right: 500px;
         }
     </style>
 
 </head>
 
-<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+<body>
     <div class="container"><br><br>      
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
@@ -82,7 +82,7 @@ $sumtime = mysqli_fetch_array($resultsum);
                 </li>
             </div> -->
 
-                <a href="../user/user_page.php" class="btn btn-success" class="ml-3">กลับ</a>
+                <a href="../user/user_page2.php" class="btn btn-warning" class="ml-3">กลับ</a>
         </ul>
 
         <div class="tab-content" id="pills-tabContent">

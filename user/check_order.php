@@ -25,10 +25,22 @@ $result = mysqli_query($connect,$search_order);
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Document</title>
+     <title>check_order</title>
+
+     <link rel="stylesheet" href="../scrollbar.css">
+
+     <style>
+        #but1{       
+            width: 150px;
+            padding: 0px;
+            margin: 15px;	
+        }
+    </style>
  </head>
- <body>
- <div class="container">    
+
+
+ <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+ <div class="container"> <br>   
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <table class="table table-dark" id="user_data"><br>
@@ -49,7 +61,7 @@ $result = mysqli_query($connect,$search_order);
                         <td><?php echo $row2['order_price']?></td>
                         <td> <form action="show_order_user.php" method="post">
                             <input type="hidden" name="id_order" value="<?php echo $row2['id_order']?>">
-                            <input type="submit" value="View">
+                            <input type="submit" class="btn btn-outline-light" value="View">
                         </form>
                     </td>
                     </tr>
@@ -61,7 +73,7 @@ $result = mysqli_query($connect,$search_order);
     </div><br>
 
     <div style="text-align:center;">
-        <a  href="user_page.php" class="btn btn-outline-success" class="ml-3">Back</a>
+        <a  href="user_page2.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
     </div>
  </body>
  </html>

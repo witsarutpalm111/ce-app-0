@@ -5,38 +5,43 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<head>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <style>
-img.d-block{
-  height: 400px;
-  width:100%;
-}
-section.ma{
-  height:100%;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  margin-right: 25px;
-  margin-left: 25px;
-}
-.footer {
-   position:relative;
-   left: 0;
-   bottom:0;
-   width: 100%;
-   background-color: red;
-   color: white;
-   text-align: center;
-   height:75;
-}
-</style>
+      img.d-block{
+        height: 400px;
+        width:100%;
+      }
+      section.ma{
+        height:100%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        margin-right: 25px;
+        margin-left: 25px;
+      }
+      .footer {
+        position:relative;
+        left: 0;
+        bottom:0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+        height:75;
+      }
+    </style>
+
+    <link rel="stylesheet" href="scrollbar.css">
 </head>
+
+
 <body style="background-color:white">
   
   <div class="container">
