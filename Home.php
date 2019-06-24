@@ -31,10 +31,15 @@
         left: 0;
         bottom:0;
         width: 100%;
-        background-color: red;
+        background-color: darkred;
         color: white;
         text-align: center;
         height:75;
+      }
+      #bb {
+        width: 170px;
+        padding: 0px;
+        margin: 10px;
       }
     </style>
 
@@ -81,58 +86,68 @@
         </a>
       </div>
     </section>
-    <section id="comtent" class="ma" >
+    <section id="content" class="ma" >
       <div class="row mb-3">
         
         <div class="col-sm-4">
-          <div class="card" style="width:15rem;" >
+          <div class="card border-0" style="width:15rem;" >
             <img src="img/cat2.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ลง Window</h5>
               <p class="card-text">ลบข้อมูลทั้งหมดในเครื่องและทำการลงโปรแกรมใหม่</p>
-              <a href="Login.php" class="btn btn-primary">เลือก</a>
+              <a href="Login.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card" style="width:15rem;" >
+          <div class="card border-0" style="width:15rem;" >
             <img src="img/cat.jpg" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
-              <h5 class="card-title">Card</h5>
-              <p class="card-text">example.</p>
-              <a href="#" class="btn btn-primary">click to connect</a>
+              <h5 class="card-title">ล้างเครื่อง</h5>
+              <p class="card-text">example.example.example.example.</p>
+              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card" style="width:15rem;" >
+          <div class="card border-0" style="width:15rem;" >
             <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
-              <h5 class="card-title">Card</h5>
-              <p class="card-text">example.</p>
-              <a href="#" class="btn btn-primary">click to connect</a>
+              <h5 class="card-title">ทำความสะอาด</h5>
+              <p class="card-text">example.example.example.example.</p>
+              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-6">
-          <div class="card" style="width:15rem;" >
+        <div class="col-sm-4">
+          <div class="card border-0" style="width:15rem;" >
             <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
-              <h5 class="card-title">Card</h5>
-              <p class="card-text">example.</p>
-              <a href="#" class="btn btn-primary">click to connect</a>
+              <h5 class="card-title">ตรวจสภาพเครือง</h5>
+              <p class="card-text">example.example.example.example.</p>
+              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="card" style="width:15rem;" >
+        <div class="col-sm-4">
+          <div class="card border-0" style="width:15rem;" >
             <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
-              <h5 class="card-title">Card</h5>
-              <p class="card-text">example.</p>
-              <a href="#" class="btn btn-primary">click to connect</a>
+              <h5 class="card-title">อาการจอฟ้า</h5>
+              <p class="card-text">example.example.example.example.</p>
+              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+            </div>
+          </div>
+    </div>
+        <div class="col-sm-4">
+          <div class="card border-0" style="width:15rem;" >
+            <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <div class="card-body">
+              <h5 class="card-title">ปัญหาอื่นๆ</h5>
+              <p class="card-text">example.example.example.example.</p>
+              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>

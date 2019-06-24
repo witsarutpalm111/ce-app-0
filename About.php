@@ -35,6 +35,7 @@
             padding: 0px;
             margin: 35px;	
         }
+        
     </style>
 
     <style type="text/css">/* เอาscrollup-down ออก */
@@ -53,7 +54,7 @@
             <h5 class="serif">Website Building Team (SSRU Computer Engineering)</h5>
         </div><br>
         
-        <section id="comtent" class="ma" >
+        <section id="content" class="ma" >
             <div class="row mb-3"> 
                 <div class="col-3">
                     <!-- <div class="card" style="width:15rem;" style="background-color:transparent" >
@@ -90,7 +91,7 @@
             </div> 
             
             <div style="text-align: center;">
-                <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a>
+                <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
                 <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
             </div>  
         </section>       

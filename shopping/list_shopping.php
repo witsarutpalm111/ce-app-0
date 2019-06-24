@@ -58,11 +58,16 @@ $sumtime = mysqli_fetch_array($resultsum);
             color: white;       
             padding-right: 500px;
         }
+        /* .input-group.mb-3 {
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(255, 255, 255);
+        } */
     </style>
 
 </head>
 
-<body>
+<body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
     <div class="container"><br><br>      
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
@@ -75,7 +80,7 @@ $sumtime = mysqli_fetch_array($resultsum);
                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
                     aria-controls="pills-profile" aria-selected="false">List All</a>
             </li>
-            
+   
             <!-- <div id="bb" class="text-right ml-5" >
                 <li class="right ml-5">
                     <a href="../Home.php" class="btn btn-success ml-5">กลับ</a>

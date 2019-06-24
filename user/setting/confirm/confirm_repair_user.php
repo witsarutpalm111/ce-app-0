@@ -36,11 +36,11 @@ if (!isset($_SESSION["User_id"])){
     if($insert = mysqli_query($connect,$p)){
       $updateorder = mysqli_query($connect,$pp);
       echo("เพิ่มลงในรายการสั่งซ่อมเรียบร้อย<br>");
-    echo("<a href=../../user_page.php>กลับ</a>");
+    echo("<a href=../../user_page2.php>กลับ</a>");
     }
   }
 }else{
    echo("กรุณาเพิ่มรายการก่อนค่ะ");
-   echo("<a href=../../user_page.php>กลับ</a>");
+   echo("<a href=../../../shopping/list_shopping.php>กลับ</a>");
  }
 ?>

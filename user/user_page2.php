@@ -42,6 +42,12 @@ $row = mysqli_fetch_array($resalt);
             font-size: 18px;
             color: black;
         }     
+        #b1{
+            margin-right: 10px;
+        }
+        #b2{
+          margin-left: 10px;
+        }
     </style>
     <link rel="stylesheet" href="scrollbar.css">
 </head>
@@ -68,7 +74,7 @@ $row = mysqli_fetch_array($resalt);
       <a class="nav-link" href="../contactus.php">Contact us</a>
     </li>
     <li id="a" class="nav-item">
-      <a class="nav-link" href="../Login.php">Log out</a>
+      <a class="nav-link" href="../Login.php">Logout</a>
     </li>
   </ul>
 </nav>
@@ -91,9 +97,9 @@ $row = mysqli_fetch_array($resalt);
 
         <!--ส่วนของ button-->
         <div class="container">
-            <a href="form_check_repair.php" class="btn btn-outline-dark" role="button"
+            <a href="form_check_repair.php" id="b1" class="btn btn-outline-dark" role="button"
                 aria-pressed="true">ตรวจสอบการซ่อม</a>
-                <a href="check_order.php" class="btn btn-outline-dark" role="button"
+            <a href="check_order.php" id="b2" class="btn btn-outline-dark" role="button"
                 aria-pressed="true">ตรวจสอบใบสั่งซ่อม</a>
             <!-- <button type="button" class="btn btn-danger">สั่งซ่อม</button>   -->
         </div>
