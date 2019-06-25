@@ -79,8 +79,8 @@ else{
                 <td>
                     <form action="setting_admin/view_detail_repair/view_user.php" method="post">
                         <input class="btn btn-info" value="View" type="submit">
-                        <input type="hidden" name="serial" value="<?php echo $row['Serial_number']?>">
-                        <input type="hidden" name="user" value="<?php echo $row['User_id']?>">
+                        <input type="hidden" name="em_serial" value="<?php echo $row['Serial_number']?>">
+                        <input type="hidden" name="em_user" value="<?php echo $row['User_id']?>">
 
 
                     </form>

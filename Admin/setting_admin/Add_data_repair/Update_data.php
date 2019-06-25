@@ -8,6 +8,7 @@ if (!$_SESSION["User_id"]){  //check session
     $user_id = $_POST['em_user'];
     $serial = $_POST['em_serial'];
 
+
     $p = "SELECT com.User_id FROM com WHERE com.User_id=$user_id";
     $result5 = mysqli_query($connect,$p);
     $row = mysqli_fetch_array($result5);
@@ -80,9 +81,16 @@ if (!$_SESSION["User_id"]){  //check session
     <input type="text" name="Note">
     <br><br>
     <button type="summit" class="btn btn-warning text-danger btn-sm">summit</button>
-    <a href="../view_detail_repair/view_user.php?id=<?php echo$user_id ?>" class="btn btn-success btn-sm">กลับ</a>
+    
 
     </form></h4>
+
+    <form action="../view_detail_repair/view_user.php" method="post">
+        <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
+        <input type="hidden" name="em_serial" value="<?php echo$serial ?>">   
+        <input type="submit" value="กลับ">
+
+    </form>
 </div>
 
     <script type="text/javascript">

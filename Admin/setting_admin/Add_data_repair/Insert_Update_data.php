@@ -12,24 +12,25 @@ session_start();
 
       $user_id = $_POST['em_user'];
       $serial = $_POST['em_serial'];
+ 
    
-           $pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
-           $result = mysqli_query($connect,$pp); 
+      //      $pp = "SELECT com.ID_com FROM `update_com`,`com` WHERE com.ID_com = update_com.ID_com AND com.Serial_number = $serial GROUP BY com.ID_com";
+      //      $result = mysqli_query($connect,$pp); 
            
-           $row1 = mysqli_fetch_array($result);
+      //      $row1 = mysqli_fetch_array($result);
       
-       $RR = $row1['ID_com'];
-       //echo $RR;
-       $count ="SELECT update_com.count FROM update_com,com WHERE com.ID_com = update_com.ID_com AND com.User_id=$palm ORDER BY update_com.count DESC LIMIT 1";
+      //  $RR = $row1['ID_com'];
+       
+       $count ="SELECT update_com.count,com.ID_com FROM `update_com`,`com` WHERE com.ID_com = update_com.ID_com AND com.Serial_number = $serial ORDER BY update_com.count DESC LIMIT 1";
       $resultcount = mysqli_query($connect,$count);
       $rowcount = mysqli_fetch_array($resultcount);
-      
-      $Nub = $rowcount['count'];
-      if($rowcount){
-        $Nub += 1;
+$ID_com = $rowcount['ID_com'];
+      $Num = $rowcount['count'];
+      if($Num != 0){
+        $Num += 1;
       }
       else{
-        $Nub = 1;
+        $Num = 1;
       }
    
 
@@ -47,11 +48,12 @@ session_start();
     $Detail =$_POST['detail'];
 
     $sql = "Insert into update_com"
-    . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$RR','$ddl','$Detail','$Note','$Price','$Date' ,'$Nub')";
+    . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$ID_com','$ddl','$Detail','$Note','$Price','$Date' ,'$Num')";
     if($result1 = mysqli_query($connect,$sql)){
 
-      Header("Location:../view_detail_repair/view_user.php");
-
+      echo$user_id;
+      // Header("Location:../view_detail_repair/view_user.php");
+echo$serial;
     } 
     
     

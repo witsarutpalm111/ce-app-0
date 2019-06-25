@@ -8,8 +8,8 @@ if (!isset($_SESSION["User_id"])){
 
 require './../../../DB_ce-app/User.php';
  // user id$
- $serial = $_POST['serial'];
- $user_id = $_POST['user'];
+ $serial = $_POST['em_serial'];
+ $user_id = $_POST['em_user'];
 
 // เลือก id_com ล่าสุด
 // $pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
