@@ -73,12 +73,12 @@ $sumtime = mysqli_fetch_array($resultsum);
 
             <li class="nav-item" id="AAA">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                    aria-controls="pills-home" aria-selected="true">My List</a>
+                    aria-controls="pills-home" aria-selected="true">รายการของฉัน</a>
             </li>
 
             <li class="nav-item mr-5">
                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                    aria-controls="pills-profile" aria-selected="false">List All</a>
+                    aria-controls="pills-profile" aria-selected="false">เลือกบริการที่ต้องการซื้อ</a>
             </li>
    
             <!-- <div id="bb" class="text-right ml-5" >
