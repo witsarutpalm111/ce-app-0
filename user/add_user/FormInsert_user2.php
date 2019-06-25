@@ -116,7 +116,7 @@
                             </div><br>
                         <div id="ac">    
                             <input type="submit" id="but1" class="btn btn-outline-dark" name="Save" value="บันทึก" />
-                            <a href="../../Login2.php" id="but2" class="btn btn-outline-dark">กลับหน้าล็อคอิน</a>
+                            <a href="../../Login.php" id="but2" class="btn btn-outline-dark">กลับหน้าล็อคอิน</a>
                         </div>
                         </div><br>   
                 </div>           

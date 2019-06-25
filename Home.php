@@ -60,7 +60,7 @@
         <a class="navbar-brand" href="#">
           <img src="img/pro0.png" width="30" height="30" alt="">Computer Engineer
         </a>
-        <a href="Login2.php" class="btn btn-warning text-danger btn-sm" >Login</a>
+        <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
       </nav>
     </section>
     <section id="banner">
