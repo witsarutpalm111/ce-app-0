@@ -50,10 +50,25 @@ $ID_com = $rowcount['ID_com'];
     $sql = "Insert into update_com"
     . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$ID_com','$ddl','$Detail','$Note','$Price','$Date' ,'$Num')";
     if($result1 = mysqli_query($connect,$sql)){
-
-      echo$user_id;
-      // Header("Location:../view_detail_repair/view_user.php");
-echo$serial;
+?>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+      </head>
+      <body>
+        <form action="../view_detail_repair/view_user.php" method="post">
+        <input type="submit" value="<?php echo "<script>alert('เพิ่มข้อมูลเรียบร้อยแล้วค่ะ');</script>" ?>">
+        <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
+        <input type="hidden" name="em_serial" value="<?php echo$serial ?>">
+      </form>
+      </body>
+      </html>
+    <!-- Header("Location:../view_detail_repair/view_user.php"); -->
+<?php
     } 
     
     
