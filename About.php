@@ -38,9 +38,9 @@
         
     </style>
 
-    <style type="text/css">/* เอาscrollup-down ออก */
+    <!-- <style type="text/css">/* เอาscrollup-down ออก */
         html, body { overflow:  hidden; }       
-    </style>
+    </style> -->
 
 </head>
 
