@@ -42,6 +42,10 @@
         padding: 0px;
         margin: 10px;
       }
+      .carousel-item{
+        width : 100%;
+        height: 100%;
+      }
     </style>
 
     <link rel="stylesheet" href="scrollbar.css">
@@ -51,7 +55,7 @@
 <body style="background-color:white">
   
   <div class="container">
-    <section id="header" class="mb-3">
+    <section id="header">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
           <img src="img/pro0.png" width="30" height="30" alt="">Computer Engineer
@@ -69,16 +73,16 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="Banner/b2.png" class="d-block"   alt="...">
+            <img src="Banner/b2.png" class="d-block"  width="100%" height="100%" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="Banner/b3.png" class="d-block"  alt="...">
+            <img src="Banner/b3.png" class="d-block" width="100%" height="100%"  alt="...">
           </div>
           <div class="carousel-item">
-            <img src="Banner/b4.png" class="d-block"  alt="...">
+            <img src="Banner/b4.png" class="d-block" width="100%" height="100%"  alt="...">
           </div>
           <div class="carousel-item">
-            <img src="Banner/b5.png" class="d-block"  alt="...">
+            <img src="Banner/b5.png" class="d-block" width="100%" height="100%"  alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
