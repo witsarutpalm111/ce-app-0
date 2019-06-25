@@ -5,12 +5,10 @@ if (!$_SESSION["User_id"]){  //check session
 	  Header("Location:../../../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
     
 }else{
-    $palm = 0;
-    if(isset($_GET['id'])){
-        $palm = $_GET['id']; // user id
-    } //user_id num ไว้หา ID_com จาก Serial ตัวสุดท้ายที่อัพเดทเข้ามาของไอดีนั้นๆ
-// echo$palm;
-    $p = "SELECT com.User_id FROM com WHERE com.User_id=$palm";
+    $user_id = $_POST['em_user'];
+    $serial = $_POST['em_serial'];
+
+    $p = "SELECT com.User_id FROM com WHERE com.User_id=$user_id";
     $result5 = mysqli_query($connect,$p);
     $row = mysqli_fetch_array($result5);
     if(!$row){
@@ -49,8 +47,13 @@ if (!$_SESSION["User_id"]){  //check session
 <body>
     <br><br>
     <div style="text-align:center; color:white;"><h4>
-    <form action="Insert_Update_data.php?AAAA=<?php echo $palm ?>" id="Form_data" method="post">
-    
+    <form action="Insert_Update_data.php" id="Form_data" method="post">
+       
+        
+        <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
+        <input type="hidden" name="em_serial" value="<?php echo$serial ?>">
+
+        
     <label>ผลการซ่อม : </label>
     <select name="ddl" id="ddl" required>
         <option hidden selected> -- select an option -- </option>
@@ -77,7 +80,7 @@ if (!$_SESSION["User_id"]){  //check session
     <input type="text" name="Note">
     <br><br>
     <button type="summit" class="btn btn-warning text-danger btn-sm">summit</button>
-    <a href="../view_detail_repair/view_user.php?id=<?php echo$palm ?>" class="btn btn-success btn-sm">กลับ</a>
+    <a href="../view_detail_repair/view_user.php?id=<?php echo$user_id ?>" class="btn btn-success btn-sm">กลับ</a>
 
     </form></h4>
 </div>

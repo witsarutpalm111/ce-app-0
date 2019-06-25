@@ -10,10 +10,8 @@ session_start();
       }
       date_default_timezone_set("Asia/Bangkok");
 
-     $palm = 0;
-     if(isset($_GET['AAAA'])){
-         $palm = $_GET['AAAA']; //user name
-     }
+      $user_id = $_POST['em_user'];
+      $serial = $_POST['em_serial'];
    
            $pp = "SELECT com.ID_com FROM com WHERE com.User_id=$palm ORDER BY id DESC LIMIT 1";
            $result = mysqli_query($connect,$pp); 
@@ -25,6 +23,7 @@ session_start();
        $count ="SELECT update_com.count FROM update_com,com WHERE com.ID_com = update_com.ID_com AND com.User_id=$palm ORDER BY update_com.count DESC LIMIT 1";
       $resultcount = mysqli_query($connect,$count);
       $rowcount = mysqli_fetch_array($resultcount);
+      
       $Nub = $rowcount['count'];
       if($rowcount){
         $Nub += 1;
@@ -32,11 +31,7 @@ session_start();
       else{
         $Nub = 1;
       }
-   //   if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
-   //      $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
-   //   }else{
-   //      $ddl = $_POST['ddl'];
-   //   }
+   
 
      if($_POST['txt_box'] == 'อื่นๆ'){ //สองอันนี้ต้องเลือก 1 อัน
         $ddl = $_POST['txt_box'];   //มันลง Data bese เป็นคำว่าอื่นๆต้องแก้ไข
@@ -53,8 +48,12 @@ session_start();
 
     $sql = "Insert into update_com"
     . "(`ID_com`, `Status_com`, `Detail_com`, `Note_com`, `Price_com`, `Time_update`,`count`) value('$RR','$ddl','$Detail','$Note','$Price','$Date' ,'$Nub')";
-    $result1 = mysqli_query($connect,$sql); 
+    if($result1 = mysqli_query($connect,$sql)){
+
+      Header("Location:../view_detail_repair/view_user.php");
+
+    } 
     
-    Header("Location:../view_detail_repair/view_user.php?id=$palm");
+    
    
       ?>

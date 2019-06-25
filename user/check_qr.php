@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
+    session_start();
     require './../DB_ce-app/User.php';
     if(isset($_GET['id_com'])){
         $palm = $_GET['id_com'];
@@ -18,7 +19,7 @@
     }else{
         // กรณีเข้าจากหน้าเว็บ
         // echo"5555555555555555555555555";
-        $user_id = $_POST['em_User'];
+        $user_id = $_SESSION['User_id'];
         $serial = $_POST['em_Serial'];
 
         $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname

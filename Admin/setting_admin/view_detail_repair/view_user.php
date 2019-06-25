@@ -82,15 +82,20 @@ $result = mysqli_query($connect,$p);
                 <td><?php echo $row['Detail_com']?></td>
                 <td><?php echo $row['Note_com']?></td>
                 <td><?php echo $row['Price_com']?></td>
-                <td><a href="../Edit/form_edit_view.php?edit=<?php echo $row['Time_update']?>&id=<?php echo $palm ?>" class="btn btn-warning" >Edit</a></td>
-                <td><a href="../delete/delete_view_user.php?delete=<?php echo $row['Time_update']?>&id=<?php echo $palm ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a></td>
+                <td><a href="../Edit/form_edit_view.php?edit=<?php echo $row['Time_update']?>&id=<?php echo $user_id ?>" class="btn btn-warning" >Edit</a></td>
+                <td><a href="../delete/delete_view_user.php?delete=<?php echo $row['Time_update']?>&id=<?php echo $user_id ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a></td>
 
             </tr>
             <?php }?>
         </table>
+        <form action="../Add_data_repair/Update_data.php" method="post">
         <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
-        <a href="../Add_data_repair/Update_data.php?id=<?php echo$palm ?>" class="btn btn-success">เพิ่มข้อมูล</a>
+        <input type="submit" value="เพิ่มข้อมูล" class="btn btn-success">
+        <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
+        <input type="hidden" name="em_serial" value="<?php echo$serial ?>">
 
+        </form>
+        
     </div>
 
 </body>

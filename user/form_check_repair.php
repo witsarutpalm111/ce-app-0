@@ -1,5 +1,13 @@
 <?php  
-// require './../DB_ce-app/User.php';
+session_start();
+ require './../DB_ce-app/User.php';
+ if (!$_SESSION["User_id"]){  //check session
+ 
+    Header("Location:../Login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+exit();
+}else{
+    $user_id = $_SESSION["User_id"];
+}
 $palm = 0;
     if(isset($_GET['alert'])){
         $palm = $_GET['alert'];
@@ -47,14 +55,25 @@ $palm = 0;
 
                 <div class="input-group mb-3 ml-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">User Name & Serial Number</span>
+                        <span class="input-group-text"> Serial Number</span>
                     </div>
-                    <input type="text" aria-label="User_Name" class="form-control" 
-                    placeholder="User name" name="em_User" required >
+                    <!-- <input type="text" aria-label="User_Name" class="form-control" 
+                    placeholder="User name" name="em_User" required > -->
 
-                    <input type="text" aria-label="Serial_Number" class="form-control"
+                    <select class="custom-select" id="inputGroupSelect01" name="em_Serial" required>
+                                                <option hidden selected>...Choose...</option>
+                                                <?php
+                                                $serial = "SELECT Serial_number FROM com WHERE com.User_id = $user_id GROUP BY com.Serial_number";
+                                                $result = mysqli_query($connect,$serial);
+                                                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                                                ?>
+                                                <option value="<?php echo$row['Serial_number'] ?>"><?php echo$row['Serial_number'] ?></option>
+                                                <?php } ?>
+                                                <!-- <option value="Guest">Other</option> -->
+                    </select>
+                    <!-- <input type="text" aria-label="Serial_Number" class="form-control"
                     placeholder="Serial number" name = "em_Serial" required >
-                </div>
+                </div> -->
 
 
                 <!-- <label>User Name : </label>
