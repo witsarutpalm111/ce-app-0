@@ -17,6 +17,7 @@ $row = mysqli_fetch_array($result5);
     if($row>0){
 
         echo "<script>alert('User_id นี้มีผู้ใช้ไปแล้วค่ะ');history.back;</script>";
+        
       
     // ติดปัญหา
 

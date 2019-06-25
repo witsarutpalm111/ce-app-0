@@ -52,6 +52,9 @@
             margin: 35px;
             background-position: center;	
         }
+        #now {
+            margin-left : 27%;
+        }
     </style>    
 
     <!-- <style type="text/css">
@@ -65,16 +68,27 @@
             margin:0px;
             height:100%;
         }
+        #but2{       
+            width: 120px;
+            padding: 0px;
+            margin: 10px;	
+        }
     </style>
+
+    <style type="text/css">/* เอาscrollup-down ออก */
+        html, body { overflow:  hidden; }       
+    </style>
+
 </head>
 
-<body style="background-image: url(BG/wall3.jpg); background-repeat: no-repeat;background-size:100%;">
-    <div class="container h-90">
-        <div>
-            <div class="row mb-3 mt-0"
+
+<body style="background-image: url(BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+    <div class="container h-90"  style="text-align: center;">
+        <div id="now" style="text-align: center;">
+            <!-- <div class="row mb-3 mt-0"
                 style="background-image: url(BG/123.jpg); background-repeat: no-repeat; background-position: center ;background-size:77%;">
                 <div class="col-1"></div>
-                <div class="col-5">
+                <div class="col-5"> -->
                     <form action="LoginForm.php" id="FormLogin" method="post" style="width:100%;">
 
                         <div class="container h-100" style="min-height:93vh;">
@@ -101,14 +115,14 @@
                                 <br><br>
 
                                 <div style="text-align: center;">
-                                    <input type="submit" class="btn btn-dark" name="submit" value="Sign in" />
-                                    <a href="user/add_user/Forminsert_user2.php" class="btn btn-dark">Sign up</a>
+                                    <input type="submit" id="but2" class="btn btn-outline-light" name="submit" value="Sign in" />
+                                    <a href="user/add_user/Forminsert_user2.php" id="but2" class="btn btn-outline-light">Sign up</a>
                                 </div>                               
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
 </body>
