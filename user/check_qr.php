@@ -66,11 +66,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My list</title>
 
-    <style>/*style ของ Background*/
+    <!-- <style>/*style ของ Background*/
         body {
             background-color: darkslategray;
         }
-    </style>
+    </style> -->
 
     <style type="text/css">
         html, body{
@@ -82,7 +82,7 @@
 
     <style>
         #text1 {
-            color: white;
+            color: black;
         }
         #but1{       
             width: 200px;
@@ -94,7 +94,7 @@
 </head>
 
 
-<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+<body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
     <?php   
    
     ?>
@@ -146,7 +146,7 @@
     </div><br>
 
     <div style="text-align:center;">
-        <a id="but1" href="user_page.php" class="btn btn-outline-light" class="ml-3">Back</a>
+        <a id="but1" href="form_check_repair.php" class="btn btn-outline-dark" class="ml-3">กลับ</a>
     </div>
 
 </body>

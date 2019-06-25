@@ -164,7 +164,7 @@
                             
                                     <div style="text-align: center;">
                                         <input type="submit" class="btn btn-dark" name="Save" value="Save" />
-                                        <a href="../../Login.php" class="btn btn-dark">Back Login</a>
+                                        <a href="../../Login.php" class="btn btn-dark">Back to Login</a>
                                     </div><br>
                        
                                 </div>

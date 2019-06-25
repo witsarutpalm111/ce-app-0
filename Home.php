@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Home</title>
 
     <style>
       img.d-block{
@@ -21,17 +21,18 @@
       }
       section.ma{
         height:100%;
-        margin-top: 20px;
-        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: 20px;
         margin-right: 25px;
         margin-left: 25px;
       }
       .footer {
+        font-size : 20px;
         position:relative;
         left: 0;
         bottom:0;
         width: 100%;
-        background-color: darkred;
+        background-color: #FF3333;
         color: white;
         text-align: center;
         height:75;
@@ -53,7 +54,7 @@
     <section id="header" class="mb-3">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="img/cat.jpg" width="30" height="30" alt="">Computer Engineer
+          <img src="img/pro0.png" width="30" height="30" alt="">Computer Engineer
         </a>
         <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
       </nav>
@@ -64,16 +65,20 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="Banner/สาขา.jpg" class="d-block"   alt="...">
+            <img src="Banner/b2.png" class="d-block"   alt="...">
           </div>
           <div class="carousel-item">
-            <img src="Banner/palmm.jpg" class="d-block"  alt="...">
+            <img src="Banner/b3.png" class="d-block"  alt="...">
           </div>
           <div class="carousel-item">
-            <img src="Banner/tree.jpg" class="d-block"  alt="...">
+            <img src="Banner/b4.png" class="d-block"  alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="Banner/b5.png" class="d-block"  alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -87,35 +92,34 @@
       </div>
     </section>
     <section id="content" class="ma" >
-      <div class="row mb-3">
-        
+      <div class="row mb-3">       
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/cat2.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro1.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ลง Window</h5>
-              <p class="card-text">ลบข้อมูลทั้งหมดในเครื่องและทำการลงโปรแกรมใหม่</p>
-              <a href="Login.php" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <p class="card-text">แบ๊กคัพข้อมูล แล้วทำการลงวินโดว์ใหม่</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/cat.jpg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro2.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ล้างเครื่อง</h5>
-              <p class="card-text">example.example.example.example.</p>
-              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <p class="card-text">ล้างข้อมูลภายในเครื่อง เช่น ไฟล์ขยะ แคช และอื่นๆ</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro3.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ทำความสะอาด</h5>
-              <p class="card-text">example.example.example.example.</p>
-              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <p class="card-text">ทำความสะอาดเครื่องคอมพิวเตอร์ ขจัดฝุ่นทั้งหมด</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
@@ -123,31 +127,31 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro4.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
-              <h5 class="card-title">ตรวจสภาพเครือง</h5>
-              <p class="card-text">example.example.example.example.</p>
-              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <h5 class="card-title">ตรวจสภาพเครื่อง</h5>
+              <p class="card-text">ตรวจเช็คสภาพฮาร์ดแวร์และส่วนประกอบต่างๆอย่างละเอียด</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro5.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">อาการจอฟ้า</h5>
-              <p class="card-text">example.example.example.example.</p>
-              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <p class="card-text">แก้ปัญหาหน้าจอฟ้า ให้คอมกลับสู่สภาพปกติ</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
     </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:15rem;" >
-            <img src="img/ww.jpeg" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro6.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ปัญหาอื่นๆ</h5>
-              <p class="card-text">example.example.example.example.</p>
-              <a href="#" id="bb" class="btn btn-outline-danger">เลือก</a>
+              <p class="card-text">ปัญหาอื่นๆ สามารถติดต่อสอบถามกันก่อนได้ค่ะ</p>
+              <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
         </div>
@@ -158,7 +162,7 @@
 <section>
  
   <div class="footer">
-    <small>Footer</small>
+    <small>ติดต่อสอบถามข้อมูลได้ที่ : 084-178-2616 หรือ อาคาร47 ห้อง4765 แขวงดุสิต เขตดุสิต กรุงเทพ 10300</small>
   </div>
 </section>
 

@@ -30,12 +30,20 @@ $row = mysqli_fetch_array($result1);
      <title>Document</title>
 
      <link rel="stylesheet" href="scrollbar.css">
+
+     <style>
+        #but1 {       
+            width: 200px;
+            padding: 0px;
+            margin: 20px;	
+        }
+     </style>
  </head>
 
 
  <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
- <div class="container"> 
-    ID Order : <?php echo$row['id_order'] ?><br>
+ <div class="container"> <br><br>
+    <h3>ID Order : <?php echo$row['id_order'] ?></h3>
     Time Order : <?php echo$row['date_order'] ?><br>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -58,8 +66,8 @@ $row = mysqli_fetch_array($result1);
                     <?php }?>
 
                 </table>
-                ราคารวม <?php echo $row['order_price']?> <br>
-                สถานะ
+                <h5>ราคารวม : <?php echo $row['order_price']?> บาท</h5><br>
+                สถานะ :
                 <!-- <button id="444">ยังไม่ได้รับการยืนยันค่ะ</button> -->
                 <?php 
                 if($row['status_order'] == ''){
@@ -67,24 +75,25 @@ $row = mysqli_fetch_array($result1);
                 }else{
                     echo"<button id=123 disabled>ยืนยันการซ่อมเรียบร้อยค่ะ</button>";
                 }
-                ?><br>
-                <a href="form_check_repair.php" id="111" style="display: none">>ตรวจสอบการซ่อม</a>
+                ?><br><br>
+                <a href="form_check_repair.php" id="111" class="btn btn-outline-danger" style="display: none">ตรวจสอบการซ่อม</a>
             </div>
         </div>
     </div><br>
 
     <div style="text-align:center;" >
-        <a  href="check_order.php" class="btn btn-outline-dark" class="ml-3">Back</a>
+        <a  href="check_order.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
     </div>
     <script>
-    $(document).ready(function () {
-        
-        if($('#123').text() == 'ยังไม่ได้รับการยืนยันค่ะ'){
-            
-            
-        }else{
-            $("#111").show("slow");
+    $(document).ready(function () {        
+        if($('#123').text() == 'ยังไม่ได้รับการยืนยันค่ะ')
+        {
+                   
+        }
 
+        else
+        {
+            $("#111").show("slow");
         }
     });
     </script>

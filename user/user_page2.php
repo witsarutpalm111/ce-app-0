@@ -65,7 +65,7 @@ $row = mysqli_fetch_array($resalt);
       </div>
     </li> -->
     <li id="a" class="nav-item">
-      <a class="nav-link" href="../shopping/list_shopping.php">My list</a>
+      <a class="nav-link" href="../shopping/list_shopping.php">Shopping list</a>
     </li>
     <li id="a" class="nav-item">
       <a class="nav-link" href="../about.php">About</a>
