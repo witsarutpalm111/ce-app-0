@@ -1,73 +1,40 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<h3><span style="font-family: inherit;"><h3 style="font-weight: bold;"><b style="font-family: inherit;"><span><img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/Capture2%20%281%29.PNG" alt="" width="70" height="58" role="presentation">รายวิชาที่มีอยู่</span></b>
-</h3>
-<p><b style="font-size: 1rem;"><span></span></b></p>
-</span>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 mb-4 col-md-6">
-            <div class="thumbnail">
-                <div class="caption">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="thumbnail" style="text-align: center;">
-                                <img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/01_Health_Medical%20%282%29.png" alt="..." width="378" height="213" role="presentation" class="img-responsive atto_image_button_text-bottom">
-                            </div>
-                            <div class="col-md-14">
-                                <h4 style="text-align: center;"><span style="font-family: inherit;">22222</span></h4>
-                                <h5 align="center">ผศ.ศรีสุวรรณ เกษมสวัสดิ์</h5>
-                            </div>
-                            <p style="text-align: right;"><a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"></a><a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" style="font-size: 0.9375rem;">เพิ่มเติม...</a></p>
-                        </div>
-                        <div id="collapseTwo" class="collapse" data-parent="#accordion" style="">
-                            <div class="card-body">กลุ่มวิชามนุษยศาสตร์และสังคมศาสตร์
-                                <br>ตำแหน่ง:
-                                <br>อีเมล์:
-                                <br>ที่ตั้งสำนักงาน:
-                                <br>วุฒิการศึกษา: </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </div>
-</div>
-
-
-
-
-<p><br></p>
-</h3>
-<h3></h3>
-<h3><b><span><img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/Capture2%20%281%29.PNG" alt="" width="70" height="58" role="presentation">ข่าวประชาสัมพันธ์ประจำรายวิชา</span></b></h3><br>
-<div class="row container-fluid">
-    <div class="col-md-4">
-        <img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/860f48425f3ada2f4127cd29093bcd7a533108c0%20%281%29.png" alt="" width="1140" height="420" role="presentation" class="img-responsive atto_image_button_text-bottom">
-        <h3>CEO</h3>
-        <p style="font-size: 0.9375rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis, repellat mollitia beatae hic voluptatum deleniti.</p>
-        <p style="text-align: right; font-size: 0.9375rem;"><a href="http://gen-ed.ssru.ac.th/th/news/view/pr-ge-21-06-62-001" target="_blank">อ่านเพิ่มเติม...</a></p>
-    </div>
-    <div class="col-md-4">
-        <img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/new-test-1%20%283%29.png" alt="" width="1140" height="420" role="presentation" class="img-responsive atto_image_button_text-bottom">
-        <h3>CTO</h3>
-        <p style="font-size: 0.9375rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis, repellat mollitia beatae hic voluptatum deleniti.</p>
-        <p style="text-align: right; font-size: 0.9375rem;"><a href="http://gen-ed.ssru.ac.th/th/news/view/pr-ge-21-06-62-001" target="_blank">อ่านเพิ่มเติม...</a></p>
-    </div>
-    <div class="col-md-4">
-        <img src="http://58.181.171.139/newmoodle/draftfile.php/5/user/draft/315226416/2019051015574860306715%20%281%29.png" alt="" width="1140" height="420" role="presentation" class="img-responsive atto_image_button_text-bottom">
-        <h3>CFO</h3>
-        <p style="font-size: 0.9375rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis, repellat mollitia beatae hic voluptatum deleniti.
-        </p>
-        <p style="text-align: right; font-size: 0.9375rem;"><a href="http://gen-ed.ssru.ac.th/th/news/view/pr-ge-21-06-62-001" target="_blank">อ่านเพิ่มเติม...</a></p>
-    </div>
-</div>
-<!-- Close Row 3 -->
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</body>
+</html>
