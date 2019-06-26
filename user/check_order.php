@@ -43,7 +43,7 @@ $result = mysqli_query($connect,$search_order);
  <div class="container"> <br>   
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table table-dark" id="user_data"><br>
+                <table class="table-responsive-xl table table-sm table-dark" id="user_data"><br>
              
                     <tr style="text-align:center">
                         <th>ID Order</th>
