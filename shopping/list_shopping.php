@@ -66,19 +66,24 @@ $sumtime = mysqli_fetch_array($resultsum);
             color: white;       
             padding-right: 500px;
         }
-        /* .input-group.mb-3 {
-            color: rgb(255, 255, 255);
-            background-color: rgb(255, 255, 255);
-            border-color: rgb(255, 255, 255);
-        } */
-        /* a{
-            justify-items: center;
-        } */
+        body {
+            background-image: url('../BG/wh1.jpg');
+            background-position: center;
+            background-repeat: repeat;  
+            background-size: cover; 
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        tr {
+            text-align:center;
+        }
     </style>
 
 </head>
 
-<body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+<body>
     <div class="container"><br><br>      
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
@@ -104,19 +109,20 @@ $sumtime = mysqli_fetch_array($resultsum);
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <table class="table-responsive-xl table table-sm table-dark" id="user_data">
-                    <tr style="text-align:center">
+                    <tr>
                         <th>ID</th>
                         <th>Detail</th>
                         <th>Price</th>
                         <th>Time</th>                        
                         <th>Remove</th>
                     </tr>
+
                     <?php   
                     $sum=0;
                     
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                     ?>
-                    <tr style="text-align:center" class="pa">
+                    <tr class="pa">
                         <td><?php echo $row['id_list']?></td>
                         <td><?php echo $row['List'];
                         ?>
@@ -138,6 +144,7 @@ $sumtime = mysqli_fetch_array($resultsum);
                         ?></td>
                         <td><a href="remove.php?id=<?php echo $row['id_list']?>" class="btn btn-outline-danger" id="remove" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">ลบรายการ</a></td>
                     </tr>
+
                     <?php }?>
                 </table>
 
@@ -221,7 +228,7 @@ $sumtime = mysqli_fetch_array($resultsum);
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
                     <table class="table-responsive-sm table table-sm table-dark" width="100%" >
-                        <tr style="text-align:center">
+                        <tr>
                             <th width="25%">ID</th>
                             <th width="25%">Detail</th>
                             <th width="25%">Price</th>
@@ -231,7 +238,7 @@ $sumtime = mysqli_fetch_array($resultsum);
                         <?php
                     while($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
                 ?>
-                        <tr style="text-align:center" >
+                        <tr>
                             <td><?php echo $row1['id_list']?></td>
                             <td><?php echo $row1['List']?></td>
                             <td><?php echo $row1['Price']?></td>

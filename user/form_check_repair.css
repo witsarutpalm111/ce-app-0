@@ -21,11 +21,12 @@ body {
     margin: 15px;
 }
 #bt1 {
+    text-align : center;
     margin-left: 150px;
     margin-bottom: 20px;
 }
 #bt2 {
-
+    text-align : center;
     margin-right: 200px;
 }
 .container{
