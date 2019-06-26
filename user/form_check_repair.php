@@ -30,28 +30,7 @@ $palm = 0;
     <title>form_check_repair</title>
 
     <link rel="stylesheet" href="../scrollbar.css">
-
-    <style>
-        #but1{       
-            width: 150px;
-            padding: 0px;
-            margin: 15px;
-
-        }
-        #but2{       
-            width: 150px;
-            padding: 0px;
-            margin: 15px;
-        }
-        #bt1 {
-            margin-left: 150px;
-            margin-bottom: 20px;
-        }
-        #bt2 {
-
-            margin-right: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="form_check_repair.css">
 
     <style type="text/css">/* เอาscrollup-down ออก */
         html, body { overflow:  hidden; }       
@@ -59,11 +38,11 @@ $palm = 0;
 </head>
 
 
-<body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+<body>
     <form action = "check_qr.php" id ="form_data" method = "post">
         <fieldset><br><br><br>
-            <div class="container" style="text-align : center;">
-                <legend style="text-align : center;"><h3>บันทึกข้อมูล</h3></legend><br><br>
+            <div class="container">
+                <legend><h3>บันทึกข้อมูล</h3></legend><br><br>
                 <div class="container h-100" style="min-height:93vh;">
 
                     <div class="input-group mb-3 ml-3">

@@ -1,0 +1,36 @@
+body {
+    background-image: url(../BG/wh1.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position: center;
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+#but1{       
+    width: 150px;
+    padding: 0px;
+    margin: 15px;
+
+}
+#but2{       
+    width: 150px;
+    padding: 0px;
+    margin: 15px;
+}
+#bt1 {
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+#bt2 {
+
+    margin-right: 200px;
+}
+.container{
+    text-align : center;
+}
+legend{
+    text-align : center;
+}

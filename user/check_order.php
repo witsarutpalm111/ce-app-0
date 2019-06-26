@@ -26,26 +26,20 @@ $result = mysqli_query($connect,$search_order);
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>check_order</title>
-
+     
      <link rel="stylesheet" href="../scrollbar.css">
-
-     <style>
-        #but1{       
-            width: 150px;
-            padding: 0px;
-            margin: 15px;	
-        }
-    </style>
+     <link rel="stylesheet" href="check_order.css">
+    
  </head>
 
 
- <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+ <body>
  <div class="container"> <br>   
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <table class="table table-dark" id="user_data"><br>
              
-                    <tr style="text-align:center">
+                    <tr>
                         <th>ID Order</th>
                         <th>Time Order</th>
                         <th>Price</th>
@@ -55,7 +49,8 @@ $result = mysqli_query($connect,$search_order);
                     <?php          
                         while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                     ?>
-                    <tr style="text-align:center">
+
+                    <tr>
                         <td> <?php echo $row2['id_order']?></td>
                         <td> <?php echo $row2['date_order']?></td>
                         <td><?php echo $row2['order_price']?></td>
@@ -65,6 +60,7 @@ $result = mysqli_query($connect,$search_order);
                         </form>
                     </td>
                     </tr>
+                    
                     <?php }?>
 
                 </table>

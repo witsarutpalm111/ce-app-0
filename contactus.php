@@ -20,12 +20,13 @@
   </head>
 
 
-  <body>
-    <section id="contact">
-       <div class="container"><br><br>
-           <h2 class="text-center text-uppercase">contact us</h2><br>
-           <h5 class="text-center w-75 m-auto">สามารถติดต่อทางทีมงานสาขาวิศวกรรมคอมพิวเตอร์ ได้ผ่านช่องทางดังนี้</h5>
-           <div class="row">
+<body>
+    <div class="container">
+        <section id="contact"><br><br>      
+          <h2 class="text-center text-uppercase">contact us</h2><br>
+          <h5 class="text-center w-75 m-auto">สามารถติดต่อทางทีมงานสาขาวิศวกรรมคอมพิวเตอร์ ได้ผ่านช่องทางดังนี้</h5>
+           
+          <div class="row">
              <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                <div class="card border-0">
                   <div class="card-body text-center">
@@ -62,19 +63,20 @@
                   </div>
                 </div>
              </div>
-           </div>
-       </div>
-    </section>
+          </div>       
+        </section>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
-            <div class="down">
-                <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
-                <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
-            </div>
+    <div class="down">
+        <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
+        <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
+    </div>
             
 </body>
 </html>

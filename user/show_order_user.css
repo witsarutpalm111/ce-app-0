@@ -1,0 +1,15 @@
+body {
+    background-image: url('../BG/wh1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;  
+    /* background-size: cover;  */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+#but1 {       
+    width: 200px;
+    padding: 0px;
+    margin: 20px;	
+}

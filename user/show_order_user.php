@@ -27,21 +27,15 @@ $row = mysqli_fetch_array($result1);
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Document</title>
+     <title>show_order_user</title>
 
-     <link rel="stylesheet" href="scrollbar.css">
+     <link rel="stylesheet" href="../scrollbar.css">
+     <link rel="stylesheet" href="show_order_user.css">
 
-     <style>
-        #but1 {       
-            width: 200px;
-            padding: 0px;
-            margin: 20px;	
-        }
-     </style>
  </head>
 
 
- <body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+ <body>
  <div class="container"> <br><br>
     <h3>ID Order : <?php echo$row['id_order'] ?></h3>
     Time Order : <?php echo$row['date_order'] ?><br>
@@ -79,11 +73,12 @@ $row = mysqli_fetch_array($result1);
                 <a href="form_check_repair.php" id="111" class="btn btn-outline-danger" style="display: none">ตรวจสอบการซ่อม</a>
             </div>
         </div>
-    </div><br>
+    </div>
 
     <div style="text-align:center;" >
         <a  href="check_order.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
     </div>
+
     <script>
     $(document).ready(function () {        
         if($('#123').text() == 'ยังไม่ได้รับการยืนยันค่ะ')
@@ -97,5 +92,6 @@ $row = mysqli_fetch_array($result1);
         }
     });
     </script>
+
  </body>
  </html>

@@ -20,7 +20,6 @@
 
 <body>
     <div class="container"><br><br>
-
         <!--ส่วนของเนื้อหา ข้างใต้ Nav Bar-->
         <div class="head">
             <h2 class="serif">OUR TEAM</h2><br>
@@ -51,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col">
                     <div class="card border-0" style="width:15rem;" >
                         <img src="profilepic/hngeng.jpg" class="card-img-top" alt="..." style="height:230px;">
                         <div class="card-body">

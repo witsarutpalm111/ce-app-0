@@ -1,7 +1,25 @@
-body{
-    background-image: url(BG/wh1.jpg);
-    background-repeat: no-repeat;
-    background-size:100%;
+/* @media screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+} */
+body {
+    background-image: url('BG/wh1.jpg');
+    background-position: center;
+    background-repeat: repeat;  
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+h2 {
+    color: black;
+    text-align:center;            
+}
+h5 {
+    color: black;
+    text-align:center;
 }
 #but1{      
     text-align: center;
@@ -16,14 +34,6 @@ body{
     width: 200px;
     padding: 0px;
     margin: 35px;	
-}
-h2 {
-    color: black;
-    text-align:center;            
-}
-h5 {
-    color: black;
-    text-align:center;
 }
 #contact{
   background-color: transparent;
