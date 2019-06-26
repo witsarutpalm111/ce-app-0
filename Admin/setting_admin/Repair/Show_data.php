@@ -27,6 +27,7 @@ if (!isset($_SESSION["User_id"])){
 
 
     $result = mysqli_query($connect,$p);    
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC)
 ?>
 <head>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -37,79 +38,62 @@ if (!isset($_SESSION["User_id"])){
 
 <meta charset="UTF-8">
     <style>
-    label{
-        color:#FFFF66;
-    }
-        body{
-        background-color:#800000;
-        text-align: right;
+        .show-qr{
+            position: relative;
+            left:40%;
+            /* top: 20%; */
+            /* margin-bottom:100px;  */
         }
         h1{
-            color:#66FF99;
             text-align: center;
         }
-        tr{
-            color:#FFFF66;
+        .scan{
             text-align: center;
         }
-        div{
-            
+        .boom{
             text-align: center;
         }
-        
+        html, body { 
+            overflow-x:  hidden; 
+        }
     </style>
   
 </head>
 <body>
     <h1> แสดงข้อมูล </h1>
-    <!-- <form action = "ShowdataAdmin.php" id ="FormSearch" method = "post">
-        
-            <label>Search Data : </label>
-            <input type="search"   id="em_Search" required name="em_Search" >
-            <input type="submit" name="submit" value="Serach"/>
+    <div>
+            <div  class="scan">
+                <label>สแกนเพื่อตรวจสอบสถานะการซ่อมของคุณ</label>
+        </div><br>
 
-    </form> -->
-    <table border="5" width = "100%">
-        <tr>
-            <th>ชื่อ</th>
-            <th>นามสกุล</th>
-            <th>User Name</th>
-            <th>ID_com</th>
-            <th>Recieve</th>
-                 
+        <div class="show-qr">
+                <div id ="<?php echo $row['ID_com']?>"></div>
+        </div><br>
+
+            <div class="scan">
+                <label >เก็บไว้เพื่อนำมารับคอมพิวเตอร์ของคุณตอนซ่อมเสร็จแล้ว</label>
+            </div> <br>
+
+            <div class="show-qr">
+                <div id ="<?php echo $row['Recieve_ID']?>"></div>
+            </div>  
             
-            
-            
-            
-        </tr>
-        <?php   
-        
-            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-        ?>
-        <tr>
-                <td><?php echo $row['fname']?></td>
-                <td><?php echo $row['lname']?></td>
-                <td><?php echo $row['User_id']?></td>
-                <td> <a href="../../../user/check_qr.php?id_com=<?php echo $row['ID_com']?>"><div id ="<?php echo $row['ID_com']?>"></div></a></td>
-                <td><div id ="<?php echo $row['Recieve_ID']?>"></td>
-                
-                
-                
-        </tr>
+    </div>
+   
         <script type="text/javascript">
 
-            new QRCode(document.getElementById("<?php echo $row['ID_com']?>"),"10.71.6.203/ce_app/user/check_qr.php?id_com=<?php echo $row['ID_com']?>");
+            new QRCode(document.getElementById("<?php echo $row['ID_com']?>"),"10.71.7.129/ce_app/user/check_qr.php?id_com=<?php echo $row['ID_com']?>");
             new QRCode(document.getElementById("<?php echo $row['Recieve_ID']?>"), "<?php echo $row['Recieve_ID']?>");
 
         </script>
 
-            <?php }?>
-            
-             
-    </table>
     <br><br>
+   <div class="boom">
     <a href="../../admin_page.php"><button type="button">back</button></a>
-    <a href="../../../Login.php"><button type="button">Log out</button></a>
+    <button onclick="window.print()">Print</button>
+    <!-- <button href="../../../Login.php"><button type="button">Log out</button></a> -->
+   </div>
+ <br>
     
 </body>
 

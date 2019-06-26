@@ -5,8 +5,16 @@
     Header("Location:../Login.php");
     exit();
   }
+  $palm = 0;
+    if(isset($_GET['alert'])){
+        $palm = $_GET['alert'];
+    }
+    if($palm == 1){
+       echo "<script>alert('กรุณาเลือกรายการจากใน บริการที่ต้องการซื้อ \\nก่อนทำการกด confirm ค่ะ');</script>";
+    }
 
 require './../DB_ce-app/User.php';
+
 $AA = $_SESSION["User_id"];
 $p1 = "SELECT * FROM price_rate";
 $result1 = mysqli_query($connect,$p1);

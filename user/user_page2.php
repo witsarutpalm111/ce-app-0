@@ -9,6 +9,13 @@ if (!isset($_SESSION["User_id"])){  //check session
 }else{
     $palm = $_SESSION['User_id'];
 }
+$p = 0;
+    if(isset($_GET['alert'])){
+        $p = $_GET['alert'];
+    }
+    if($p == 1){
+       echo "<script>alert('เพิ่มลงในรายการสั่งซ่อมเรียบร้อยแล้วค่ะ\\nรอทางเจ้าหน้าที่ยืนยันรายการที่สั่งซ่อมนะคะ');</script>";
+    }
 $p ="SELECT * FROM user WHERE user.User_id = $palm";
 $resalt = mysqli_query($connect,$p);
 $row = mysqli_fetch_array($resalt);
