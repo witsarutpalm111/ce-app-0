@@ -108,7 +108,7 @@ $sumtime = mysqli_fetch_array($resultsum);
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table-responsive-xl table table-sm table-dark" id="user_data">
+                <table class="table-responsive-xl table table-sm table-dark text-nowrap" id="user_data">
                     <tr>
                         <th>ID</th>
                         <th>Detail</th>
@@ -227,7 +227,7 @@ $sumtime = mysqli_fetch_array($resultsum);
 
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
-                    <table class="table-responsive-sm table table-sm table-dark" width="100%" >
+                    <table class="table-responsive-sm table table-sm table-dark text-nowrap" width="100%" >
                         <tr>
                             <th width="25%">ID</th>
                             <th width="25%">Detail</th>

@@ -39,7 +39,7 @@ $result = mysqli_query($connect,$p);
     <br>
 <div class="container">
 
-        <table class="table-responsive table-dark" id="user_data">
+        <table class="table-responsive table table-dark text-nowrap" id="user_data">
             <tr style="text-align:center">
                 <th>User id</th>
                 <th>Name</th>

@@ -13,7 +13,7 @@ $palm = 0;
         $palm = $_GET['alert'];
     }
     if($palm == 1){
-       echo "<script>alert('คุณกรอกข้อมูลไม่ถูกต้องค่ะ');</script>";
+       echo "<script>alert('คุณยังไม่ได้เลือก Serial Number ค่ะ');</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -32,46 +32,52 @@ $palm = 0;
     <link rel="stylesheet" href="../scrollbar.css">
     <link rel="stylesheet" href="form_check_repair.css">
 
-    <style type="text/css">/* เอาscrollup-down ออก */
+    <!-- <style type="text/css">/* เอาscrollup-down ออก */
         html, body { overflow:  hidden; }       
-    </style>
+    </style> -->
 </head>
 
 
 <body>
+    <div class="form-body">
     <form action = "check_qr.php" id ="form_data" method = "post">
         
+        <div class="container">
+            <div class="head-h">
+                <h3>บันทึกข้อมูล</h3>
+            </div>
             <div class="container">
-                <div class="head-h">
-                    <h3>บันทึกข้อมูล</h3>
-                </div>
-                <div class="container">
 
-                    <div class="input-group">
-                        <div id="bt1" class="input-group-prepend">
-                            <span class="input-group-text"> Serial Number</span>
-                        </div>
-
-                        <select id="bt2" class="custom-select" id="inputGroupSelect01" name="em_Serial" required>
-                            <option hidden selected>Choose Serial Number</option>
-                            <?php
-                            $serial = "SELECT Serial_number FROM com WHERE com.User_id = $user_id GROUP BY com.Serial_number";
-                            $result = mysqli_query($connect,$serial);
-                            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                            ?>
-                            <option value="<?php echo$row['Serial_number'] ?>"><?php echo$row['Serial_number'] ?></option>
-                            <?php } ?>
-                            
-                        </select>
-                        <br><br>                       
+                <div class="input-group">
+                    <div id="bt1" class="input-group-prepend">
+                        <span class="input-group-text">Serial</span>
                     </div>
-                    <p>ปล.serial number จะได้รับเมื่อนำคอมพิวเตอร์มาที่ร้านค่ะ</p>    
+
+                    <select id="bt2" class="custom-select" id="inputGroupSelect01" name="em_Serial" required>
+                        <option hidden selected>Choose Serial Number</option>
+                        <?php
+                        $serial = "SELECT Serial_number FROM com WHERE com.User_id = $user_id GROUP BY com.Serial_number";
+                        $result = mysqli_query($connect,$serial);
+                        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                        ?>
+                        <option value="<?php echo$row['Serial_number'] ?>"><?php echo$row['Serial_number'] ?></option>
+                        <?php } ?>
+
+                    </select>
+                    <br><br>                       
+                </div>
+                <p>ปล.serial number จะได้รับเมื่อนำคอมพิวเตอร์มาที่ร้านค่ะ</p>   
+                <div>
                     <input type="submit" id="but1" class="btn btn-outline-dark" name="save" value="ตกลง"/>
                     <a href="user_page2.php" id="but2" class="btn btn-outline-dark">กลับ</a>
-                </div>
-            
+                </div> 
+                
             </div>
         
-    </form>
+        </div>
+    
+</form>
+    </div>
+   
 </body>
 </html>

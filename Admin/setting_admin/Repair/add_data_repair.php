@@ -58,10 +58,12 @@
 
             <input type="submit" class="btn btn-dark" name="save" value="save"/>
             <a href="../../admin_page.php" class="btn btn-dark">กลับ</a>
+            
 
         </div>
         </fieldset>
     </form>
     </div>   
+  
 </body>
 </html>

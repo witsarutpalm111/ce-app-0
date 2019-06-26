@@ -51,7 +51,7 @@ else{
 <body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br><br>
     <div class="container">
-        <table class="table-responsive-xl table table-sm table-dark" id="user_data" width="100%">
+        <table class="table-responsive-xl table table-sm table-dark text-nowrap" id="user_data" width="100%">
             <tr style="text-align:center">
                 <!-- <th width="10%">User id</th> -->
                 <th >Serial Num</th>

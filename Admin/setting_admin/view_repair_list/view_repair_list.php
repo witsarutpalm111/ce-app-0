@@ -37,7 +37,7 @@ $result = mysqli_query($connect,$p);
 <body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">   
 <br><br>
     <div class="container">
-        <table class="table table-dark" id="user_data">
+        <table class="table table-dark text-nowrap" id="user_data">
             <tr style="text-align:center">
                 <th>ID List</th>
                 <th>List</th>

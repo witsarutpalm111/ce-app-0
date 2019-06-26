@@ -45,12 +45,7 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>view_user</title>
 
-    <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style>
+    
 </head>
 <body>
     <br>
@@ -59,7 +54,7 @@ $result = mysqli_query($connect,$p);
     <button class="btn text-warning btn-secondary" disabled>User id : <?php echo$user_id ?></button>
 
     </div>
-        <table class="table table-dark" id="user_data">
+        <table class="table-responsive table table-dark text-nowrap" id="user_data">
             <tr style="text-align:center">
                 <th>Time</th>
                 <th>Status</th>
@@ -97,6 +92,6 @@ $result = mysqli_query($connect,$p);
         </form>
         
     </div>
-
+<br><br>
 </body>
 </html>

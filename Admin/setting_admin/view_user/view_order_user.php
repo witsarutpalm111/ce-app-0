@@ -50,7 +50,7 @@ $result = mysqli_query($connect,$p);
 <form action="order_user_list.php" method="post">
     
 
-<table class="table table-dark" id="user_data"  >
+<table class="table table-dark text-nowrap table-responsive" id="user_data"  >
 <br><br>
             <tr style="text-align:center">
                 <th>ID Order</th>

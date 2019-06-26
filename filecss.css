@@ -1,7 +1,7 @@
-@media screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
+@media only screen and (max-width: 720px) {
+   .forms-body{
+       display: none;
+   }
 }
 .bg-img {
     background-image: url('BG/key.jpg');

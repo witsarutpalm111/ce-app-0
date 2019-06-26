@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
+<?php
     session_start();
     require './../DB_ce-app/User.php';
     if(isset($_GET['id_com'])){
         $palm = $_GET['id_com'];
+    }
+    if($_POST['em_Serial'] =='Choose Serial Number'){
+              Header("Location:form_check_repair.php?alert=1");
+
     }
     // กรณีเข้ามากับ qr
     // echo$palm;
@@ -49,8 +53,9 @@
        
     
     ?>
+
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
@@ -59,95 +64,153 @@
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css.css">
+    <!-- <link rel="stylesheet" href="../css.css"> -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My list</title>
 
-    <!-- <style>/*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style> -->
-
     <style type="text/css">
-        html, body{
-            padding:0px;
-            margin:0px;
-            height:100%;
+        @media only screen and (min-width: 720px) {
+            .bg123 {
+                display: none;
+            }
         }
-    </style>
 
-    <style>
+        html,
+        body {
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+            max-height: 100%;
+            width: 100%;
+        }
+
         #text1 {
             color: black;
+            text-align: left;
+
         }
-        #but1{       
+
+        #but1 {
             width: 200px;
-            padding: 0px;
-            margin: 20px;	
+            padding-bottom: 0px;
+            justify-content: center;
+            /* margin-bottom: 30px; */
+
+        }
+
+        .but1 {
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        h1 {
+            padding-top: 20px;
+        }
+
+        .bg-123 {
+            background-image: url('../BG/key.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            /* height: 100%; */
+            width: 100%;
+            min-height: 100%;
+            /* min-height: 150vh; */
+            /* max-height: 100% */
+        }
+        .table-responsive{
+            width:100%;
         }
     </style>
 
 </head>
 
 
-<body style="background-image: url(../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
-    <?php   
-   
-    ?>
+<body>
+    <div class="bg-123">
+        <!-- ส่วนของตัวอักษรด้านบน -->
+        <div class="container">
+            <h1 class="text-center"> ผลการค้นหา </h1>
+            <div id="text1">
 
-
-    <!-- ส่วนของตัวอักษรด้านบน -->
-    <div id="text1" style="text-align:center"><br>
-        <h1> ผลการค้นหา </h1><br>  
-        <label>User Name : </label>
-        <?php echo $row1['User_id']?>
-        <label>Serial Number: </label>
-        <?php echo $row1['Serial_number']?>
-        <br>
-        <label>ชื่อ : </label>
-        <?php echo $row1['fname']?>
-        <label>นามสกุล : </label>
-        <?php echo $row1['lname']?>
-    </div>
-
-    <!-- ส่วนของตาราง -->
-    <div class="container">    
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table-responsive-xl table table-sm table-dark" id="user_data"><br>
-             
-                    <tr style="text-align:center">
-                        <th>Time stamp</th>
-                        <th>ผลการซ่อม</th>
-                        <th>รายละเอียดการซ่อม</th>
-                        <th>ราคา</th>
-                        <th>หมายเหตุ</th>
-                    </tr>
-
-                    <?php          
-                        while($row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
-                    ?>
-                    <tr style="text-align:center">
-                        <td> <?php echo $row2['Time_update']?></td>
-                        <td> <?php echo $row2['Status_com']?></td>
-                        <td><?php echo $row2['Detail_com']?></td>
-                        <td><?php echo $row2['Price_com']?></td>
-                        <td><?php echo $row2['Note_com']?></td>
-                    </tr>
-                    <?php }?>
-
-                </table>
+                <label>User Name : </label>
+                <?php echo $row1['User_id']?><br>
+                <label>Serial Number : </label>
+                <?php echo $row1['Serial_number']?>
+                <br>
+                <label>ชื่อ : </label>
+                <?php echo $row1['fname']?><br>
+                <label>นามสกุล : </label>
+                <?php echo $row1['lname']?>
             </div>
-        </div>
-    </div><br>
+            <!-- ส่วนของตาราง -->
+                <div class="table-responsive-xl">
+                <table class=" table table-sm text-nowrap mt-2" id="user_data">
+                <tr style="text-align:center" class="table-info">
+                    <th>Time stamp</th>
+                    <th>ผลการซ่อม</th>
+                    <th>รายละเอียดการซ่อม</th>
+                    <th>ราคา</th>
+                    <th>หมายเหตุ</th>
+                </tr>
 
-    <div style="text-align:center;">
-        <a id="but1" href="form_check_repair.php" class="btn btn-outline-dark" class="ml-3">กลับ</a>
+                <?php      
+                    $row_data = 1;  
+                      
+                        while($row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
+
+                            $i = $row_data%3;
+                            
+                    ?>
+                <tr id="row-data<?php echo $row_data?>" class="text-center">
+                    <td> <?php echo $row2['Time_update']?></td>
+                    <td> <?php echo $row2['Status_com']?></td>
+                    <td><?php echo $row2['Detail_com']?></td>
+                    <td><?php echo $row2['Price_com']?></td>
+                    <td><?php echo $row2['Note_com']?></td>
+                </tr>
+                <?php
+                    if($i == 1){
+                        echo"<script>
+                        $('#row-data$row_data').addClass('table-success');
+                        </script>";
+                    }else if($i == 2){
+                        echo"<script>
+                        $('#row-data$row_data').addClass('table-danger');
+                        </script>";
+                    }else{
+                        echo"<script>
+                        $('#row-data$row_data').addClass('table-warning');
+                        </script>";
+                    }
+                    
+                    $row_data += 1;
+                    
+                   
+                 }
+                    
+                 ?>
+
+            </table>
+                </div>
+            
+
+
+
+            <div class="but1">
+                <a id="but1" href="form_check_repair.php" class="btn btn-dark text-center mb-3">กลับ</a>
+
+            </div>
+
+        </div>
     </div>
 
 </body>
+
 </html>
