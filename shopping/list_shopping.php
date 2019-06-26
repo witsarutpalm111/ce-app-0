@@ -71,6 +71,9 @@ $sumtime = mysqli_fetch_array($resultsum);
             background-color: rgb(255, 255, 255);
             border-color: rgb(255, 255, 255);
         } */
+        /* a{
+            justify-items: center;
+        } */
     </style>
 
 </head>
@@ -100,7 +103,7 @@ $sumtime = mysqli_fetch_array($resultsum);
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table table-dark" id="user_data">
+                <table class="table-responsive-xl table table-sm table-dark" id="user_data">
                     <tr style="text-align:center">
                         <th>ID</th>
                         <th>Detail</th>
@@ -217,12 +220,12 @@ $sumtime = mysqli_fetch_array($resultsum);
 
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
-                    <table class="table table-dark" style="width:100%" >
+                    <table class="table-responsive-sm table table-sm table-dark" width="100%" >
                         <tr style="text-align:center">
-                            <th>ID</th>
-                            <th>Detail</th>
-                            <th>Price</th>
-                            <th>เพิ่มเข้า My List</th>
+                            <th width="25%">ID</th>
+                            <th width="25%">Detail</th>
+                            <th width="25%">Price</th>
+                            <th width="25%" style="text-align:left">เพิ่มเข้า My List</th>
 
                         </tr>
                         <?php
@@ -232,10 +235,11 @@ $sumtime = mysqli_fetch_array($resultsum);
                             <td><?php echo $row1['id_list']?></td>
                             <td><?php echo $row1['List']?></td>
                             <td><?php echo $row1['Price']?></td>
-                            <td class=" text-center">
-                                <div class="container ml-5">
+            
+                            <td style="justify-items: center;">
+                                <div class="container">
 
-                                    <div class="input_wrapper ml-5">
+                                    <div class="input_wrapper">
                                         <input type="checkbox" class="switch_4" name="checkbox[]"
                                             id="checkbox_<?php echo $row1['id_list']?>"
                                             value="<?php echo $row1['id_list']?>">

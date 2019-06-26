@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($result1);
     Time Order : <?php echo$row['date_order'] ?><br>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table table-dark" id="user_data"><br>
+                <table class="table-responsive-xl table table-sm table-dark" id="user_data"><br>
              
                     <tr style="text-align:center">
                         <th>ID Product</th>

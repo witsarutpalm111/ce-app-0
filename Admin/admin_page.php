@@ -51,16 +51,15 @@ else{
 <body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br><br>
     <div class="container">
-        <table class="table-responsive table-dark" id="user_data">
+        <table class="table-responsive-xl table table-sm table-dark" id="user_data" width="100%">
             <tr style="text-align:center">
-                <th>User id</th>
-                <th>Serial Num</th>
-
-                <th>Time</th>
-                <th>Status</th>
+                <!-- <th width="10%">User id</th> -->
+                <th >Serial Num</th>
+                <th >Time</th>
+                <th >Status</th>
                 <!-- <th>Detail</th> -->
                 
-                <th>View</th>
+                <th >View</th>
 
             </tr>
             <?php   
@@ -69,16 +68,16 @@ else{
             ?>
             
             <tr style="text-align:center" class="pa">
-                <td><?php echo $row['User_id']?></td>
-                <td><?php echo $row['Serial_number']?></td>
+                <!-- <td><?php echo $row['User_id']?></td> -->
+                <td ><?php echo $row['Serial_number']?></td>
 
-                <td><?php echo $row['Time_update']?></td>
-                <td><?php echo $row['Status_com']?></td>
+                <td ><?php echo $row['Time_update']?></td>
+                <td ><?php echo $row['Status_com']?></td>
                 <!-- ปัญหา -->
                 <!-- ทำเป็น form ส่งค่า serail ไปด้วย จะได้เช็ค 1 id หลายเครื่องได้-->
-                <td>
+                <td >
                     <form action="setting_admin/view_detail_repair/view_user.php" method="post">
-                        <input class="btn btn-info" value="View" type="submit">
+                        <input class="btn btn-info mr-3 mb-3" value="View" type="submit">
                         <input type="hidden" name="em_serial" value="<?php echo $row['Serial_number']?>">
                         <input type="hidden" name="em_user" value="<?php echo $row['User_id']?>">
 
