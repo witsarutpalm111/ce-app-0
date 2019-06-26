@@ -58,7 +58,7 @@
     <section id="header">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="img/pro0.png" width="30" height="30" alt="">Computer Engineer
+          <img src="img/pro0.png" width="40" height="40" alt=""> Computer Engineer
         </a>
         <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
       </nav>

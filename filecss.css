@@ -2,8 +2,8 @@
     .forms-body{
         display: none;
     }
-
 }
+
 .bg-img{
     background-image: url('BG/key.jpg');
     background-position: center;
@@ -20,19 +20,22 @@
     min-height: 100vh;
     margin: 0;
     padding: 0;
-
 }
-
+#but2{       
+    width: 150px;
+    padding: 0px;
+    margin: 20px;	
+}
 .forms-body {
     /* display: none; */
     position: absolute;
     max-height: 450px;
     max-width: 450px;
-    padding: 20px;
+    padding: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.664);
     border-radius: 25px;
 }
 

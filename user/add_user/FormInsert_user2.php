@@ -12,44 +12,19 @@
     <title>Register2</title>
 
     <link rel="stylesheet" href="../scrollbar.css">
-
-    <style>
-        #but1{
-            width: 150px;
-            padding: 0px;
-            margin: 15px;
-
-        }
-        #but2{
-            width: 150px;
-            padding: 0px;
-            margin: 15px;
-        }
-        #aa{
-            padding-left: 130px ;
-            padding-right: 230px ;
-        }
-        #ab{
-            padding-right: 23px ;
-        }
-        #ac{
-            padding-left: 70px ;
-        }
-    </style>
-
-    <!-- <style type="text/css">/* เอาscrollup-down ออก */
-        html, body { overflow:  hidden; }       
-    </style> -->
+    <link rel="stylesheet" href="register.css">
+ 
 </head>
 
 
-<body style="background-image: url(../../BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
-   
-<form action="InsertForm_user.php" id="formUser" method="post">
-            <div class="container" style="text-align : center;">               
-                <div class="container h-100" style="min-height:93vh;"><br><br>
-                    <legend style="text-align : center;"><h2>ลงทะเบียนผู้ใช้</h2></legend><br> 
-                        <div id="aa" style="text-align: center;">
+<body>  
+    <div class="container">          
+    <form class="bg-img" action="InsertForm_user.php" id="formUser" method="post">
+        <div class="forms-regis">
+                        
+                <div><br><br>
+                    <h2>Register</h2><br> 
+                        <div>
 
                             <div class="input-group mb-3 ml-5">
                                 <div class="input-group-prepend">
@@ -104,7 +79,8 @@
                                     aria-label="Telephone" aria-describedby="basic-addon1" name="em_phone">
                             </div>
 
-                            <div id="ab" class="input-group mb-3 ml-5" style="text-align: center;">
+
+                            <div id="ab" class="input-group mb-3 ml-5">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Role</label>
                                 </div>
@@ -114,14 +90,15 @@
                                     <option value="Guest">Other</option>
                                 </select>
                             </div><br>
-                        <div id="ac">    
-                            <input type="submit" id="but1" class="btn btn-outline-dark" name="Save" value="บันทึก" />
-                            <a href="../../Login.php" id="but2" class="btn btn-outline-dark">กลับหน้าล็อคอิน</a>
-                        </div>
-                        </div><br>   
-                </div>           
+                            
+                            <div id="ac">    
+                                <input type="submit" id="but1" class="btn btn-outline-dark" name="Save" value="บันทึก" />
+                                <a href="../../Login.php" id="but2" class="btn btn-outline-dark">กลับหน้าล็อคอิน</a>
+                            </div>
+                        </div><br>                           
             </div>
+        </div>
     </form>    
-    
+    </div> 
 </body>
 </html>

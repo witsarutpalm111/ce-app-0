@@ -26,15 +26,12 @@
     <link rel="stylesheet" href="filecss.css">
     <title>Form Login</title>
 
-    <style>
-    
-    </style>
 </head>
 
 
 <body>
 <div class="bg-img">
-<div class="forms-login">
+    <div class="forms-login">
         <form action="LoginForm.php" class="forms-body" method="post">
             <div class="row">
                 <div class="col-md-12">
@@ -49,7 +46,7 @@
 
             <div class="form-btn">
                 <input type="submit" id="but2" class="btn btn-outline-light" name="submit" value="Sign in" />
-                <a href="user/add_user/Forminsert_user2.php" id="but2">Sign up</a>
+                <a href="user/add_user/Forminsert_user2.php" id="but2" class="btn btn-outline-light" >Sign up</a>
             </div>
         </form>
     </div>

@@ -15,44 +15,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <title>Contact us</title>
 
-
-    <style>
-        #but1{      
-            text-align: center;
-            height: 25px; 
-            width: 200px;
-            padding: 0px;
-            margin: 20px;	
-        }
-        #but2{       
-            text-align: center;
-            height: 25px;
-            width: 200px;
-            padding: 0px;
-            margin: 35px;	
-        }
-        h2 {
-            color: black;
-            text-align:center;            
-        }
-        h5 {
-            color: black;
-            text-align:center;
-        }
-        #contact{
-          background-color: transparent;
-        }
-        </style>
-
-        <!-- <style type="text/css">/* เอาscrollup-down ออก */
-            html, body { overflow:  hidden; }       
-        </style> -->
-
         <link rel="stylesheet" href="scrollbar.css">
+        <link rel="stylesheet" href="contactus.css">
   </head>
 
 
-  <body style="background-image: url(BG/wh1.jpg);background-repeat: no-repeat;background-size:100%;">
+  <body>
     <section id="contact">
        <div class="container"><br><br>
            <h2 class="text-center text-uppercase">contact us</h2><br>
@@ -103,10 +71,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
-            <div style="text-align: center;">
+            <div class="down">
                 <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
                 <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
             </div>
-
+            
 </body>
 </html>
