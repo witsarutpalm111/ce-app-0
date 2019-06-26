@@ -40,12 +40,14 @@ $palm = 0;
 
 <body>
     <form action = "check_qr.php" id ="form_data" method = "post">
-        <fieldset><br><br><br>
+        
             <div class="container">
-                <legend><h3>บันทึกข้อมูล</h3></legend><br><br>
-                <div class="container h-100" style="min-height:93vh;">
+                <div class="head-h">
+                    <h3>บันทึกข้อมูล</h3>
+                </div>
+                <div class="container">
 
-                    <div class="input-group mb-3 ml-3">
+                    <div class="input-group">
                         <div id="bt1" class="input-group-prepend">
                             <span class="input-group-text"> Serial Number</span>
                         </div>
@@ -59,6 +61,7 @@ $palm = 0;
                             ?>
                             <option value="<?php echo$row['Serial_number'] ?>"><?php echo$row['Serial_number'] ?></option>
                             <?php } ?>
+                            
                         </select>
                         <br><br>                       
                     </div>
@@ -68,7 +71,7 @@ $palm = 0;
                 </div>
             
             </div>
-        </fieldset>
+        
     </form>
 </body>
 </html>

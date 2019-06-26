@@ -21,16 +21,21 @@ body {
     margin: 15px;
 }
 #bt1 {
-    margin-left: 150px;
+    /* margin-left: 150px; */
     margin-bottom: 20px;
 }
 #bt2 {
-
-    margin-right: 200px;
+    position: relative;
+    /* margin-right: 200px; */
 }
 .container{
     text-align : center;
 }
 legend{
     text-align : center;
+}
+.head-h{
+    top:5%;
+    position: relative;;
+    /* justify-content: center; */
 }
