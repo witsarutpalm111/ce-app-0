@@ -1,0 +1,29 @@
+body {
+    background-image: url('BG/wh1.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+h2 {
+    color: black;
+    text-align:center;            
+}
+h5 {
+    color: black;
+    text-align:center;
+}
+#but1{       
+    width: 200px;
+    padding: 0px;
+    margin: 20px;	
+}
+#but2{       
+    width: 200px;
+    padding: 0px;
+    margin: 35px;	
+}
+.head{
+    padding:0 16px;
+}
+.ma{
+    text-align: center;
+}

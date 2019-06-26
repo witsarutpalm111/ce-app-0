@@ -1,0 +1,33 @@
+body{
+    background-image: url(BG/wh1.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+#but1{      
+    text-align: center;
+    height: 25px; 
+    width: 200px;
+    padding: 0px;
+    margin: 20px;	
+}
+#but2{       
+    text-align: center;
+    height: 25px;
+    width: 200px;
+    padding: 0px;
+    margin: 35px;	
+}
+h2 {
+    color: black;
+    text-align:center;            
+}
+h5 {
+    color: black;
+    text-align:center;
+}
+#contact{
+  background-color: transparent;
+}
+.down{
+    text-align: center;
+}

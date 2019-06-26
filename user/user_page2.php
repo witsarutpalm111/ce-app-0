@@ -39,32 +39,45 @@ $row = mysqli_fetch_array($resalt);
 
     
     <!-- <link rel="stylesheet" href="scrollbar.css"> -->
+    <style>
+       #a {
+          margin-left : 15px;
+          margin-top : 10px;
+       }
+       #cepic {
+          margin-right : 15px;
+       }
+    </style>
+
 </head>
 
 
 <body>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
-<a class="navbar-brand" href="#">Navbar</a>
+<a class="navbar-brand">
+          <img src="../img/pro0.png" id="cepic" width="60" height="60" alt="">
+        </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+        
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="../Home.php">Home<span class="sr-only">(current)</span></a>
+        <h2><a class="nav-link" href="../Home.php">Home <span class="sr-only">(current)</span></a></h2>
       </li>
       <li id="a" class="nav-item">
-        <a class="nav-link" href="../shopping/list_shopping.php">Shopping list</a>
+        <h5><a class="nav-link" href="../shopping/list_shopping.php"> Shopping list </a></h5>
       </li>
       <li id="a" class="nav-item">
-        <a class="nav-link" href="../about.php">About</a>
+        <h5><a class="nav-link" href="../about.php"> About </a></h5>
       </li>
       <li id="a" class="nav-item">
-        <a class="nav-link" href="../contactus.php">Contact us</a>
+        <h5><a class="nav-link" href="../contactus.php"> Contact us </a></h5>
       </li>
       <li id="a" class="nav-item">
-        <a class="nav-link" href="../Login.php">Logout</a>
+        <h5><a class="nav-link" href="../Login.php"> Logout</a></h5>
       </li>
     </ul>
   </div>
