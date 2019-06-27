@@ -27,17 +27,17 @@ $result = mysqli_query($connect,$search_order);
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>check_order</title>
      
-     <link rel="stylesheet" href="../scrollbar.css">
-     <link rel="stylesheet" href="check_order.css">
+     <!-- <link rel="stylesheet" href="../scrollbar.css"> -->
+     <!-- <link rel="stylesheet" href="check_order.css"> -->
     
  </head>
 
 
  <body>
  <div class="container"> <br>   
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table-responsive-xl table table-sm table-dark text-nowrap" id="user_data"><br>
+    
+            <div class="table-responsive-xl">
+                <table class="table table-sm table-dark text-nowrap" id="user_data"><br>
              
                     <tr>
                         <th>ID Order</th>
@@ -65,7 +65,7 @@ $result = mysqli_query($connect,$search_order);
 
                 </table>
             </div>
-        </div>
+        
     </div><br>
 
     <div style="text-align:center;">

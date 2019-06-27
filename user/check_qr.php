@@ -150,9 +150,9 @@
                 <?php echo $row1['lname']?>
             </div>
             <!-- ส่วนของตาราง -->
-                <div class="table-responsive-xl">
-                <table class=" table table-sm text-nowrap mt-2" id="user_data">
-                <tr style="text-align:center" class="table-info">
+                <div class="table-responsive-xl text-dark">
+                <table class=" table table-sm text-nowrap mt-2 " id="user_data">
+                <tr style="text-align:center" class="bg-dark text-light">
                     <th>Time stamp</th>
                     <th>ผลการซ่อม</th>
                     <th>รายละเอียดการซ่อม</th>
@@ -165,7 +165,7 @@
                       
                         while($row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
 
-                            $i = $row_data%3;
+                            $i = $row_data%2;
                             
                     ?>
                 <tr id="row-data<?php echo $row_data?>" class="text-center">
@@ -178,15 +178,11 @@
                 <?php
                     if($i == 1){
                         echo"<script>
-                        $('#row-data$row_data').addClass('table-success');
-                        </script>";
-                    }else if($i == 2){
-                        echo"<script>
-                        $('#row-data$row_data').addClass('table-danger');
+                        $('#row-data$row_data').addClass('table-secondary');
                         </script>";
                     }else{
                         echo"<script>
-                        $('#row-data$row_data').addClass('table-warning');
+                        $('#row-data$row_data').addClass('table-light');
                         </script>";
                     }
                     
