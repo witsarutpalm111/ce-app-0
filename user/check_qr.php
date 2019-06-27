@@ -2,6 +2,10 @@
 <html lang="en">
 <?php
     session_start();
+    if(!isset($palm) && !isset($_POST['em_Serial'])){
+        echo"กรุณาเข้าสู่ระบบหรือแสกน qr code เพื่อตรวจสอบค่ะ";
+        exit();
+    }
     require './../DB_ce-app/User.php';
     if(isset($_GET['id_com'])){
         $palm = $_GET['id_com'];
@@ -10,6 +14,7 @@
               Header("Location:form_check_repair.php?alert=1");
 
     }
+    echo $_SESSION['User_id'];
     // กรณีเข้ามากับ qr
     // echo$palm;
     if(isset($palm)){
@@ -20,7 +25,8 @@
         $result1 = mysqli_query($connect,$id_com);
         $row1 = mysqli_fetch_array($result);
 // echo$palm;
-    }else{
+    }
+    else{
         // กรณีเข้าจากหน้าเว็บ
         // echo"5555555555555555555555555";
         $user_id = $_SESSION['User_id'];
