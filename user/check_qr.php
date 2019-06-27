@@ -151,7 +151,7 @@
             </div>
             <!-- ส่วนของตาราง -->
                 <div class="table-responsive-xl text-dark">
-                <table class=" table table-sm text-nowrap mt-2" id="user_data">
+                <table class=" table table-sm text-nowrap mt-2 " id="user_data">
                 <tr style="text-align:center" class="bg-dark text-light">
                     <th>Time stamp</th>
                     <th>ผลการซ่อม</th>
@@ -178,15 +178,11 @@
                 <?php
                     if($i == 1){
                         echo"<script>
-                        $('#row-data$row_data').addClass('table-success');
-                        </script>";
-                    }else if($i == 2){
-                        echo"<script>
-                        $('#row-data$row_data').addClass('table-danger');
+                        $('#row-data$row_data').addClass('table-secondary');
                         </script>";
                     }else{
                         echo"<script>
-                        $('#row-data$row_data').addClass('table-warning');
+                        $('#row-data$row_data').addClass('table-light');
                         </script>";
                     }
                     
