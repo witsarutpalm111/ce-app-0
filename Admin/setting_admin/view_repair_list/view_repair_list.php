@@ -37,8 +37,9 @@ $result = mysqli_query($connect,$p);
 <body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">   
 <br><br>
     <div class="container">
-        <table class="table table-dark text-nowrap" id="user_data">
-            <tr style="text-align:center">
+    <div class="table-responsive-xl text-dark">
+        <table class="table table-sm text-nowrap mt-2 " id="user_data">
+            <tr style="text-align:center" class="bg-dark text-light">
                 <th>ID List</th>
                 <th>List</th>
                 <th>Price</th>
@@ -48,7 +49,9 @@ $result = mysqli_query($connect,$p);
             </tr>
 
             <?php
+                $row_data = 1;
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                $i = $row_data%2;
             ?>
                 
             <tr style="text-align:center" class="pa">
@@ -74,10 +77,23 @@ $result = mysqli_query($connect,$p);
                 <td><a href="../delete/delete_repair_list.php?delete_list=<?php echo $row['id_list']?>" class="btn btn-danger"onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a> </td>
             </tr>
 
-                <?php }?>
+                <?php 
+            if($i == 1){
+                echo"<script>
+                $('#row-data$row_data').addClass('table-secondary');
+                </script>";
+            }else{
+                echo"<script>
+                $('#row-data$row_data').addClass('table-light');
+                </script>";
+            }
+            
+            $row_data += 1;
+            
+            }?>
                 
         </table>
-
+        </div>
         <a href="../add_order/form_add_order.php" class="btn btn-info text-light btn-sm">เพิ่มรายการซ่อม</a>
         <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
     </div>

@@ -7,6 +7,11 @@
     
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <meta charset="UTF-8">
@@ -49,17 +54,34 @@
     </style>
 
     <link rel="stylesheet" href="scrollbar.css">
+
+
+
+    <script>
+    function hello(){
+        alert(row);
+        Swal.getImage({
+            title: 'Sweet!',
+            text: 'Modal with a custom image.',
+            imageUrl: 'img/pro0.png',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'Hello ^ ^',
+            animation: false
+        })
+    }
+</script>
 </head>
 
 
 <body style="background-color:white">
-  
+
   <div class="container">
     <section id="header">
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light">      
         <a class="navbar-brand" href="#">
           <img src="img/pro0.png" width="40" height="40" alt=""> Computer Engineer
-        </a>
+        </a>       
         <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
       </nav>
     </section>

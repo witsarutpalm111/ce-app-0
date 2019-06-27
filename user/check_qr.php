@@ -138,7 +138,6 @@
         <div class="container">
             <h1 class="text-center"> ผลการค้นหา </h1>
             <div id="text1">
-
                 <label>User Name : </label>
                 <?php echo $row1['User_id']?><br>
                 <label>Serial Number : </label>
@@ -149,6 +148,7 @@
                 <label>นามสกุล : </label>
                 <?php echo $row1['lname']?>
             </div>
+            
             <!-- ส่วนของตาราง -->
                 <div class="table-responsive-xl text-dark">
                 <table class=" table table-sm text-nowrap mt-2 " id="user_data">

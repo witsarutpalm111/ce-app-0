@@ -49,10 +49,10 @@ $result = mysqli_query($connect,$p);
 <div class="container">
 <form action="order_user_list.php" method="post">
     
-
-<table class="table table-dark text-nowrap table-responsive" id="user_data"  >
+<div class="table-responsive-xl text-dark"></div>
+<table class=" table table-sm text-nowrap mt-2 " id="user_data"  >
 <br><br>
-            <tr style="text-align:center">
+            <tr style="text-align:center" class="bg-dark text-light">
                 <th>ID Order</th>
                 <th>User ID</th>
                 <th>Status</th>
@@ -60,8 +60,9 @@ $result = mysqli_query($connect,$p);
 
             </tr>
             <?php   
-                    
+                  $row_data = 1;     
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                    $i = $row_data%2;
             ?>
             
             <tr style="text-align:center" class="pa">
@@ -85,8 +86,21 @@ $result = mysqli_query($connect,$p);
                 </form>
             </td>
             </tr>
-            <?php }?>
+            <?php 
+        if($i == 1){
+            echo"<script>
+            $('#row-data$row_data').addClass('table-secondary');
+            </script>";
+        }else{
+            echo"<script>
+            $('#row-data$row_data').addClass('table-light');
+            </script>";
+        }
+        
+        $row_data += 1;
+        }?>
         </table>
+        </div>
         </form>
         <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
 
