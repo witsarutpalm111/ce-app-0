@@ -38,9 +38,9 @@ $result = mysqli_query($connect,$p);
 <body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br>
 <div class="container">
-
-        <table class="table-responsive table table-dark text-nowrap" id="user_data">
-            <tr style="text-align:center">
+<div class="table-responsive-xl text-dark">
+        <table class=" table table-sm text-nowrap mt-2 " id="user_data">
+            <tr style="text-align:center" class="bg-dark text-light">
                 <th>User id</th>
                 <th>Name</th>
                 <th>Surname</th>
@@ -52,8 +52,9 @@ $result = mysqli_query($connect,$p);
 
             </tr>
             <?php   
-                    
+                    $row_data = 1; 
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                            $i = $row_data%2;
                     ?>
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['User_id']?></td>
@@ -66,8 +67,21 @@ $result = mysqli_query($connect,$p);
 
 
             </tr>
-            <?php }?>
+            <?php
+        if($i == 1){
+            echo"<script>
+            $('#row-data$row_data').addClass('table-secondary');
+            </script>";
+        }else{
+            echo"<script>
+            $('#row-data$row_data').addClass('table-light');
+            </script>";
+        }
+        
+        $row_data += 1;
+        }?>
         </table>
+        </div>
         <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
     </div>
 

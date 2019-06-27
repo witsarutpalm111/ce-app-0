@@ -41,25 +41,41 @@ $row = mysqli_fetch_array($result1);
     Time Order : <?php echo$row['date_order'] ?><br>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table-responsive-xl table table-sm table-dark" id="user_data"><br>
+            <div class="table-responsive-xl text-dark">   
+            <table class="table table-sm text-nowrap mt-2" id="user_data"><br>
              
-                    <tr style="text-align:center">
+                    <tr style="text-align:center" class="bg-dark text-light">
                         <th>ID Product</th>
                         <th>List</th>
                         <th>Price</th>
                     </tr>
 
-                    <?php          
+                    <?php   
+                    $row_data = 1;         
                         while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                            $i = $row_data%2;
                     ?>
                     <tr style="text-align:center">
                         <td> <?php echo $row2['id_product']?></td>
                         <td> <?php echo $row2['List']?></td>
                         <td><?php echo $row2['Price']?></td>
                     </tr>
-                    <?php }?>
+                    <?php 
+                 if($i == 1){
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-secondary');
+                    </script>";
+                }else{
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-light');
+                    </script>";
+                }
+                
+                $row_data += 1;
+                }?>
 
                 </table>
+            </div>
                 <h5>ราคารวม : <?php echo $row['order_price']?> บาท</h5><br>
                 สถานะ :
                 <!-- <button id="444">ยังไม่ได้รับการยืนยันค่ะ</button> -->

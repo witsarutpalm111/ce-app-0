@@ -108,8 +108,9 @@ $sumtime = mysqli_fetch_array($resultsum);
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <table class="table-responsive-xl table table-sm table-dark text-nowrap" id="user_data">
-                    <tr>
+            <div class="table-responsive-xl text-dark">    
+            <table class=" table table-sm text-nowrap mt-2" id="user_data">
+                    <tr style="text-align:center" class="bg-dark text-light">
                         <th>ID</th>
                         <th>Detail</th>
                         <th>Price</th>
@@ -119,8 +120,9 @@ $sumtime = mysqli_fetch_array($resultsum);
 
                     <?php   
                     $sum=0;
-                    
+                    $row_data = 1;
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                            $i = $row_data%2;
                     ?>
                     <tr class="pa">
                         <td><?php echo $row['id_list']?></td>
@@ -145,9 +147,21 @@ $sumtime = mysqli_fetch_array($resultsum);
                         <td><a href="remove.php?id=<?php echo $row['id_list']?>" class="btn btn-outline-danger" id="remove" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">ลบรายการ</a></td>
                     </tr>
 
-                    <?php }?>
+                    <?php
+                if($i == 1){
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-secondary');
+                    </script>";
+                }else{
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-light');
+                    </script>";
+                }
+                
+                $row_data += 1;
+                }?>
                 </table>
-
+                </div>
                 <form action="../user/setting/confirm/confirm_repair_user.php" method="post" name="insert_form" id="insert_form">              
                     <!-- ส่วนของ ราคารวม -->
                     <div id="profile" class="input-group mb-3">
@@ -227,8 +241,9 @@ $sumtime = mysqli_fetch_array($resultsum);
 
             <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <form medhod="post" name="check_shop" id="check_shop">
-                    <table class="table-responsive-sm table table-sm table-dark text-nowrap" width="100%" >
-                        <tr>
+            <div class="table-responsive-xl text-dark">
+                    <table class="table table-sm text-nowrap mt-2" width="100%" >
+                        <tr style="text-align:center" class="bg-dark text-light">
                             <th width="25%">ID</th>
                             <th width="25%">Detail</th>
                             <th width="25%">Price</th>
@@ -236,8 +251,10 @@ $sumtime = mysqli_fetch_array($resultsum);
 
                         </tr>
                         <?php
+                         $row_data = 1;
                     while($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
-                ?>
+                        $i = $row_data%2;
+                    ?>
                         <tr>
                             <td><?php echo $row1['id_list']?></td>
                             <td><?php echo $row1['List']?></td>
@@ -267,9 +284,21 @@ $sumtime = mysqli_fetch_array($resultsum);
                                 <!-- <button class="btn btn-danger" id="<?php echo $row1['id_list']?>">addd</button> -->
                             </td>
                         </tr>
-                        <?php }?>
-                    </table>
+                        <?php 
+                    if($i == 1){
+                        echo"<script>
+                        $('#row-data$row_data').addClass('table-secondary');
+                        </script>";
+                    }else{
+                        echo"<script>
+                        $('#row-data$row_data').addClass('table-light');
+                        </script>";
+                    }
                     
+                    $row_data += 1;
+                    }?>
+                    </table>
+                    </div>
                 </form>
                 <button type="submit" class="btn btn-success" name="add" id="add">add</button>
            

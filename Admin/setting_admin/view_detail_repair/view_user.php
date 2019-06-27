@@ -54,8 +54,9 @@ $result = mysqli_query($connect,$p);
     <button class="btn text-warning btn-secondary" disabled>User id : <?php echo$user_id ?></button>
 
     </div>
-        <table class="table-responsive table table-dark text-nowrap" id="user_data">
-            <tr style="text-align:center">
+    <div class="table-responsive-xl text-dark">
+        <table class="table table-sm text-nowrap mt-2" id="user_data">
+            <tr style="text-align:center" class="bg-dark text-light">
                 <th>Time</th>
                 <th>Status</th>
                 <th>Detail</th>
@@ -63,13 +64,13 @@ $result = mysqli_query($connect,$p);
                 <th>Price</th>
                 <th>View</th>
                 <th>Delete</th>
-
-
             </tr>
 
-            <?php                     
+            <?php  
+                $row_data = 1;                 
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-            ?>
+                $i = $row_data%2;
+           ?>
 
             <tr style="text-align:center" class="pa">
                 <td><?php echo $row['Time_update']?></td>
@@ -81,8 +82,22 @@ $result = mysqli_query($connect,$p);
                 <td><a href="../delete/delete_view_user.php?delete=<?php echo $row['Time_update']?>&id=<?php echo $user_id ?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก?')">Delete</a></td>
 
             </tr>
-            <?php }?>
+            <?php 
+        if($i == 1){
+            echo"<script>
+            $('#row-data$row_data').addClass('table-secondary');
+            </script>";
+        }else{
+            echo"<script>
+            $('#row-data$row_data').addClass('table-light');
+            </script>";
+        }
+        
+        $row_data += 1;
+        }?>
         </table>
+        </div>
+
         <form action="../Add_data_repair/Update_data.php" method="post">
         <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
         <input type="submit" value="เพิ่มข้อมูล" class="btn btn-success">

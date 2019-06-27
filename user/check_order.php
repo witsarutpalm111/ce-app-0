@@ -36,19 +36,21 @@ $result = mysqli_query($connect,$search_order);
  <body>
  <div class="container"> <br>   
     
-            <div class="table-responsive-xl">
-                <table class="table table-sm table-dark text-nowrap" id="user_data"><br>
+            <div class="table-responsive-xl text-dark">
+                <table class="table table-sm text-nowrap mt-2" id="user_data"><br>
              
-                    <tr>
+                    <tr style="text-align:center" class="bg-dark text-light">
                         <th>ID Order</th>
                         <th>Time Order</th>
                         <th>Price</th>
                         <th>View</th>
                     </tr>
 
-                    <?php          
+                    <?php   
+                    $row_data = 1;       
                         while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                    ?>
+                            $i = $row_data%2;
+                   ?>
 
                     <tr>
                         <td> <?php echo $row2['id_order']?></td>
@@ -61,7 +63,19 @@ $result = mysqli_query($connect,$search_order);
                     </td>
                     </tr>
                     
-                    <?php }?>
+                    <?php
+                if($i == 1){
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-secondary');
+                    </script>";
+                }else{
+                    echo"<script>
+                    $('#row-data$row_data').addClass('table-light');
+                    </script>";
+                }
+                
+                $row_data += 1;
+                }?>
 
                 </table>
             </div>
