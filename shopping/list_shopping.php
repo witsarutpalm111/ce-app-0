@@ -140,14 +140,10 @@ $sumtime = mysqli_fetch_array($resultsum);
 
                 <li class="nav-item">
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                        aria-controls="pills-profile" aria-selected="false">เลือกบริการที่ต้องการซื้อ</a>
+                        aria-controls="pills-profile" aria-selected="false">เลือกรายการที่ต้องการ</a>
                 </li>
 
-                <!-- <div id="bb" class="text-right ml-5" >
-                <li class="right ml-5">
-                    <a href="../Home.php" class="btn btn-success ml-5">กลับ</a>
-                </li>
-            </div> -->
+               
 
             </ul>
 
@@ -323,7 +319,7 @@ $sumtime = mysqli_fetch_array($resultsum);
                                     <th width="25%">ID</th>
                                     <th width="25%">Detail</th>
                                     <th width="25%">Price</th>
-                                    <th width="25%" style="text-align:left">เพิ่มเข้า My List</th>
+                                    <th width="25%" style="text-align:left">เพิ่มเข้ารายการของฉัน</th>
 
                                 </tr>
                                 <?php
