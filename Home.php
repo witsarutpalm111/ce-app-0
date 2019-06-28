@@ -1,6 +1,19 @@
 <?php
  session_start();
- 
+ require './DB_ce-app/User.php';
+ if (!isset($_SESSION["User_id"])){
+  
+}
+else{
+  // $fname =$_SESSION['fname'];
+  // $lname = $_SESSION['lname'];
+  $user_id = $_SESSION['User_id'];
+  $sql = "SELECT fname,lname FROM user WHERE user.user_id = $user_id";
+  $result = mysqli_query($connect,$sql);
+  $row = mysqli_fetch_array($result);
+  $fname =$row['fname'];
+  $lname = $row['lname'];
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +34,7 @@
 
     <style>
       img.d-block{
-        height: 400px;
+        height: 100%;
         width:100%;
       }
       section.ma{
@@ -81,8 +94,16 @@
       <nav class="navbar navbar-light bg-light">      
         <a class="navbar-brand" href="#">
           <img src="img/pro0.png" width="40" height="40" alt=""> Computer Engineer
-        </a>       
-        <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
+        </a>
+        <?php 
+        if (!isset($_SESSION["User_id"])){?>
+          <a href="Login.php" class="btn btn-warning text-danger btn-sm" >Login</a>
+        <?php }else{?>
+          <a href="user/user_page2.php"><button class="btn btn-outline-white"><?php echo$fname." ".$lname ?></button></a>
+
+       <?php }
+
+        ?>       
       </nav>
     </section>
     <section id="banner">

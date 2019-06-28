@@ -20,7 +20,7 @@ session_start();
 
         require './DB_ce-app/User.php';
 
-        $sql = "SELECT user.User_id,user.Password,user.Role FROM user WHERE user.User_id ='$em_User' and user.Password='$em_Password'";
+        $sql = "SELECT user.User_id,user.Password,user.Role,user.fname,user.lname FROM user WHERE user.User_id ='$em_User' and user.Password='$em_Password'";
         $result = mysqli_query($connect,$sql);
 
         $Palm = mysqli_fetch_array($result);
