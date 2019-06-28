@@ -30,6 +30,11 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>view_repair_list</title>
+    <style>
+         .table th{
+             border-top-width: 0px;
+         }
+     </style>
 
 </head>
 
@@ -54,7 +59,7 @@ $result = mysqli_query($connect,$p);
                 $i = $row_data%2;
             ?>
                 
-            <tr style="text-align:center" class="pa">
+            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
                 <td><?php echo $row['id_list']?></td>
                 <td><?php echo $row['List']?></td>
                 <td><?php echo $row['Price']?></td>

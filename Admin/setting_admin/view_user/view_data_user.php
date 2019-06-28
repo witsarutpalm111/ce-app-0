@@ -32,7 +32,11 @@ $result = mysqli_query($connect,$p);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
+    <style>
+         .table th{
+             border-top-width: 0px;
+         }
+     </style>
 
 </head>
 <body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
@@ -56,7 +60,7 @@ $result = mysqli_query($connect,$p);
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                             $i = $row_data%2;
                     ?>
-            <tr style="text-align:center" class="pa">
+            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
                 <td><?php echo $row['User_id']?></td>
                 <td><?php echo $row['fname']?></td>
                 <td><?php echo $row['lname']?></td>

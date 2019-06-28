@@ -31,12 +31,11 @@ $row1 = mysqli_fetch_array($result1);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>order_user_list</title>
 
-    <!-- <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style> -->
+    <style>
+         .table th{
+             border-top-width: 0px;
+         }
+     </style>
 </head>
 
 
@@ -47,7 +46,7 @@ $row1 = mysqli_fetch_array($result1);
             <tr style="text-align:center" class="bg-dark text-light">
                 <th>User id</th>
                 <th>ID Order</th>
-                <th>ID Order</th>
+                <th>User id</th>
                 <th>Order</th>
             </tr>
             <?php   
@@ -56,7 +55,7 @@ $row1 = mysqli_fetch_array($result1);
                     $i = $row_data%2;
             ?>
             
-            <tr style="text-align:center">
+            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
             <td><?php echo $row['user_id']?></td>
 
                 <td><?php echo $row['id_order']?></td>

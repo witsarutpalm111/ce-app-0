@@ -2,19 +2,17 @@
 <html lang="en">
 <?php
     session_start();
-    if(!isset($palm) && !isset($_POST['em_Serial'])){
-        echo"กรุณาเข้าสู่ระบบหรือแสกน qr code เพื่อตรวจสอบค่ะ";
-        exit();
-    }
+    
     require './../DB_ce-app/User.php';
     if(isset($_GET['id_com'])){
         $palm = $_GET['id_com'];
     }
-    if($_POST['em_Serial'] =='Choose Serial Number'){
-              Header("Location:form_check_repair.php?alert=1");
-
+    
+    if(!isset($palm) && !isset($_POST['em_Serial'])){
+        echo"กรุณาเข้าสู่ระบบหรือแสกน qr code เพื่อตรวจสอบค่ะ";
+        exit();
     }
-    echo $_SESSION['User_id'];
+    
     // กรณีเข้ามากับ qr
     // echo$palm;
     if(isset($palm)){
@@ -31,8 +29,11 @@
         // echo"5555555555555555555555555";
         $user_id = $_SESSION['User_id'];
         $serial = $_POST['em_Serial'];
+        if($_POST['em_Serial'] =='Choose Serial Number'){
+            Header("Location:form_check_repair.php?alert=1");
 
-        $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname
+  }else{
+    $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname
         FROM user,com,update_com
         WHERE com.User_id = $user_id AND com.Serial_number = $serial AND com.ID_com = update_com.ID_com AND com.User_id = user.User_id";
          $result = mysqli_query($connect,$p1);
@@ -44,6 +45,9 @@
             // Header("Location:form_check_repair.php?alert=1");
             // exit();
         }
+  }
+
+        
     }
 
     
@@ -130,8 +134,9 @@
             /* min-height: 150vh; */
             /* max-height: 100% */
         }
-        .table-responsive{
-            width:100%;
+
+        .table-responsive {
+            width: 100%;
         }
     </style>
 
@@ -154,19 +159,19 @@
                 <label>นามสกุล : </label>
                 <?php echo $row1['lname']?>
             </div>
-            
-            <!-- ส่วนของตาราง -->
-                <div class="table-responsive-xl text-dark">
-                <table class=" table table-sm text-nowrap mt-2 " id="user_data">
-                <tr style="text-align:center" class="bg-dark text-light">
-                    <th>Time stamp</th>
-                    <th>ผลการซ่อม</th>
-                    <th>รายละเอียดการซ่อม</th>
-                    <th>ราคา</th>
-                    <th>หมายเหตุ</th>
-                </tr>
 
-                <?php      
+            <!-- ส่วนของตาราง -->
+            <div class="table-responsive-xl text-dark">
+                <table class=" table table-sm text-nowrap mt-2 " id="user_data">
+                    <tr style="text-align:center" class="bg-dark text-light">
+                        <th>Time stamp</th>
+                        <th>ผลการซ่อม</th>
+                        <th>รายละเอียดการซ่อม</th>
+                        <th>ราคา</th>
+                        <th>หมายเหตุ</th>
+                    </tr>
+
+                    <?php      
                     $row_data = 1;  
                       
                         while($row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC)){
@@ -174,14 +179,14 @@
                             $i = $row_data%2;
                             
                     ?>
-                <tr id="row-data<?php echo $row_data?>" class="text-center">
-                    <td> <?php echo $row2['Time_update']?></td>
-                    <td> <?php echo $row2['Status_com']?></td>
-                    <td><?php echo $row2['Detail_com']?></td>
-                    <td><?php echo $row2['Price_com']?></td>
-                    <td><?php echo $row2['Note_com']?></td>
-                </tr>
-                <?php
+                    <tr id="row-data<?php echo $row_data?>" class="text-center">
+                        <td> <?php echo $row2['Time_update']?></td>
+                        <td> <?php echo $row2['Status_com']?></td>
+                        <td><?php echo $row2['Detail_com']?></td>
+                        <td><?php echo $row2['Price_com']?></td>
+                        <td><?php echo $row2['Note_com']?></td>
+                    </tr>
+                    <?php
                     if($i == 1){
                         echo"<script>
                         $('#row-data$row_data').addClass('table-secondary');
@@ -199,9 +204,9 @@
                     
                  ?>
 
-            </table>
-                </div>
-            
+                </table>
+            </div>
+
 
 
 

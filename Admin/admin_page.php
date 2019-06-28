@@ -45,6 +45,11 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>admin_page</title>
+     <style>
+         .table th{
+             border-top-width: 0px;
+         }
+     </style>
 
 </head>
 
@@ -52,9 +57,9 @@ else{
     <br><br>
     <div class="container">
     <div class="table-responsive-xl text-dark">
-        <table class=" table table-sm text-nowrap mt-2 " id="user_data" width="100%">
+        <table class="table text-nowrap" id="user_data" width="100%">
             <tr style="text-align:center" class="bg-dark text-light">
-                <!-- <th width="10%">User id</th> -->
+                <th>User id</th>
                 <th >Serial Num</th>
                 <th >Time</th>
                 <th >Status</th>
@@ -69,8 +74,8 @@ else{
                     $i = $row_data%2;
            ?>
             
-            <tr style="text-align:center" class="pa">
-                <!-- <td><?php echo $row['User_id']?></td> -->
+            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
+                <td><?php echo $row['User_id']?></td>
                 <td ><?php echo $row['Serial_number']?></td>
 
                 <td ><?php echo $row['Time_update']?></td>
@@ -105,7 +110,7 @@ else{
         <a href="../Login.php"><button type="button" class="btn btn-info btn-sm">Log out</button></a>
 
     <!-- <a href="setting_admin/add_Admin/Forminsert_admin.php" class="btn btn-warning text-danger btn-sm">เพิ่ม Admin</a> -->
-    <a href="setting_admin/Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a>
+    <!-- <a href="setting_admin/Repair/add_data_repair.php" class="btn btn-warning text-danger btn-sm">เพิ่มข้อมูลการซ่อม</a> -->
     <a href="setting_admin/view_user/view_data_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล User</a>
     <a href="setting_admin/view_user/view_order_user.php" class="btn btn-warning text-danger btn-sm">ดูข้อมูล Order</a>
     <a href="setting_admin/view_repair_list/view_repair_list.php" class="btn btn-warning text-danger btn-sm">ดูรายการซ่อม</a>

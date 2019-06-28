@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($result1);
                         while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                             $i = $row_data%2;
                     ?>
-                    <tr style="text-align:center">
+                    <tr style="text-align:center" id="row-data<?php echo $row_data?>">
                         <td> <?php echo $row2['id_product']?></td>
                         <td> <?php echo $row2['List']?></td>
                         <td><?php echo $row2['Price']?></td>
@@ -86,7 +86,7 @@ $row = mysqli_fetch_array($result1);
                     echo"<button id=123 disabled>ยืนยันการซ่อมเรียบร้อยค่ะ</button>";
                 }
                 ?><br><br>
-                <a href="form_check_repair.php" id="111" class="btn btn-outline-danger" style="display: none">ตรวจสอบการซ่อม</a>
+                <a href="form_check_repair.php" id="111" class="btn btn-outline-dark" style="display: none">ตรวจสอบการซ่อม</a>
             </div>
         </div>
     </div>

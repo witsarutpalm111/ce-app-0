@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <?php   
  session_start();
+ require './../../../DB_ce-app/User.php';
  if (!isset($_SESSION["User_id"])){
  
     Header("../../../Location:Login.php");
     exit();
+  }
+  if(isset($_GET['id_order'])){
+    $id_order = $_GET['id_order'];
+    $sql = "SELECT user_id FROM `order` WHERE id_order = $id_order GROUP BY id_order";
+    $user_id = mysqli_query($connect,$sql);
+    $row = mysqli_fetch_array($user_id);
+    // echo$row['user_id'];
+  }
+  else{
+      
   }
 ?>
 <html lang="en">
@@ -39,10 +50,9 @@
 
                 <div class="input-group mb-3 ml-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">User_Name & Serial_Number</span>
+                        <span class="input-group-text">Serial_Number</span>
                     </div>
-                    <input type="text" aria-label="User_Name" class="form-control" 
-                    placeholder="User_name" name="em_User" required >
+                    <input type="hidden" name="em_User" value="<?php echo $row['user_id'] ?>" required >
 
                     <input type="text" aria-label="Serial_Number" class="form-control"
                     placeholder="Serial_number" name = "em_Serial" required >
@@ -55,9 +65,9 @@
                 <label>Serial Number : </label>
                 <input type="text" name = "em_Serial" size = "20" placeholder="Serial_number" required /> -->
             <br>
-
+            <input type="hidden" name="id_order" value="<?php echo $id_order?>">
             <input type="submit" class="btn btn-dark" name="save" value="save"/>
-            <a href="../../admin_page.php" class="btn btn-dark">กลับ</a>
+            <a href="../view_user/view_order_user.php" class="btn btn-dark">กลับ</a>
             
 
         </div>

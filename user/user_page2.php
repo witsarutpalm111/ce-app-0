@@ -40,6 +40,21 @@ $row = mysqli_fetch_array($resalt);
     
     <!-- <link rel="stylesheet" href="scrollbar.css"> -->
     <style>
+      @media(max-width:720px){
+        #b1{
+           padding: .3rem .5rem;
+           font-size: 16px;
+           background: black;
+           color: white;
+       }
+       #b2{
+           padding: .3rem .5rem;
+           font-size: 16px;
+           background: black;
+           color: white;
+
+       }
+      }
        #a {
           margin-left : 15px;
           margin-top : 10px;
@@ -47,6 +62,11 @@ $row = mysqli_fetch_array($resalt);
        #cepic {
           margin-right : 15px;
        }
+      
+       /* #btna{
+         position: relative;
+         flex-wrap: nowrap;         
+       } */
     </style>
 
 </head>
@@ -101,7 +121,7 @@ $row = mysqli_fetch_array($resalt);
         <br>
 
         <!--ส่วนของ button-->
-        <div class="container">
+        <div class="container" id="btna">
             <a href="form_check_repair.php" id="b1" class="btn btn-outline-dark" role="button"
                 aria-pressed="true">ตรวจสอบการซ่อม</a>
             <a href="check_order.php" id="b2" class="btn btn-outline-dark" role="button"

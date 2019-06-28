@@ -12,6 +12,9 @@ if(isset($_GET['alert'])){
 }
 if($palm == 1){
    echo "<script>alert('คุณยืนยัน order นี้ไปแล้วค่ะ');</script>";
+}else if($palm == 2){
+    echo "<script>alert('ใบสั่งซ่อมนี้มีเลข Serial อยู่แล้วคะ');</script>";
+
 }
 $p ="SELECT order.id_order,order.user_id,status_order FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
 $result = mysqli_query($connect,$p);
@@ -36,12 +39,11 @@ $result = mysqli_query($connect,$p);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>view_order_user</title>
 
-    <!-- <style>
-        /*style ของ Background*/
-        body {
-            background-color: darkslategray;
-        }
-    </style> -->
+    <style>
+         .table th{
+             border-top-width: 0px;
+         }
+     </style>
 </head>
 
 
@@ -57,6 +59,8 @@ $result = mysqli_query($connect,$p);
                 <th>User ID</th>
                 <th>Status</th>
                 <th>view</th>
+                <th>เพิ่มข้อมูลการซ่อม</th>
+
 
             </tr>
             <?php   
@@ -65,7 +69,7 @@ $result = mysqli_query($connect,$p);
                     $i = $row_data%2;
             ?>
             
-            <tr style="text-align:center" class="pa">
+            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
                 <td><?php echo $row['id_order']?></td>
                 <td><?php echo $row['user_id']?></td>
                     
@@ -84,6 +88,17 @@ $result = mysqli_query($connect,$p);
                     <input class="btn btn-info text-light btn-sm" type="submit" value="View">
                     <input type="hidden" name="id" value="<?php echo $row['id_order']?>">
                 </form>
+            </td>
+            <td><?php
+                if($row['status_order'] == 'confirm'){?>
+
+                    <a href="../Repair/add_data_repair.php?id_order=<?php echo $row['id_order']?>" class="btn btn-outline-dark  btn-sm">เพิ่มข้อมูลการซ่อม</a>
+<?php
+                }else{
+                    echo"ยังไม่ได้รับการยืนยัน";
+                }
+
+                    ?>
             </td>
             </tr>
             <?php 

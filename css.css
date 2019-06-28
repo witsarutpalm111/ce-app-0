@@ -1,117 +1,73 @@
-.wrapper{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	width: 400px;
-	/* margin: 50vh auto 0; */
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	-webkit-transform: translateY(-50%);
-	        transform: translateY(-50%);
-}
-
-.switch_box{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	max-width: 200px;
-	min-width: 200px;
-	height: 200px;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-}
-
-/* Switch 4 Specific Style Start */
-
-.box_4{
-	background: #eee;
-}
-
-.input_wrapper{
-  width: 80px;
-  height: 40px;
+.switch {
   position: relative;
-  cursor: pointer;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  /* float: right; */
 }
 
-.input_wrapper input[type="checkbox"]{
-  width: 80px;
-  height: 40px;
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
   cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: #315e7f;
-  border-radius: 2px;
-  position: relative;
-  outline: 0;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.input_wrapper input[type="checkbox"]:after{
+.slider:before {
   position: absolute;
   content: "";
-  top: 3px;
-  left: 3px;
-  width: 34px;
-  height: 34px;
-  background: #dfeaec;
-  z-index: 2;
-  border-radius: 2px;
-  -webkit-transition: all .35s;
-  transition: all .35s;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.input_wrapper svg{
-  position: absolute;
-  top: 50%;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  fill: #fff;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-  z-index: 1;
+input.default:checked + .slider {
+  background-color: #444;
+}
+input.primary:checked + .slider {
+  background-color: #2196F3;
+}
+input.success:checked + .slider {
+  background-color: #8bc34a;
+}
+input.info:checked + .slider {
+  background-color: #3de0f5;
+}
+input.warning:checked + .slider {
+  background-color: #FFC107;
+}
+input.danger:checked + .slider {
+  background-color: #f44336;
 }
 
-.input_wrapper .is_checked{
-  width: 18px;
-  left: 18%;
-  -webkit-transform: translateX(190%) translateY(-30%) scale(0);
-          transform: translateX(190%) translateY(-30%) scale(0);
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
 }
 
-.input_wrapper .is_unchecked{
-  width: 15px;
-  right: 10%;
-  -webkit-transform: translateX(0) translateY(-30%) scale(1);
-          transform: translateX(0) translateY(-30%) scale(1);
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
-/* Checked State */
-.input_wrapper input[type="checkbox"]:checked{
-  background: #23da87;
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
 }
 
-.input_wrapper input[type="checkbox"]:checked:after{
-  left: calc(100% - 37px);
+.slider.round:before {
+  border-radius: 50%;
 }
-
-.input_wrapper input[type="checkbox"]:checked + .is_checked{
-  -webkit-transform: translateX(0) translateY(-30%) scale(1);
-          transform: translateX(0) translateY(-30%) scale(1);
-}
-
-.input_wrapper input[type="checkbox"]:checked ~ .is_unchecked{
-  -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
-          transform: translateX(-190%) translateY(-30%) scale(0);
-}
-
-/* Switch 4 Specific Style End */

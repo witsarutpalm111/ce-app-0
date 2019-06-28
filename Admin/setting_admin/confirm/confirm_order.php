@@ -17,10 +17,10 @@ echo$row['status_order'];
 
 if($row['status_order'] == ''){
     $update = mysqli_query($connect,$confirm);
-    echo"5555555";
+    // echo"5555555";
     Header("Location:../view_user/view_order_user.php");
 }else{
-    echo"666666";
+    // echo"666666";
 
 Header("Location:../view_user/view_order_user.php?alert=1");
 

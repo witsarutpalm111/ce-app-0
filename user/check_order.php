@@ -52,13 +52,13 @@ $result = mysqli_query($connect,$search_order);
                             $i = $row_data%2;
                    ?>
 
-                    <tr>
+                    <tr id="row-data<?php echo $row_data?>">
                         <td> <?php echo $row2['id_order']?></td>
                         <td> <?php echo $row2['date_order']?></td>
                         <td><?php echo $row2['order_price']?></td>
                         <td> <form action="show_order_user.php" method="post">
                             <input type="hidden" name="id_order" value="<?php echo $row2['id_order']?>">
-                            <input type="submit" class="btn btn-outline-light" value="View">
+                            <input type="submit" class="btn btn-outline-success" value="View">
                         </form>
                     </td>
                     </tr>
