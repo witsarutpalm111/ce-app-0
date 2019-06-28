@@ -16,7 +16,7 @@ if($palm == 1){
     echo "<script>alert('ใบสั่งซ่อมนี้มีเลข Serial อยู่แล้วคะ');</script>";
 
 }
-$p ="SELECT order.id_order,order.user_id,status_order FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
+$p ="SELECT order.id_order,order.user_id,status_order,Serial_number FROM `order_user`,`order` WHERE order_user.id_order = order.id_order GROUP BY id_order";
 $result = mysqli_query($connect,$p);
 
 ?>
@@ -90,10 +90,13 @@ $result = mysqli_query($connect,$p);
                 </form>
             </td>
             <td><?php
-                if($row['status_order'] == 'confirm'){?>
-
-                    <a href="../Repair/add_data_repair.php?id_order=<?php echo $row['id_order']?>" class="btn btn-outline-dark  btn-sm">เพิ่มข้อมูลการซ่อม</a>
-<?php
+                if($row['status_order'] == 'confirm'){
+                    if($row['Serial_number'] == ""){?>
+                        <a href="../Repair/add_data_repair.php?id_order=<?php echo $row['id_order']?>" class="btn btn-outline-dark  btn-sm">เพิ่มข้อมูลการซ่อม</a>
+                    <?php }else{
+                        echo"เพิ่มข้อมูลการซ่อมแล้วค่ะ";
+                    }
+                    
                 }else{
                     echo"ยังไม่ได้รับการยืนยัน";
                 }

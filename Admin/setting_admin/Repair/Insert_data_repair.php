@@ -31,6 +31,8 @@ if (!$_SESSION["User_id"]){  //check session
     $p = "SELECT user.User_id FROM user WHERE User_id=$User";
     $result5 = mysqli_query($connect,$p);
     $row = mysqli_fetch_array($result5);
+    if($row_serial['Serial_number'] == ""){
+
         if($row>0){
             $sql = "Insert into com"
             . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`) value('$Serial','$User','$hash','$has')";
@@ -40,12 +42,9 @@ if (!$_SESSION["User_id"]){  //check session
             $result = mysqli_query($connect,$sql);
             $result1 = mysqli_query($connect,$sql1);
             
-            if($row_serial['Serial_number'] == ""){
                 $update_serial = "UPDATE `order_user` SET `Serial_number`='$Serial' WHERE id_order='$id_order' ";
                 $update = mysqli_query($connect,$update_serial);
-            }else{
-                header("location:add_data_repair.php?alert=2");
-            }
+           
             
             
             header("location:Show_data.php?alert=$hash");
@@ -57,5 +56,8 @@ if (!$_SESSION["User_id"]){  //check session
             header("location:../../../Login.php?alert=2");
             
     }
+}else{
+    header("location:../view_user/view_order_user.php?alert=2");
+}
 }
 ?>
