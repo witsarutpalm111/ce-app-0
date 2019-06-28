@@ -118,7 +118,12 @@ $sumtime = mysqli_fetch_array($resultsum);
         a{
             color: #000000
         }
-
+        #but1{     
+            height: 30px ;  
+            width:150px;
+            padding: 0px;
+            margin: 10px;	
+        }
     </style>
 
 </head>
@@ -303,8 +308,8 @@ $sumtime = mysqli_fetch_array($resultsum);
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-success" value="Confirm">
-                        <a href="../user/user_page2.php" class="btn btn-warning" class="mb-5">กลับ</a>
+                        <input type="submit" id="but1" class="btn btn-success" value="ยืนยัน">
+                        <a href="../user/user_page2.php" id="but1" class="btn btn-outline-dark">กลับ</a>
                         <br><br>
                     </form>
                 </div>

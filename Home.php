@@ -95,7 +95,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="Banner/b2.png" class="d-block"  width="100%" height="100%" alt="...">
+            <img src="Banner/b2.png" class="d-block" width="100%" height="100%" alt="...">
           </div>
           <div class="carousel-item">
             <img src="Banner/b3.png" class="d-block" width="100%" height="100%"  alt="...">

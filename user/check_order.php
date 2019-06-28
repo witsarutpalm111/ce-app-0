@@ -27,8 +27,8 @@ $result = mysqli_query($connect,$search_order);
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>check_order</title>
      
-     <!-- <link rel="stylesheet" href="../scrollbar.css"> -->
-     <!-- <link rel="stylesheet" href="check_order.css"> -->
+     <link rel="stylesheet" href="../scrollbar.css">
+     <link rel="stylesheet" href="check_order.css">
     
  </head>
 
@@ -58,7 +58,7 @@ $result = mysqli_query($connect,$search_order);
                         <td><?php echo $row2['order_price']?></td>
                         <td> <form action="show_order_user.php" method="post">
                             <input type="hidden" name="id_order" value="<?php echo $row2['id_order']?>">
-                            <input type="submit" class="btn btn-outline-success" value="View">
+                            <input type="submit" class="btn btn-outline-info" value="View">
                         </form>
                     </td>
                     </tr>
@@ -80,7 +80,7 @@ $result = mysqli_query($connect,$search_order);
                 </table>
             </div>
         
-    </div><br>
+    </div>
 
     <div style="text-align:center;">
         <a  href="user_page2.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
