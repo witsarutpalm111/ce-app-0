@@ -105,8 +105,8 @@
 
         #but1 {
             width: 200px;
-            padding-bottom: 0px;
-            justify-content: center;
+            padding: 0px;
+            /* justify-content: center; */
             /* margin-bottom: 30px; */
 
         }
@@ -122,7 +122,7 @@
         }
 
         .bg-123 {
-            background-image: url('../BG/key.jpg');
+            background-image: url('../BG/wh1.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -211,7 +211,7 @@
 
 
             <div class="but1">
-                <a id="but1" href="form_check_repair.php" class="btn btn-dark text-center mb-3">กลับ</a>
+                <a href="form_check_repair.php" id="but1" class="btn btn-outline-dark">กลับ</a>
 
             </div>
 

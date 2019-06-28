@@ -86,7 +86,7 @@ $result = mysqli_query($connect,$p);
         }?>
         </table>
         </div>
-        <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
+        <a href="../../admin_page.php" class="btn btn-outline-warning text-warning">กลับ</a>
     </div>
 
 </body>

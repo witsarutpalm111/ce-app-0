@@ -43,6 +43,12 @@ $result = mysqli_query($connect,$p);
          .table th{
              border-top-width: 0px;
          }
+         #but1{       
+            width: 100px;
+            padding: 0px;
+            margin-top: 20px;	
+            margin-left: 100px;	
+        }
      </style>
 </head>
 
@@ -120,7 +126,7 @@ $result = mysqli_query($connect,$p);
         </table>
         </div>
         </form>
-        <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
+        <a href="../../admin_page.php" id="but1" class="btn btn-outline-warning text-warning btn-sm">กลับ</a>
 
     </div>
 
