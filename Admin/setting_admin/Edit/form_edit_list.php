@@ -53,7 +53,8 @@ if($hour < 1){
         }
     </style>
 </head>
-<body>
+
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
 <div><br><br>
 <legend id="p1" style="text-align:center; color:white;">
     <h2>ID List: <?php echo $row['id_list'] ?></h2><br>
@@ -75,8 +76,8 @@ if($hour < 1){
         <br><br><br>
 
  
-        <input type="submit" name="submit" value="submit" class="btn btn-dark">
-        <a href="../view_repair_list/view_repair_list.php" class="btn btn-dark">กลับ</a>
+        <input type="submit" name="submit" value="ยืนยัน" class="btn btn-success text-light">
+        <a href="../view_repair_list/view_repair_list.php" class="btn btn-outline-warning text-warning">กลับ</a>
     
 
     </form>

@@ -51,7 +51,7 @@ $result = mysqli_query($connect,$p);
      </style>
     
 </head>
-<body>
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br>
 <div class="container">
     <div class="text-right mb-3">
@@ -103,8 +103,8 @@ $result = mysqli_query($connect,$p);
         </div>
 
         <form action="../Add_data_repair/Update_data.php" method="post">
-        <a href="../../admin_page.php" class="btn btn-success">กลับ</a>
-        <input type="submit" value="เพิ่มข้อมูล" class="btn btn-success">
+        <a href="../../admin_page.php" class="btn btn-outline-warning text-warning">กลับ</a>
+        <input type="submit" value="เพิ่มข้อมูล" class="btn btn-success text-light">
         <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
         <input type="hidden" name="em_serial" value="<?php echo$serial ?>">
 

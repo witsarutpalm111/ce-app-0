@@ -47,7 +47,7 @@ $result = mysqli_query($connect,$p);
             width: 100px;
             padding: 0px;
             margin-top: 20px;	
-            margin-left: 100px;	
+            margin-left: 130px;	
         }
      </style>
 </head>
@@ -123,7 +123,7 @@ $result = mysqli_query($connect,$p);
         </table>
         </div>
         </form>
-        <a href="../../admin_page.php" id="but1" class="btn btn-outline-warning text-warning btn-sm">กลับ</a>
+        <a href="../../admin_page.php" id="but1" class="btn btn-outline-warning text-warning">กลับ</a>
 
     </div>
 

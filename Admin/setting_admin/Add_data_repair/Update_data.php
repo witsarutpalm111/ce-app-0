@@ -45,7 +45,7 @@ if (!$_SESSION["User_id"]){  //check session
     </style>
 </head>
 
-<body>
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
     <br><br>
     <div style="text-align:center; color:white;"><h4>
     <form action="Insert_Update_data.php" id="Form_data" method="post">
@@ -80,7 +80,7 @@ if (!$_SESSION["User_id"]){  //check session
     <label>หมายเหตุ : </label>
     <input type="text" name="Note">
     <br><br>
-    <button type="summit" class="btn btn-warning text-danger btn-sm">summit</button>
+    <button type="summit" class="btn btn-success text-light">ยืนยัน</button>
     
 
     </form></h4>
@@ -88,7 +88,7 @@ if (!$_SESSION["User_id"]){  //check session
     <form action="../view_detail_repair/view_user.php" method="post">
         <input type="hidden" name="em_user" value="<?php echo$user_id ?>">
         <input type="hidden" name="em_serial" value="<?php echo$serial ?>">   
-        <input type="submit" value="กลับ">
+        <input type="submit" class="btn btn-outline-warning text-warning" value="กลับ">
 
     </form>
 </div>

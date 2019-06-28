@@ -105,8 +105,8 @@ if (!isset($_SESSION["User_id"])){
             </div>
 
             
-            <input class="btn btn-success text-light btn-sm" type="submit" value="Submit">
-            <a href="../view_repair_list/view_repair_list.php" class="btn btn-warning text-danger btn-sm">Back</a>
+            <input class="btn btn-success text-light" type="submit" value="ยืนยัน">
+            <a href="../view_repair_list/view_repair_list.php" class="btn btn-outline-warning text-warning">กลับ</a>
         
         </form>
     </div>

@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         }
     </style>
 </head>
-<body>
+<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
 <div><br><br>
 <legend id="p1" style="text-align:center; color:white;">
     <h2>User name : <?php echo $row['User_id'] ?></h2><br>
@@ -61,8 +61,8 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         <br><br><br>
 
  
-        <input type="submit" name="submit" value="submit" class="btn btn-dark">
-        <a href="../view_detail_repair/view_user.php?id=<?php echo$row['User_id']?>" ><button class="btn btn-dark">กลับ</button></a>
+        <input type="submit" name="submit" value="ยืนยัน" class="btn btn-success text-light">
+        <a href="../view_detail_repair/view_user.php?id=<?php echo$row['User_id']?>" ><button class="btn btn-outline-warning text-warning">กลับ</button></a>
     
 
     </form>

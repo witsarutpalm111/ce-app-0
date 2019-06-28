@@ -99,8 +99,8 @@ $result = mysqli_query($connect,$p);
                 
         </table>
         </div>
-        <a href="../add_order/form_add_order.php" class="btn btn-info text-light btn-sm">เพิ่มรายการซ่อม</a>
-        <a href="../../admin_page.php" class="btn btn-warning text-danger btn-sm">กลับ</a>
+        <a href="../add_order/form_add_order.php" class="btn btn-info text-light">เพิ่มรายการซ่อม</a>
+        <a href="../../admin_page.php" class="btn btn-outline-warning text-warning">กลับ</a>
     </div>
 
 </body>

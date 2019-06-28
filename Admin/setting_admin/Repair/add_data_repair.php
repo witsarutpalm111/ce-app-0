@@ -66,8 +66,8 @@
                 <input type="text" name = "em_Serial" size = "20" placeholder="Serial_number" required /> -->
             <br>
             <input type="hidden" name="id_order" value="<?php echo $id_order?>">
-            <input type="submit" class="btn btn-dark" name="save" value="save"/>
-            <a href="../view_user/view_order_user.php" class="btn btn-dark">กลับ</a>
+            <input type="submit" class="btn btn-success text-light" name="save" value="บันทึก"/>
+            <a href="../view_user/view_order_user.php" class="btn btn-outline-warning text-warning">กลับ</a>
             
 
         </div>
