@@ -141,7 +141,7 @@ else{
     <section id="content" class="ma" >
       <div class="row mb-3">       
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro1.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ลง Window</h5>
@@ -151,7 +151,7 @@ else{
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro2.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ล้างเครื่อง</h5>
@@ -161,7 +161,7 @@ else{
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro3.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ทำความสะอาด</h5>
@@ -173,7 +173,7 @@ else{
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro4.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ตรวจสภาพเครื่อง</h5>
@@ -183,7 +183,7 @@ else{
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro5.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">อาการจอฟ้า</h5>
@@ -193,7 +193,7 @@ else{
           </div>
     </div>
         <div class="col-sm-4">
-          <div class="card border-0" style="width:15rem;" >
+          <div class="card border-0" style="width:100%;" >
             <img src="img/pro6.png" class="card-img-top" alt="..." style=" height:200px; ">
             <div class="card-body">
               <h5 class="card-title">ปัญหาอื่นๆ</h5>
