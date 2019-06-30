@@ -45,8 +45,8 @@
             </div>
 
             <div class="form-btn">
-                <input type="submit" id="but2" class="btn btn-outline-light" name="submit" value="Sign in" />
-                <a href="user/add_user/Forminsert_user2.php" id="but2" class="btn btn-outline-light" >Sign up</a>
+                <input type="submit" id="but2" class="btn btn-outline-light" name="submit" value="เข้าสู่ระบบ" />
+                <a href="user/add_user/Forminsert_user2.php" id="but2" class="btn btn-outline-light" >สมัครสมาชิก</a>
             </div>
         </form>
     </div>
