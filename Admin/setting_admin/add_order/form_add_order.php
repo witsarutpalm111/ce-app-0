@@ -30,22 +30,37 @@ if (!isset($_SESSION["User_id"])){
         <title>form_add_order</title>
 
     <style>
-        #profile {
-            color: white;
-            padding-left: 300px;
-            padding-right: 300px;
+        .input-group {
+                /* display: none; */
+                position: relative;
+                display: flex;
+                flex-wrap: nowrap;
+                min-width: 100%;
+            }
+
+        body,html {
+            width: 100%;
+            height: 100%;
         }
-        #choice{
-            padding-left: 450px;
-            padding-right: 450px;
+
+        .bg123 {
+            background-image: url('../../../BG/wall3.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
         }
     </style>
 </head>
 
 
-<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+<body >
+    <div class="bg123">
     <br><br>
-    <div style="text-align:center" class="container h-100">
+    <div style="text-align:center" class="container">
         <form action="add_order.php" method="post">
 
 
@@ -61,7 +76,7 @@ if (!isset($_SESSION["User_id"])){
                 <div class="input-group-prepend">
                     <span class="input-group-text">ราคา</span>
                 </div>
-                <input type="text" class="form-control" placeholder="ราคา" name="price" required>
+                <input type="number" class="form-control" placeholder="ราคา" name="price" required>
                 <div class="input-group-append">
                     <span class="input-group-text">บาท</span>
                 </div>
@@ -70,34 +85,17 @@ if (!isset($_SESSION["User_id"])){
 
             <div id="profile" class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">ระยะเวลาซ่อม</label>
+                    <label class="input-group-text" for="inputGroupSelect02">เวลา</label>
                 </div>
                 <div>
-                    <select class="custom-select" id="inputGroupSelect01" type="text" class="form-control" name="time_hour" required>
-                        <option selected>จำนวนชั่วโมง </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
+                    <input class="custom-select" id="inputGroupSelect02" type="number" class="form-control" name="time_hour" required>
+                       
                 </div>
                 <div class="input-group-prepend">
                     <span class="input-group-text">ชั่วโมง</span>
                 </div>
                 <div>
-                    <select class="custom-select" id="inputGroupSelect01" type="text" class="form-control" name="time_minute" required>
-                        <option selected>จำนวนนาที</option>
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                        <option value="50">50</option>
-                    </select>
+                    <input class="custom-select" id="inputGroupSelect01" type="number" class="form-control" name="time_minute" onchange="check()" required>
                 </div>
                 <div class="input-group-append">
                     <span class="input-group-text">นาที</span>
@@ -105,29 +103,30 @@ if (!isset($_SESSION["User_id"])){
             </div>
 
             
-            <input class="btn btn-success text-light" type="submit" value="ยืนยัน">
+            <input class="btn btn-success text-light" type="submit" value="ยืนยัน" onclick="check()">
             <a href="../view_repair_list/view_repair_list.php" class="btn btn-outline-warning text-warning">กลับ</a>
         
         </form>
     </div>
 
-
+    </div>
 
     <script>       
 	    function check(){
-		    var elem = document.getElementById('test_txt').value;
+		    var elem = document.getElementById('inputGroupSelect01').value;
 		    if(elem < 60 && elem >0)
 		    {
-                $('#test_txt').css('border-color', '#00ff00');			
+                $('#inputGroupSelect01').css('border-color', '#00ff00');			
             }
             else if(elem == " ")
             {
-                $('#test_txt').css('border-color', '');
+                $('#inputGroupSelect01').css('border-color', '');
             }
             else
             {
-                alert("กรอกได้เฉพาะตัวเลข 1-59 คะ");
-                $('#test_txt').css('border-color', '#cc0000');
+               alert("กรอกได้เฉพาะตัวเลข 1-59 คะ");
+                $('#inputGroupSelect01').css('border-color', '#cc0000');
+                
             }
         }
     </script>

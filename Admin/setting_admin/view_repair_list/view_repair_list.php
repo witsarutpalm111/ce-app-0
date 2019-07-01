@@ -34,16 +34,34 @@ $result = mysqli_query($connect,$p);
          .table th{
              border-top-width: 0px;
          }
+         body,html{
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg123 {
+            background-image: url('../../../BG/wall3.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+        }
      </style>
 
 </head>
 
 
-<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">   
-<br><br>
+<body>   
+<div class="bg123">
     <div class="container">
-    <div class="table-responsive-xl text-dark">
-        <table class="table table-sm text-nowrap mt-2 " id="user_data">
+        <div class="text-center pt-5 mb-3">
+            <h1>รายการซ่อมทั้งหมด</h1>
+        </div>
+    <div class="table-responsive-xl text-dark ">
+        <table class="table table-sm text-nowrap" id="user_data">
             <tr style="text-align:center" class="bg-dark text-light">
                 <th>ID List</th>
                 <th>List</th>
@@ -102,6 +120,6 @@ $result = mysqli_query($connect,$p);
         <a href="../add_order/form_add_order.php" class="btn btn-info text-light">เพิ่มรายการซ่อม</a>
         <a href="../../admin_page.php" class="btn btn-outline-warning text-warning">กลับ</a>
     </div>
-
+    </div>
 </body>
 </html>

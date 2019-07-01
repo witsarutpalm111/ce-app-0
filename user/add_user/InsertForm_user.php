@@ -7,7 +7,7 @@ $User = $_POST['em_User'];
 $Password = $_POST['em_Password'];
 $Phone = $_POST['em_phone'];
 $Role = $_POST['em_Role'];
-$Line = $_POST['em_line'];
+// $Line = $_POST['em_line'];
 $Mail = $_POST['em_mail'];
 
 
@@ -24,7 +24,7 @@ $row = mysqli_fetch_array($result5);
     }else{
 
         $sql = "Insert into user"
-        . "(`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `More_contact`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Line','$Password')";
+        . "(`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `Password`) value('$User','$fname','$lname','$Phone','$Role','$Mail','$Password')";
         
         $result = mysqli_query($connect,$sql);
         

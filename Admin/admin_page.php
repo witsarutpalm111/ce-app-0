@@ -49,11 +49,32 @@ else{
          .table th{
              border-top-width: 0px;
          }
+         body,
+        html {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .bg123 {
+            background-image: url('../BG/wall3.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+        }
      </style>
 
 </head>
 
-<body style="background-image: url(../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
+<body >
+    <div class="bg123">
+
+    
     <br><br>
     <div class="container">
     <div class="table-responsive-xl text-dark">
@@ -123,7 +144,7 @@ else{
  
     <br><br>
     <!-- <a href="check_user_id.php" class="btn btn-warning text-danger btn-sm">เพิ่มรายละเอียดการซ่อม</a> -->
-
+    </div>
 </body>
 
 </html>

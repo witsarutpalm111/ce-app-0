@@ -27,9 +27,35 @@ $result = mysqli_query($connect,$search_order);
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>check_order</title>
      
-     <link rel="stylesheet" href="../scrollbar.css">
+     <!-- <link rel="stylesheet" href="../scrollbar.css"> -->
      <link rel="stylesheet" href="check_order.css">
-    
+     <style>
+     .bg123{
+    background-image: url('../BG/wh1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;  
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+}
+#but1{       
+    width: 150px;
+    padding: 0px;
+    margin: 15px;	
+}
+tr {
+    text-align:center
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+}
+     </style>
  </head>
 
 

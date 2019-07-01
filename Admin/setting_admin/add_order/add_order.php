@@ -19,6 +19,8 @@ $list = $_POST['list'];
 $price = $_POST['price'];
 $time_hour = $_POST['time_hour'];
 $time_minute = $_POST['time_minute'];
+if($time_minute > 0 && $time_minute <= 60){
+    
 
 $time = ($time_hour*60)+$time_minute;
 // echo $time;
@@ -44,3 +46,9 @@ if($id){
      <a href="../view_repair_list/view_repair_list.php">ดูตารางรายการซ่อม</a>
  </body>
  </html>
+<?php }else{ 
+    echo"คุณกรอกนาทีไม่ถูกต้อง";
+    ?>
+    <a href="form_add_order.php">กลับ</a>
+    <?php
+} ?>

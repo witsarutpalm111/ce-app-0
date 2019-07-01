@@ -22,8 +22,9 @@ $result = mysqli_query($connect,$p);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -34,53 +35,77 @@ $result = mysqli_query($connect,$p);
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>view_order_user</title>
 
     <style>
-         .table th{
-             border-top-width: 0px;
-         }
-         #but1{       
+        .table th {
+            border-top-width: 0px;
+        }
+
+        #but1 {
             width: 100px;
             padding: 0px;
-            margin-top: 20px;	
-            margin-left: 130px;	
+            /* margin-top: 20px; */
+            /* margin-left: 130px; */
         }
-     </style>
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .bg123 {
+            background-image: url('../../../BG/wall3.jpg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
 
 
-<body style="background-image: url(../../../BG/wall3.jpg);background-repeat: no-repeat;background-size:100%;">
-<div class="container">
-<form action="order_user_list.php" method="post">
-    
-<div class="table-responsive-xl text-dark"></div>
-<table class=" table table-sm text-nowrap mt-2 " id="user_data"  >
-<br><br>
-            <tr style="text-align:center" class="bg-dark text-light">
-                <th>ID Order</th>
-                <th>User ID</th>
-                <th>Status</th>
-                <th>view</th>
-                <th>เพิ่มข้อมูลการซ่อม</th>
+<body>
+    <div class="bg123">
 
 
-            </tr>
-            <?php   
+        <div class="container">
+            <form action="order_user_list.php" method="post">
+
+                <div class="table-responsive-xl text-dark">
+                <table class=" table table-sm text-nowrap mt-2 " id="user_data">
+                    <br><br>
+                    <tr style="text-align:center" class="bg-dark text-light">
+                        <th>ID Order</th>
+                        <th>User ID</th>
+                        <th>Status</th>
+                        <th>view</th>
+                        <th>เพิ่มข้อมูลการซ่อม</th>
+
+
+                    </tr>
+                    <?php   
                   $row_data = 1;     
                 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                     $i = $row_data%2;
             ?>
-            
-            <tr style="text-align:center" id="row-data<?php echo $row_data?>">
-                <td><?php echo $row['id_order']?></td>
-                <td><?php echo $row['user_id']?></td>
-                    
-                
-            <td><?php 
+
+                    <tr style="text-align:center" id="row-data<?php echo $row_data?>">
+                        <td><?php echo $row['id_order']?></td>
+                        <td><?php echo $row['user_id']?></td>
+
+
+                        <td><?php 
                     if($row['status_order'] == 'confirm'){
                         echo("ยืนยันแล้ว");
                     }else{
@@ -88,18 +113,19 @@ $result = mysqli_query($connect,$p);
                     }
     
                 ?>
-            </td>
-            <td>
-                <form action="order_user_list.php" method="post">
-                    <input class="btn btn-info text-light btn-sm" type="submit" value="View">
-                    <input type="hidden" name="id" value="<?php echo $row['id_order']?>">
-                </form>
-            </td>
-            <td><?php
+                        </td>
+                        <td>
+                            <form action="order_user_list.php" method="post">
+                                <input class="btn btn-info text-light btn-sm" type="submit" value="View">
+                                <input type="hidden" name="id" value="<?php echo $row['id_order']?>">
+                            </form>
+                        </td>
+                        <td><?php
                 if($row['status_order'] == 'confirm'){
                     if($row['Serial_number'] == ""){?>
-                        <a href="../Repair/add_data_repair.php?id_order=<?php echo $row['id_order']?>" class="btn btn-outline-dark  btn-sm">เพิ่มข้อมูลการซ่อม</a>
-                    <?php }else{
+                            <a href="../Repair/add_data_repair.php?id_order=<?php echo $row['id_order']?>"
+                                class="btn btn-outline-dark  btn-sm">เพิ่มข้อมูลการซ่อม</a>
+                            <?php }else{
                         echo"เพิ่มข้อมูลการซ่อมแล้วค่ะ";
                     }
                     
@@ -108,9 +134,9 @@ $result = mysqli_query($connect,$p);
                 }
 
                     ?>
-            </td>
-            </tr>
-            <?php 
+                        </td>
+                    </tr>
+                    <?php 
         if($i == 1){
             echo"<script>
             $('#row-data$row_data').addClass('table-secondary');
@@ -123,12 +149,15 @@ $result = mysqli_query($connect,$p);
         
         $row_data += 1;
         }?>
-        </table>
+                </table>
+
         </div>
+
         </form>
         <a href="../../admin_page.php" id="but1" class="btn btn-outline-warning text-warning">กลับ</a>
 
     </div>
-
+    </div>
 </body>
+
 </html>

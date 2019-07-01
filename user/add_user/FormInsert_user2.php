@@ -31,7 +31,7 @@
                                     <span class="input-group-text" id="basic-addon1">Username</span>
                                 </div>
                                 <input type="text" class="form-control  mr-4" placeholder="Username"
-                                    aria-label="Username" aria-describedby="basic-addon1" name="em_User">
+                                    aria-label="Username" aria-describedby="basic-addon1" name="em_User" required>
                             </div>
 
 
@@ -40,7 +40,7 @@
                                     <span class="input-group-text" id="basic-addon1">Password</span>
                                 </div>
                                 <input type="password" class="form-control  mr-4" placeholder="Password"
-                                    aria-label="Password" aria-describedby="basic-addon1" name="em_Password">
+                                    aria-label="Password" aria-describedby="basic-addon1" name="em_Password" required>
                             </div>
 
 
@@ -49,7 +49,7 @@
                                     <span class="input-group-text" id="basic-addon1">Name</span>
                                 </div>
                                 <input type="text" class="form-control  mr-4" placeholder="Name"
-                                    aria-label="Name" aria-describedby="basic-addon1" name="em_fname">
+                                    aria-label="Name" aria-describedby="basic-addon1" name="em_fname" required>
                             </div>
 
 
@@ -58,7 +58,7 @@
                                     <span class="input-group-text" id="basic-addon1">Surname</span>
                                 </div>
                                 <input type="text" class="form-control  mr-4" placeholder="Surname"
-                                    aria-label="Surname" aria-describedby="basic-addon1" name="em_lname">
+                                    aria-label="Surname" aria-describedby="basic-addon1" name="em_lname" required>
                             </div>
 
 
@@ -66,8 +66,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">E-mail</span>
                                 </div>
-                                <input type="text" class="form-control  mr-4" placeholder="E-mail"
-                                    aria-label="E-mail" aria-describedby="basic-addon1" name="em_mail">
+                                <input type="email" class="form-control  mr-4" placeholder="E-mail"
+                                    aria-label="E-mail" aria-describedby="basic-addon1" name="em_mail" required>
                             </div>
                                         
 
@@ -76,7 +76,7 @@
                                     <span class="input-group-text" id="basic-addon1">Telephone</span>
                                 </div>
                                 <input type="text" class="form-control  mr-4" placeholder="Telephone"
-                                    aria-label="Telephone" aria-describedby="basic-addon1" name="em_phone">
+                                    aria-label="Telephone" aria-describedby="basic-addon1" name="em_phone" required>
                             </div>
 
 
