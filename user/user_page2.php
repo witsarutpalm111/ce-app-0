@@ -9,6 +9,7 @@ if (!isset($_SESSION["User_id"])){  //check session
 }else{
     $palm = $_SESSION['User_id'];
 }
+// echo$palm;
 $p = 0;
     if(isset($_GET['alert'])){
         $p = $_GET['alert'];
@@ -16,9 +17,10 @@ $p = 0;
     if($p == 1){
        echo "<script>alert('เพิ่มลงในรายการสั่งซ่อมเรียบร้อยแล้วค่ะ\\nรอทางเจ้าหน้าที่ยืนยันรายการที่สั่งซ่อมนะคะ');</script>";
     }
-$p ="SELECT * FROM user WHERE user.User_id = $palm";
-$resalt = mysqli_query($connect,$p);
-$row = mysqli_fetch_array($resalt);
+$sql ="SELECT * FROM user WHERE user.User_id = '$palm' ";
+$result = mysqli_query($connect,$sql);
+// print_r($result);
+$row = mysqli_fetch_array($result);
 ?>
 
 <!-- ฟกดฟดฟหด -->
@@ -136,9 +138,9 @@ $row = mysqli_fetch_array($resalt);
 </html>
 
 
-<script>
+<!-- <script>
     function pass(){
-        // alert(row);
+        alert(row);
         Swal.fire({
             title: 'Your Profile',
             html:   "User ID : <?php echo $row['User_id']; ?><br>" +
@@ -152,4 +154,4 @@ $row = mysqli_fetch_array($resalt);
             backdrop: `rgba(0,0,123,0.4) url("../img/nyan-cat.gif") center left no-repeat`
         });
     }
-</script>
+</script> -->
