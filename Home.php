@@ -142,7 +142,7 @@ else{
       <div class="row mb-3">       
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro1.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro1.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ลง Window</h5>
               <p class="card-text">แบ๊กคัพข้อมูล แล้วทำการลงวินโดว์ใหม่</p>
@@ -152,7 +152,7 @@ else{
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro2.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro2.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ล้างเครื่อง</h5>
               <p class="card-text">ล้างข้อมูลภายในเครื่อง เช่น ไฟล์ขยะ แคช และอื่นๆ</p>
@@ -162,7 +162,7 @@ else{
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro3.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro3.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ทำความสะอาด</h5>
               <p class="card-text">ทำความสะอาดเครื่องคอมพิวเตอร์ ขจัดฝุ่นทั้งหมด</p>
@@ -174,7 +174,7 @@ else{
       <div class="row">
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro4.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro4.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ตรวจสภาพเครื่อง</h5>
               <p class="card-text">ตรวจเช็คสภาพฮาร์ดแวร์และส่วนประกอบต่างๆอย่างละเอียด</p>
@@ -184,7 +184,7 @@ else{
         </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro5.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro5.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">อาการจอฟ้า</h5>
               <p class="card-text">แก้ปัญหาหน้าจอฟ้า ให้คอมกลับสู่สภาพปกติ</p>
@@ -194,7 +194,7 @@ else{
     </div>
         <div class="col-sm-4">
           <div class="card border-0" style="width:100%;" >
-            <img src="img/pro6.png" class="card-img-top" alt="..." style=" height:200px; ">
+            <img src="img/pro6.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ปัญหาอื่นๆ</h5>
               <p class="card-text">ปัญหาอื่นๆ สามารถติดต่อสอบถามกันก่อนได้ค่ะ</p>
