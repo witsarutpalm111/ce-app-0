@@ -23,7 +23,7 @@ $result = mysqli_query($connect,$sql);
 $row = mysqli_fetch_array($result);
 ?>
 
-<!-- ฟกดฟดฟหด -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
