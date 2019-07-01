@@ -10,7 +10,7 @@ exit();
 require './../DB_ce-app/User.php';
 $search_order = "SELECT order_user.date_order,order_user.order_price,order.id_order
 FROM `order`,`order_user`
-WHERE order.id_order = order_user.id_order AND order.user_id = $palm
+WHERE order.id_order = order_user.id_order AND order.user_id = '$palm'
 GROUP BY id_order";
 $result = mysqli_query($connect,$search_order);
 ?>

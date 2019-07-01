@@ -15,7 +15,7 @@ $time_minute = $_POST['time_minute'];
 
 $time = ($time_hour*60)+$time_minute;
 
-$p ="UPDATE `price_rate` SET `List`='$List', `Price`='$price', `time` = $time WHERE id_list=$id_list";
+$p ="UPDATE `price_rate` SET `List`='$List', `Price`='$price', `time` = '$time' WHERE id_list= $id_list ";
 if($result = mysqli_query($connect,$p)){
     Header("Location:../view_repair_list/view_repair_list.php");
 }

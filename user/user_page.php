@@ -9,7 +9,7 @@ if (!isset($_SESSION["User_id"])){  //check session
 }else{
     $palm = $_SESSION['User_id'];
 }
-$p ="SELECT * FROM user WHERE user.User_id = $palm";
+$p ="SELECT * FROM user WHERE user.User_id = '$palm' ";
 $resalt = mysqli_query($connect,$p);
 $row = mysqli_fetch_array($resalt);
 ?>

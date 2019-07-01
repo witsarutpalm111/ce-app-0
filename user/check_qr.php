@@ -35,7 +35,7 @@
         }else{
             $p1 = "SELECT com.User_id,com.Serial_number,update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update,user.fname,user.lname
             FROM user,com,update_com
-            WHERE com.User_id = $user_id AND com.Serial_number = $serial AND com.ID_com = update_com.ID_com AND com.User_id = user.User_id";
+            WHERE com.User_id = '$user_id' AND com.Serial_number = $serial AND com.ID_com = update_com.ID_com AND com.User_id = user.User_id";
             $result = mysqli_query($connect,$p1);
             $result1 = mysqli_query($connect,$p1); 
           

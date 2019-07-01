@@ -21,7 +21,7 @@ require './../../../DB_ce-app/User.php';
 //เอา id_com มาใช้
 $p = "SELECT update_com.Status_com,update_com.Detail_com,update_com.Note_com,update_com.Price_com,update_com.Time_update
 FROM `update_com`,`com`
-WHERE Serial_number = '$serial' AND com.User_id = $user_id AND com.ID_com=update_com.ID_com";
+WHERE Serial_number = '$serial' AND com.User_id = '$user_id' AND com.ID_com=update_com.ID_com";
 $result = mysqli_query($connect,$p);   
 
 ?>

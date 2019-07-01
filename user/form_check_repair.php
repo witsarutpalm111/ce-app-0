@@ -56,7 +56,7 @@ $palm = 0;
                     <select id="bt2" class="custom-select" id="inputGroupSelect01" name="em_Serial" required>
                         <option hidden selected>Choose Serial Number</option>
                         <?php
-                        $serial = "SELECT Serial_number FROM com WHERE com.User_id = $user_id GROUP BY com.Serial_number";
+                        $serial = "SELECT Serial_number FROM com WHERE com.User_id = '$user_id' GROUP BY com.Serial_number";
                         $result = mysqli_query($connect,$serial);
                         while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                         ?>

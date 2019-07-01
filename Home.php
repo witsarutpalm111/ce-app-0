@@ -8,7 +8,7 @@ else{
   // $fname =$_SESSION['fname'];
   // $lname = $_SESSION['lname'];
   $user_id = $_SESSION['User_id'];
-  $sql = "SELECT fname,lname FROM user WHERE user.user_id = $user_id";
+  $sql = "SELECT fname,lname FROM user WHERE user.user_id = '$user_id'";
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_array($result);
   $fname =$row['fname'];

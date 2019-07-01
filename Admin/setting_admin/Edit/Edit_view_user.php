@@ -31,14 +31,14 @@ $detail = $_POST['detail'];
 $note = $_POST['note'];
 $Price = $_POST['price'];
 
-$pp1 = "SELECT com.ID_com FROM com WHERE com.User_id=$palm1 ORDER BY id DESC LIMIT 1";
+$pp1 = "SELECT com.ID_com FROM com WHERE com.User_id= '$palm1' ORDER BY id DESC LIMIT 1";
 $result1 = mysqli_query($connect,$pp1); 
 $row1 = mysqli_fetch_array($result1);
 $RR = $row1['ID_com'];
 
 $pp = "SELECT com.User_id
 FROM `com`,`update_com` 
-WHERE com.User_id = $palm1 AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ";
+WHERE com.User_id = '$palm1' AND com.ID_com = '$RR' AND com.ID_com=update_com.ID_com ";
 $result2 = mysqli_query($connect,$pp); 
 $row = mysqli_fetch_array($result2);
 

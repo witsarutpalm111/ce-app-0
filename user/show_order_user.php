@@ -11,7 +11,7 @@ $id_order =$_POST['id_order'];
 require './../DB_ce-app/User.php';
 $search_order = "SELECT status_order,order_user.date_order,order_user.order_price,order.id_order,order.id_product,price_rate.List,price_rate.Price
 FROM `order`,`order_user`,`price_rate`
-WHERE order.id_order = $id_order AND order.user_id = $palm AND order.id_product = price_rate.id_list AND order.id_order = order_user.id_order";
+WHERE order.id_order = $id_order AND order.user_id = '$palm' AND order.id_product = price_rate.id_list AND order.id_order = order_user.id_order";
 $result = mysqli_query($connect,$search_order);
 $result1 = mysqli_query($connect,$search_order);
 $row = mysqli_fetch_array($result1);

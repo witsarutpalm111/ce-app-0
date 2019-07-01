@@ -12,7 +12,7 @@ if (!isset($_SESSION["User_id"])){
     if(isset($_GET['alert'])){
         $palm = $_GET['alert'];
     }
-    
+    // echo$palm;
 //     $em_Search = "";
 //     if(isset($_POST['em_Search'])){
 //         $em_Search = $_POST['em_Search'];
@@ -20,14 +20,15 @@ if (!isset($_SESSION["User_id"])){
 //    // $em_Search = $_POST['em_Search'];
 //    // $pa = $_SESSION['user_id'];
 //    if($em_Search == ""){
-    $p = "SELECT * FROM user,com WHERE user.User_id=com.User_id and com.ID_com='$palm'";
+    $p = "SELECT com.ID_com,com.Receive_ID FROM user,com WHERE user.User_id=com.User_id and com.ID_com='$palm'";
   // }else{
    // $p = "SELECT * FROM User,file_user WHERE User.user_id=file_user.user_id AND (file_user.user_id = '$em_Search' or User.Name = '$em_Search') ";
    //}
 
 
     $result = mysqli_query($connect,$p);    
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC)
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
 ?>
 <head>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -75,7 +76,7 @@ if (!isset($_SESSION["User_id"])){
             </div> <br>
 
             <div class="show-qr">
-                <div id ="<?php echo $row['Recieve_ID']?>"></div>
+                <div id ="<?php echo $row['Receive_ID']?>"></div>
             </div>  
             
     </div>
@@ -83,7 +84,7 @@ if (!isset($_SESSION["User_id"])){
         <script type="text/javascript">
 
             new QRCode(document.getElementById("<?php echo $row['ID_com']?>"),"10.71.7.145/ce_app/user/check_qr.php?id_com=<?php echo $row['ID_com']?>");
-            new QRCode(document.getElementById("<?php echo $row['Recieve_ID']?>"), "10.71.7.145/ce_app/Admin/check_qr_admin.php?id_receive=<?php echo $row['Recieve_ID']?>");
+            new QRCode(document.getElementById("<?php echo $row['Receive_ID']?>"), "10.71.7.145/ce_app/Admin/check_qr_admin.php?id_receive=<?php echo $row['Receive_ID']?>");
 
         </script>
 

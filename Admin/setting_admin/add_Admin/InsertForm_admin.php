@@ -16,7 +16,7 @@ $Role = 'Admin';
 $Line = $_POST['em_line'];
 $Mail = $_POST['em_mail'];
 
-$p = "SELECT user.User_id FROM user WHERE User_id=$User";
+$p = "SELECT user.User_id FROM user WHERE user.User_id='$User'";
 $result5 = mysqli_query($connect,$p);
 $row = mysqli_fetch_array($result5);
     if($row>0){

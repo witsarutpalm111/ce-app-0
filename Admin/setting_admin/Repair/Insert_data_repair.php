@@ -26,20 +26,19 @@ if (!$_SESSION["User_id"]){  //check session
     $date = date("jnYHis");
     $status = 'ยืนยันคำสั่งซ่อม';
     $hash = md5($date.$salt.'user');
-    $has = md5($date.$salt.'Recieve');
+    $has = md5($date.$salt.'Receive');
 
-    $p = "SELECT user.User_id FROM user WHERE User_id=$User";
+    $p = "SELECT user.User_id FROM user WHERE user.User_id = '$User' ";
     $result5 = mysqli_query($connect,$p);
     $row = mysqli_fetch_array($result5);
     if($row_serial['Serial_number'] == ""){
 
         if($row>0){
-            $sql = "Insert into com"
-            . "(`Serial_number`, `User_id`,`ID_com`, `Recieve_ID`) value('$Serial','$User','$hash','$has')";
-
-            $sql1 = "Insert into update_com"
-            . "(`ID_com`,`Status_com`,`Time_update`) value('$hash','$status','$time')";
+            $sql = "INSERT INTO com(`Serial_number`,`User_id`,`ID_com`, `Receive_ID`) VALUE('$Serial','$User','$hash','$has')";
             $result = mysqli_query($connect,$sql);
+
+            $sql1 = "INSERT INTO update_com(`ID_com`,`Status_com`,`Time_update`) VALUE('$hash','$status','$time')";
+
             $result1 = mysqli_query($connect,$sql1);
             
                 $update_serial = "UPDATE `order_user` SET `Serial_number`='$Serial' WHERE id_order='$id_order' ";
@@ -54,10 +53,9 @@ if (!$_SESSION["User_id"]){  //check session
 
         }else{
             header("location:../../../Login.php?alert=2");
-            
-    }
-}else{
+        }
+    }else{
     header("location:../view_user/view_order_user.php?alert=2");
-}
+    }
 }
 ?>

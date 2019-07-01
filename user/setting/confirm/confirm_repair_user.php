@@ -24,7 +24,7 @@ if (!isset($_SESSION["User_id"])){
   }
   $id_order = $num;
 
-  $frist ="SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$user_id and price_rate.id_list=order.id_product AND id_order = ''";
+  $frist ="SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE order.user_id ='$user_id' and price_rate.id_list=order.id_product AND id_order = ''";
 
   $p = "INSERT INTO `order_user`(`date_order`, `id_order`, `order_price`) VALUE('$Date','$id_order','$price')";
   $search ="SELECT * FROM `order` WHERE order.user_id = '$user_id' AND order.id_order='' ";
