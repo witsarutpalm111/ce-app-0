@@ -84,7 +84,7 @@ else{
                 <!-- ทำเป็น form ส่งค่า serail ไปด้วย จะได้เช็ค 1 id หลายเครื่องได้-->
                 <td >
                     <form action="setting_admin/view_detail_repair/view_user.php" method="post">
-                        <input class="btn btn-info mr-3 mb-3" value="View" type="submit">
+                        <input class="btn btn-info" value="View" type="submit">
                         <input type="hidden" name="em_serial" value="<?php echo $row['Serial_number']?>">
                         <input type="hidden" name="em_user" value="<?php echo $row['User_id']?>">
 

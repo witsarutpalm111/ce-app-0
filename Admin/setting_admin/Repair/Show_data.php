@@ -83,7 +83,7 @@ if (!isset($_SESSION["User_id"])){
         <script type="text/javascript">
 
             new QRCode(document.getElementById("<?php echo $row['ID_com']?>"),"10.71.7.145/ce_app/user/check_qr.php?id_com=<?php echo $row['ID_com']?>");
-            new QRCode(document.getElementById("<?php echo $row['Recieve_ID']?>"), "<?php echo $row['Recieve_ID']?>");
+            new QRCode(document.getElementById("<?php echo $row['Recieve_ID']?>"), "10.71.7.145/ce_app/Admin/check_qr_admin.php?id_receive=<?php echo $row['Recieve_ID']?>");
 
         </script>
 
