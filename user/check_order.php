@@ -34,56 +34,59 @@ $result = mysqli_query($connect,$search_order);
 
 
  <body>
- <div class="container"> <br>   
+     <div class="bg123">
+     <div class="container"> <br>   
     
-            <div class="table-responsive-xl text-dark">
-                <table class="table table-sm text-nowrap mt-2" id="user_data"><br>
-             
-                    <tr style="text-align:center" class="bg-dark text-light">
-                        <th>ID Order</th>
-                        <th>Time Order</th>
-                        <th>Price</th>
-                        <th>View</th>
-                    </tr>
+    <div class="table-responsive-xl text-dark">
+        <table class="table table-sm text-nowrap mt-2" id="user_data"><br>
+     
+            <tr style="text-align:center" class="bg-dark text-light">
+                <th>ID Order</th>
+                <th>Time Order</th>
+                <th>Price</th>
+                <th>View</th>
+            </tr>
 
-                    <?php   
-                    $row_data = 1;       
-                        while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                            $i = $row_data%2;
-                   ?>
+            <?php   
+            $row_data = 1;       
+                while($row2 = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                    $i = $row_data%2;
+           ?>
 
-                    <tr id="row-data<?php echo $row_data?>">
-                        <td> <?php echo $row2['id_order']?></td>
-                        <td> <?php echo $row2['date_order']?></td>
-                        <td><?php echo $row2['order_price']?></td>
-                        <td> <form action="show_order_user.php" method="post">
-                            <input type="hidden" name="id_order" value="<?php echo $row2['id_order']?>">
-                            <input type="submit" class="btn btn-outline-info" value="View">
-                        </form>
-                    </td>
-                    </tr>
-                    
-                    <?php
-                if($i == 1){
-                    echo"<script>
-                    $('#row-data$row_data').addClass('table-secondary');
-                    </script>";
-                }else{
-                    echo"<script>
-                    $('#row-data$row_data').addClass('table-light');
-                    </script>";
-                }
-                
-                $row_data += 1;
-                }?>
-
-                </table>
-            </div>
+            <tr id="row-data<?php echo $row_data?>">
+                <td> <?php echo $row2['id_order']?></td>
+                <td> <?php echo $row2['date_order']?></td>
+                <td><?php echo $row2['order_price']?></td>
+                <td> <form action="show_order_user.php" method="post">
+                    <input type="hidden" name="id_order" value="<?php echo $row2['id_order']?>">
+                    <input type="submit" class="btn btn-outline-info" value="View">
+                </form>
+            </td>
+            </tr>
+            
+            <?php
+        if($i == 1){
+            echo"<script>
+            $('#row-data$row_data').addClass('table-secondary');
+            </script>";
+        }else{
+            echo"<script>
+            $('#row-data$row_data').addClass('table-light');
+            </script>";
+        }
         
+        $row_data += 1;
+        }?>
+
+        </table>
     </div>
 
-    <div style="text-align:center;">
-        <a  href="user_page2.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
-    </div>
+</div>
+
+<div style="text-align:center;">
+<a  href="user_page2.php" id="but1" class="btn btn-outline-dark" class="ml-3">กลับ</a>
+</div>
+     </div>
+ 
  </body>
  </html>
