@@ -41,9 +41,12 @@ if (!isset($_SESSION["User_id"])){
     <style>
         .show-qr{
             position: relative;
-            left:40%;
+            text-align: center;
             /* top: 20%; */
-            /* margin-bottom:100px;  */
+         justify-content: center;
+         justify-items: center;
+            margin:0px;
+            left: 40%; 
         }
         h1{
             text-align: center;
@@ -63,7 +66,7 @@ if (!isset($_SESSION["User_id"])){
 <body>
     <h1> แสดงข้อมูล </h1>
     <div>
-            <div  class="scan">
+            <div class="scan">
                 <label>สแกนเพื่อตรวจสอบสถานะการซ่อมของคุณ</label>
         </div><br>
 
