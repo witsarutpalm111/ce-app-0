@@ -19,10 +19,10 @@ $AA = $_SESSION["User_id"];
 $p1 = "SELECT * FROM price_rate";
 $result1 = mysqli_query($connect,$p1);
 
-$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_product AND id_order = ''";
+$p = "SELECT price_rate.List,price_rate.Price,price_rate.id_list,order.user_id,price_rate.time FROM `order`,`price_rate` WHERE order.user_id ='$AA' and price_rate.id_list=order.id_product AND id_order = ''";
 $result = mysqli_query($connect,$p); 
 
-$psum = "SELECT SUM(time)AS WWW FROM `order`,`price_rate` WHERE user_id =$AA and price_rate.id_list=order.id_product AND id_order = ''";
+$psum = "SELECT SUM(time)AS WWW FROM `order`,`price_rate` WHERE order.user_id ='$AA' and price_rate.id_list=order.id_product AND id_order = ''";
 $resultsum = mysqli_query($connect,$psum); 
 $sumtime = mysqli_fetch_array($resultsum);
 
