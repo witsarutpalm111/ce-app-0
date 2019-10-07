@@ -25,7 +25,7 @@ $result = mysqli_query($connect,$search_order);
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>check_order</title>
+     <title>ตรวจสอบใบสั่งซ่อม</title>
      
      <!-- <link rel="stylesheet" href="../scrollbar.css"> -->
      <link rel="stylesheet" href="check_order.css">

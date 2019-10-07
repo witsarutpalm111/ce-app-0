@@ -29,7 +29,7 @@ $result = mysqli_query($connect,$p);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>view_repair_list</title>
+    <title>แก้ไขรายการซ่อมของร้าน</title>
     <style>
          .table th{
              border-top-width: 0px;
@@ -58,7 +58,7 @@ $result = mysqli_query($connect,$p);
 <div class="bg123">
     <div class="container">
         <div class="text-center pt-5 mb-3">
-            <h1>รายการซ่อมทั้งหมด</h1>
+            <h1 style="color:white">แก้ไขรายการซ่อม</h1>
         </div>
     <div class="table-responsive-xl text-dark ">
         <table class="table table-sm text-nowrap" id="user_data">

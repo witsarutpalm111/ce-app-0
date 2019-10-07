@@ -44,7 +44,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>admin_page</title>
+    <title>หน้าหลักแอดมิน</title>
      <style>
          .table th{
              border-top-width: 0px;

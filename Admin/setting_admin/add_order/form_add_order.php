@@ -27,7 +27,7 @@ if (!isset($_SESSION["User_id"])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>form_add_order</title>
+        <title>เพิ่มรายการซ่อมของทางร้าน</title>
 
     <style>
         .input-group {
