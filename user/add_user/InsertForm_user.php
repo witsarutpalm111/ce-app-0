@@ -4,7 +4,7 @@ require './../../DB_ce-app/User.php';
 $fname = $_POST['em_fname'];
 $lname = $_POST['em_lname'];
 $User = $_POST['em_User'];
-$Password = $_POST['em_Password'];
+$Password = md5($_POST['em_Password']);
 $Phone = $_POST['em_phone'];
 $Role = $_POST['em_Role'];
 // $Line = $_POST['em_line'];

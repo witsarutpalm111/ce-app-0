@@ -114,7 +114,7 @@ $row = mysqli_fetch_array($resalt);
 
 <!--ส่วนของ Nav Bar แถบด้านบน-->
         <ul class="topnav">
-            <li><a class="active" href="../Home.php">Home</a></li>
+            <li><a class="active" href="../index.php">Home</a></li>
             <div onclick="pass();">
                 <li><a href="#">My Profile</a></li>
             </div>

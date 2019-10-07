@@ -87,7 +87,7 @@ $row = mysqli_fetch_array($result);
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <h2><a class="nav-link" href="../Home.php">Home <span class="sr-only">(current)</span></a></h2>
+        <h2><a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a></h2>
       </li>
       <li id="a" class="nav-item">
         <h5><a class="nav-link" href="../shopping/list_shopping.php"> Shopping list </a></h5>

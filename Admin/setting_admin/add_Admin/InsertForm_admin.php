@@ -10,7 +10,7 @@ if (!isset($_SESSION["User_id"])){
 $fname = $_POST['em_fname'];
 $lname = $_POST['em_lname'];
 $User = $_POST['em_User'];
-$Password = $_POST['em_Password'];
+$Password = md5($_POST['em_Password']);
 $Phone = $_POST['em_phone'];
 $Role = 'Admin';
 $Line = $_POST['em_line'];

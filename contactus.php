@@ -74,7 +74,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
     <div class="down">
-        <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
+        <!-- <a id="but1" href="../ce-app-0/index.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
         <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
     </div>
             

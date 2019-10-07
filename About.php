@@ -63,7 +63,7 @@
             </div> 
             
             <div>
-                <!-- <a id="but1" href="../ce-app-0/Home.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
+                <!-- <a id="but1" href="../ce-app-0/index.php" class="btn btn-outline-dark">หน้าหลัก</a> -->
                 <a id="but2" href="user/user_page2.php" class="btn btn-outline-dark">กลับ</a>
             </div>  
         </section>       
