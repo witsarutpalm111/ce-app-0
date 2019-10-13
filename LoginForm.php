@@ -17,7 +17,7 @@ session_start();
     <?php
         $em_User = $_POST['em_User'];
         $em_Password = md5($_POST['em_Password']);
-        echo$em_Password;
+        // echo$em_Password;
 
         require './DB_ce-app/User.php';
 
