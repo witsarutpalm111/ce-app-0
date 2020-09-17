@@ -15,9 +15,8 @@ session_start();
 </head>
 <body>
     <?php
-        $em_User = $_POST['em_User'];
-        $em_Password = md5($_POST['em_Password']);
-        // echo$em_Password;
+        $em_User     = $_POST['em_User'];
+        $em_Password = $_POST['em_Password'];
 
         require './DB_ce-app/User.php';
 
@@ -28,7 +27,7 @@ session_start();
         $num_row = mysqli_num_rows($result);
 
         if($num_row == 1){
-          $_SESSION['User_id'] = $em_User;
+          $_SESSION['User_id']  = $em_User;
           $_SESSION['Password'] = $em_Password;
           if($role['Role'] == "Admin"){
             header("location:Admin/admin_page.php");

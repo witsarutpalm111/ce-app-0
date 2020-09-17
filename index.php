@@ -145,7 +145,7 @@ else{
             <img src="img/pro1.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">ลง Window</h5>
-              <p class="card-text">แบ๊กคัพข้อมูล แล้วทำการลงวินโดว์ใหม่</p>
+              <p class="card-text">แบ๊กคัพข้อมูล แล้วทำการลงวินโดว์ใหม่ พร้อมทั้งติดตั้งโปรแกรมพื้นฐาน</p>
               <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
@@ -187,7 +187,7 @@ else{
             <img src="img/pro5.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
               <h5 class="card-title">อาการจอฟ้า</h5>
-              <p class="card-text">แก้ปัญหาหน้าจอฟ้า ให้คอมกลับสู่สภาพปกติ</p>
+              <p class="card-text">แก้ปัญหาหน้าอาการจอฟ้า(Blue screen) ให้คอมกลับสู่สภาวะปกติ</p>
               <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
@@ -196,8 +196,8 @@ else{
           <div class="card border-0" style="width:100%;" >
             <img src="img/pro6.png" class="card-img-top" alt="..." style=" height:250px; ">
             <div class="card-body">
-              <h5 class="card-title">ปัญหาอื่นๆ</h5>
-              <p class="card-text">ปัญหาอื่นๆ สามารถติดต่อสอบถามกันก่อนได้ค่ะ</p>
+              <h5 class="card-title">บริการให้คำปรึกษา</h5>
+              <p class="card-text">หากมีข้อสงสัยหรือต้องการปรึกษาปัญหาคอม สามารถติดต่อสอบถามกันได้ค่ะ</p>
               <a href="shopping/list_shopping.php" id="bb" class="btn btn-outline-danger">เลือก</a>
             </div>
           </div>
