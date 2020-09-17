@@ -24,13 +24,13 @@ session_start();
         $sql = "SELECT user.User_id,user.Password,user.Role,user.fname,user.lname FROM user WHERE user.User_id ='$em_User' and user.Password='$em_Password'";
         $result = mysqli_query($connect,$sql);
 
-        $Palm = mysqli_fetch_array($result);
+        $role = mysqli_fetch_array($result);
         $num_row = mysqli_num_rows($result);
 
         if($num_row == 1){
           $_SESSION['User_id'] = $em_User;
           $_SESSION['Password'] = $em_Password;
-          if($Palm['Role'] == "Admin"){
+          if($role['Role'] == "Admin"){
             header("location:Admin/admin_page.php");
           }
           else{
