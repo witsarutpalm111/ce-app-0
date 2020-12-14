@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2020 at 06:05 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Dec 14, 2020 at 03:00 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -207,7 +206,7 @@ CREATE TABLE `user` (
   `User_id` varchar(255) NOT NULL,
   `fname` text NOT NULL,
   `lname` text NOT NULL,
-  `phone_num` int(11) NOT NULL,
+  `phone_num` varchar(20) NOT NULL,
   `Role` text NOT NULL,
   `Email` text NOT NULL,
   `More_contact` text NOT NULL,
@@ -219,14 +218,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_id`, `fname`, `lname`, `phone_num`, `Role`, `Email`, `More_contact`, `Password`) VALUES
-('111', 'witsarut', 'wittaya', 0, 'Std', 'palm@gmail.com', '5555', '111'),
-('123456', 'witsarut', 'wittaya', 0, 'Admin', 'palm@gmail.com', '-', 'e10adc3949ba59abbe56e057f20f883e'),
-('222', 'witsarut', '5555', 0, 'asfasf', 'palm@gmail.com', 'safsafsaf', '222'),
-('333', 'witsarut', 'wittaya', 0, '783783', 'palm@gmail.com', '78378', '333'),
-('444', '444', '444', 444, 'Guest', '4444', '', '444'),
-('555', 'iiii', 'iiiii', 44444554, 'Student', 'iiiii', '', '555'),
-('hhh', 'hhh', 'h', 0, 'Student', 'h', '', 'hhh'),
-('user', ',lll', ',lk,k,lp,', 7548484, 'Student', 'palm@gmail', '', 'ee11cbb19052e40b07aac0ca060c23ee');
+('1111', 'Johnson', 'Winterfall', '094-897-9632', 'Admin', 'Johnson@gmail.com', '', '1111'),
+('2222', 'Adam', 'Leonard', '097-897-6387', 'Admin', 'Adam@gmail.com', '-', '2222'),
+('3333', 'Testena', 'Toney', '086-458-9874', 'Guest', 'Testena@gmail.com', '', '3333'),
+('4444', 'Rneelay', 'Polen', '086-789-4518', 'Guest', 'Rneelay@ssru.ac.th', '', '4444'),
+('5555', 'Witsarut', 'Wittaya', '081-111-2458', 'Guest', 'Witsarut@gmail.com', '', '5555'),
+('com_club_Admin', 'Mhanmai', 'Titayakorn', '097-864-7884', 'Admin', 'Mhanmai@ssru.ac.th', '', 'com_club_Admin'),
+('com_club_Student', 'Jane', 'Doe', '099-999-9999', 'Student', 'comclubstudent@ssru.ac.th', '', 'com_club_Student'),
+('student1', 'Frank', 'Smith', '095-788-4442', 'Student', 'Frank@ssru.ac.th', '', 'student1'),
+('student2', 'John', 'Doe', '087-754-8484', 'Student', 'Johndoe@ssru.ac.th', '', 'student2');
 
 --
 -- Indexes for dumped tables

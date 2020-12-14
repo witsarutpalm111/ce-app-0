@@ -84,8 +84,7 @@ else{
                 <th >Serial Num</th>
                 <th >Time</th>
                 <th >Status</th>
-                <!-- <th>Detail</th> -->
-                
+                <!-- <th>Detail</th> -->              
                 <th >View</th>
 
             </tr>
